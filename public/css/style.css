@@ -1,0 +1,386 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #e5e5e5;
+}
+/* navbar style */
+
+.navbar {
+    z-index: 3;
+}
+
+/* navbar color */
+.nav-color {
+    background-color: #dbfff6;
+    transition: all ease-in-out 0.3s;
+}
+
+.bg-transparent {
+    transition: all ease-in 0.1s;
+}
+
+* {
+    z-index: 2;
+}
+
+.ellipse-img {
+    z-index: 1;
+}
+
+.hero-img {
+    z-index: 1;
+}
+
+.nav-link {
+    font-size: 18px;
+}
+
+.nav-link.active {
+    width: 83px;
+    height: 27px;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 14px;
+}
+
+.button-primary {
+    width: 120px;
+    height: 50px;
+    background-color: transparent;
+    box-sizing: border-box;
+    border-radius: 10px;
+    border-color: #4cf0c9;
+    /* border-inline-color: linear-gradient(82.49deg, #45def2 -10.14%, #4cf0c9 116.62%); */
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 30px;
+}
+
+.button-secondary {
+    width: 120px;
+    height: 50px;
+    background: linear-gradient(82.49deg, #45def2 -10.14%, #4cf0c9 116.62%);
+    border: none;
+    border-radius: 10px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 30px;
+}
+/* hero section */
+
+#hero {
+    background: #dbfff6;
+    height: 100vh;
+    /* width: 1440px;
+      height: 1000px; */
+    left: 40px;
+    top: 0px;
+}
+
+.img-hero {
+    /* position: absolute; */
+    width: 650px;
+    height: 400px;
+    left: 710px;
+    top: 100px;
+    flex: 0 0 auto;
+}
+
+.hero-tagline h1 {
+    width: 630px;
+    height: 189px;
+    left: 80px;
+    top: 274px;
+    color: #000;
+    font-family: 'Quicksand';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 50px;
+    line-height: 50px;
+    letter-spacing: 0.1em;
+    /* margin-top: 20px; */
+}
+
+.hero-tagline p {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 20px;
+    letter-spacing: 0.05em;
+    color: #4c4c4c;
+    margin-bottom: 50px;
+    margin-top: 20px;
+}
+
+/* komunitas section */
+#komunitas {
+    background: #e5e5e5;
+}
+
+/* .row-gx-5 {
+  background-image: #dbfff6;
+} */
+
+.col-lg-4 {
+    flex: 0 0 auto;
+}
+
+.card-com {
+    height: 400px;
+    width: 376px;
+}
+/* #card-foto1 {
+  height: 400px;
+  width: 390px;
+  left: 79px;
+  border-radius: 0px;
+} */
+
+/* #card-foto2 {
+  height: 400px;
+  width: 390px;
+  left: 513px;
+  top: 858px;
+  border-radius: 0px;
+}
+
+#card-foto3 {
+  height: 400px;
+  width: 390px;
+  left: 947px;
+  top: 858px;
+  border-radius: 0px;
+} */
+
+.card-komunitas {
+    width: 100%;
+    height: 299px;
+    background-color: transparent;
+    padding: 40px;
+    box-shadow: 0 0 7 rgba(0, 0, 0, 0.05);
+}
+
+.mangkok-icon {
+    width: 117.86px;
+    height: 108.36px;
+    background-color: transparent;
+    border-radius: none;
+}
+
+.card-komunitas h3 {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 36px;
+    line-height: 54px;
+    /* identical to box height */
+    letter-spacing: 0.05em;
+    color: #000000;
+}
+
+.card-komunitas p {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 30px;
+    text-align: center;
+    color: #000000;
+}
+
+/* Tentang kami section */
+
+#Tentang {
+    background: linear-gradient(260.47deg, #5ac8d7 -19.89%, #4cf0c9 103.4%);
+    height: 100vh 0;
+    /* width: 1440px;
+      height: 550px; */
+}
+
+.ponsel-img {
+    width: 575px;
+    height: 855px;
+    bottom: 0px;
+}
+
+#Tentang h3 {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 40px;
+    line-height: 60px;
+    letter-spacing: 0.05em;
+    color: #000000;
+}
+
+#Tentang p {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    color: #000000;
+}
+
+.button-sm-primary {
+    background: linear-gradient(82.49deg, #45def2 -10.14%, #4cf0c9 116.62%);
+    border: none;
+    height: 48px;
+    width: 177px;
+    left: 0px;
+    top: 316px;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+#choice {
+    background: #e5e5e5;
+}
+
+#choice h3 {
+    font-family: 'Quicksand';
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 50px;
+    text-align: center;
+    color: #000000;
+}
+
+.card-choice {
+    flex-direction: column;
+    box-sizing: border-box;
+    border: 1px solid #989898;
+    border-radius: 10px;
+    width: 410px;
+    height: 128px;
+}
+
+.card-choice h5 {
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 30px;
+    color: #000000;
+}
+
+.card-choice p {
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 30px;
+    color: #000000;
+}
+
+/* dukungan */
+
+#dukungan {
+    height: 100vh 0;
+    /* width: 1440px;
+      height: 250px; */
+    left: 0px;
+    top: 3027px;
+    background: radial-gradient(104.31% 1102.11% at 6.91% 14.11%, rgba(157, 255, 231, 0.99) 11.48%, #45def2 100%);
+}
+
+.card-dukungan h6 {
+    font-weight: 500;
+    font-size: 30px;
+    line-height: 48px;
+    color: #000000;
+}
+
+.card-dukungan p {
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 36px;
+    color: #000000;
+}
+
+/* Dekstop 15 */
+
+.form-tagline {
+    font-family: 'Poppins';
+    font-weight: 600;
+    font-size: 55px;
+    line-height: 66px;
+    letter-spacing: 0.05em;
+    color: #000000;
+    background: #e5e5e5;
+}
+
+input {
+    background: #eeeeee;
+    border: 1px solid #000000;
+    border-radius: 5px;
+    margin-bottom: 1rem;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 25px;
+    line-height: 38px;
+    /* identical to box height */
+    letter-spacing: 0.05em;
+    color: #8b8b8b;
+}
+
+#waktubooking {
+    width: 630px;
+    height: 68px;
+    left: 80px;
+    top: 326px;
+}
+
+#durasiwaktu {
+    width: 630px;
+    height: 68px;
+    left: 80px;
+    top: 421px;
+}
+
+#alamat {
+    width: 630px;
+    height: 68px;
+    left: 80px;
+    top: 516px;
+}
+/* .button-lg-primary {
+  border: none;
+  background-color: transparent;
+  width: 72px;
+  height: 90px;
+  left: 80px;
+  top: 612px;
+} */
+
+#search-lk {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px 33px 10px;
+    width: 197px;
+    height: 196px;
+    left: 80px;
+    top: 612px;
+    background: #f1f9ff;
+    border-radius: 10px;
+    border: none;
+}
+
+#search-pr {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 33px 10px;
+    width: 196px;
+    height: 199px;
+    left: 297px;
+    top: 611px;
+    background: #f7dfff;
+    border-radius: 10px;
+    border: none;
+}
+
+#letter {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 25px;
+    letter-spacing: 0.05em;
+    color: #a8a8a8;
+}

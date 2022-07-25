@@ -1,0 +1,28 @@
+@media screen and (max-width: 972px) {
+}
+
+@media screen and (max-width: 576px) {
+    .hero-tagline h1 {
+        line-height: 50px;
+    }
+
+    .img-hero {
+        width: 75%;
+        height: auto;
+    }
+
+    .card-komunitas {
+        margin: 15px 0;
+    }
+
+    .card-komunitas h3 {
+        font-size: 25px;
+    }
+
+    .card-komunitas p {
+        font-size: 16px;
+    }
+}
+
+@media screen and (max-width: 350px) {
+}
