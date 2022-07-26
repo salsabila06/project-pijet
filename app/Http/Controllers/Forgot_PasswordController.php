@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\MalasNgodingEmail;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
 
 class Forgot_PasswordController extends Controller
 {
@@ -17,13 +19,10 @@ class Forgot_PasswordController extends Controller
         $credentials = $request->validate([
             'email' => 'required|email'
         ]);
-
-        if (Auth::attempt($credentials)){
-            $request->session()->regenerate();
-            return redirect()->intended('/Reset');
-        }
-
-        return back()->with('Error','Emails doesnt  exists!');
+/*
+        Mail::to("4cae806432f8ad")->send(new MalasNgodingEmail());
+*/
+        return "Email telah dikirim";
 
     }
     //

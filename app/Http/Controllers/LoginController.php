@@ -25,7 +25,6 @@ class LoginController extends Controller
         if (Auth::attempt($credentials)){
             $request->session()->regenerate();
             if (auth()->user()->first_name==='kenny'){
-                $this->authorize('admin');
                 return redirect()->intended('/Layout');
             }
             return redirect()->intended('/');
