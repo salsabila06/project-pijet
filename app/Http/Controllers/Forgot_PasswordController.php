@@ -4,8 +4,6 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Password;
-use PHPUnit\Framework\Constraint\Count;
 
 class Forgot_PasswordController extends Controller
 {
@@ -25,7 +23,7 @@ class Forgot_PasswordController extends Controller
             return redirect()->intended('/Reset');
         }
 
-        return back()->with('loginError','Emails doesnt  exists!');
+        return back()->with('Error','Emails doesnt  exists!');
 
     }
     //
