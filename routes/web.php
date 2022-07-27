@@ -42,15 +42,14 @@ Route::get('/Register',[RegisterController::class,'create'])->name('register-pag
 Route::post('/Register',[RegisterController::class,'store'])->name('register-data');
 
 Route::get('/Login',[LoginController::class,'index'])->name('login')->middleware('guest');
-Route::post('/Login',[LoginController::class,'authenticate']);
-Route::get('/Layout',[AdminController::class,'index'])->middleware('admin');
+Route::post('/Login',[LoginController::class,'authenticate']);  1
+Route::get('/Layout',[AdminController::class,'index'])->name('admin')->middleware('admin');
 Route::post('/Logout',[LoginController::class,'logout'])->name('logout')->middleware('auth');
 Route::get('/Logout',[LoginController::class,'logout'])->name('logout')->middleware('admin');
 
 Route::get('/Forgot_Password',[Forgot_PasswordController::class,'index'])->name('forgot')->middleware('guest');
-Route::post('/Forgot_Password',[Forgot_PasswordController::class,'authenticate']);
-
-Route::get('/Reset_Password', [Reset_PasswordController::class,'index'])->name('reset-page')->middleware('auth');
+Route::post('/Forgot_Password',[Forgot_PasswordController::class,'authenticate'])->name('forgot-link');
+Route::get('/Forgot_Password/{token}', [Forgot_PasswordController::class,'show'])->name('reset')->middleware('guest');
 
 Route::get('/Dashboard',[DashboardController::class,'index'])->name('dashboard')->middleware('admin');
 
@@ -59,8 +58,8 @@ Route::get('/Booking',[BookingController::class,'index'])->name('booking');
 Route::get('/Profile',[LoginController::class,'show'])->name('profile')->middleware('auth');
 
 Route::get('/Posts',[PostController::class,'index'])->name('posts');
-
 Route::get('/Posts/{post}',[PostController::class,'show']);
+
 
 
 

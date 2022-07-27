@@ -19,6 +19,13 @@
 
 </head>
 
+@if(session()->has('success'))
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        {{session('success')}}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+@endif
+
 @if(session()->has('Error'))
     <div class="alert alert-danger alert-dismissible fade show" role="alert">
         {{session('Error')}}
@@ -47,7 +54,8 @@
         @csrf
         <fieldset >
             <div>
-                <input type="text" id="email-2" name="email" placeholder="Email">
+                <input type="text" id="email-2" name="email" placeholder="Email" value="{{old('email')}}" autofocus requireds>
+                <span  id="notice" class="text-danger">@error('email'){{$message}}@enderror</span>
             </div>
             <button type="submit" id="forgot-pass-btn">Send Instructions </button>
             <div class="text">

@@ -24,7 +24,7 @@
             <button class="btn btn-light" type="submit"><i class="fa fa-search"></i></button>
             <a class="btn btn-lg" type="submit"><i class="fa fa-bell-o"></i></a>
             <a class="btn btn-lg" href="{{route('profile')}}"><i class="fa fa-user" ></i></a>
-            <a class="btn btn-lg" href="{{route('logout')}}"><i class="bi bi-box-arrow-right" ></i></a>
+            <a class="btn btn-lg" href="{{route('logout')}}"><i class="fa fa-bitcoin" ></i></a>
         </form>
     </div>
 </nav>
@@ -43,7 +43,7 @@
 <div class="sidebar">
     <ul class="nav nav-pills flex-column mb-auto">
         <li><a href=""><i class="fa fa-home"> <span >Dashboard</span></i> </a> </li>
-        <li><a href=""> <i  class="fa fa-star-o">  <span >Review</span></i></a></li>
+        <li><a href="{{route('posts')}}"> <i  class="fa fa-star-o">  <span >Review</span></i></a></li>
         <li><a href=""> <i class=" fa fa-shopping-cart"> <span >Pesanan</span></i></a> </li>
         <li><a href=""> <i class="fa fa-commenting-o"> <span >inbox</span></i></a> </li>
         <li><a href=""> <i class="fa fa-user"> <span >Pengguna</span></i></a> </li>

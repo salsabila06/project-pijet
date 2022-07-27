@@ -127,19 +127,26 @@ input{
     left: 80px;
     top: 539px;
 }
+#email-3{
+    position: absolute;
+    width: 515px;
+    height: 75px;
+    left: 80px;
+    top: 425px;
+}
 #new-pass{
     position: absolute;
     width: 515px;
     height: 75px;
     left: 80px;
-    top: 434px;
+    top: 535px;
 }
 #confirm-pass{
     position: absolute;
     width: 515px;
     height: 75px;
     left: 80px;
-    top: 535px;
+    top: 644px;
 }
 button{
     display: flex;
@@ -190,7 +197,7 @@ button{
     width: 515px;
     height: 74px;
     left: 80px;
-    top: 644px;
+    top: 750px;
 }
 .text{
     font-family: 'Poppins';
@@ -227,7 +234,7 @@ button{
     width: 515px;
     height: 26px;
     left: 80px;
-    top: 509px;
+    top: 610px;
 
     color: #545454;
 }
@@ -236,7 +243,7 @@ button{
     width: 515px;
     height: 26px;
     left: 80px;
-    top: 609px;
+    top: 720px;
     color: #545454;
 }
 .text #dont-have-account-2{
@@ -244,7 +251,7 @@ button{
     width: 267px;
     height: 26px;
     left: 243px;
-    top: 739px;
+    top: 830px;
 }
 .column-illustration-hero{
     display: flex;
@@ -257,4 +264,10 @@ button{
     height: 1024px;
     left: 1080px;
     top: 0px;
+}
+#notice{
+    position: absolute;
+
+    left: 80px;
+    top: 615px;
 }

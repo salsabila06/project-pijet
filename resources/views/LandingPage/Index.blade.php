@@ -29,7 +29,7 @@
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav align-items-center ms-auto">
                 <li class="nav-item"><a class="nav-link active me-3" aria-current="page" {{Request::is('hero') ? 'active'  : ""}} href="#hero"><span>Beranda</span> <br /><img src="/image/Line 1.svg" alt="" /></a></li>
-                <li class="nav-item"><a class="nav-link" {{Request::is('komunitas') ? 'active'  : ""}} href="{{route('posts')}}"><span>Komunitas</span></a></li>
+                <li class="nav-item"><a class="nav-link" {{Request::is('komunitas') ? 'active'  : ""}} href="#komunitas"><span>Komunitas</span></a></li>
                 <li class="nav-item"><a class="nav-link" {{Request::is('Tentang') ? 'active'  : ""}} href="#Tentang"><span>Tentang Kami</span></a></li>
                 <li class="nav-item"><a class="nav-link" {{Request::is('dukungan') ? 'active'  : ""}} href="#dukungan"><span>Dukungan</span></a></li>
                 <!-- <a class="btn-login ms-2" href="/"><img src="/assets/img/login.svg" alt="" /></a> -->
@@ -43,7 +43,7 @@
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <li><a class="dropdown-item" href="{{route('profile')}}">Profile</a></li>
-                        <li><a class="dropdown-item" href="">My Dashboard</a></li>
+                        <li><a class="dropdown-item" href="{{route('admin')}}">My Dashboard</a></li>
                         <li><hr class="dropdown-divider"></li>
                         <li>
                             <form action="/Logout" method="post">

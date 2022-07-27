@@ -11,7 +11,7 @@
                         <h5 class="card-title">{{$data->last_name}}</h5>
                         <h6 class="card-subtitle mb-2 text-muted">{{$data->id}}</h6>
                         <h6 class="card-subtitle mb-2 text-muted">{{$data->email}}</h6>
-                        <a href="{{route('home')}}" class="card-link">Kembali</a>
+                        <a href="{{route('admin')}}" class="card-link">Kembali</a>
                     </div>
                 </div>
             </ul>
