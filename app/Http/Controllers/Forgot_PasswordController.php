@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Mail\MalasNgodingEmail;
+use App\Mail\Email;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
@@ -20,9 +20,9 @@ class Forgot_PasswordController extends Controller
             'email' => 'required|email'
         ]);
 
-        Mail::to($request->email)->send(new MalasNgodingEmail());
+        Mail::to($request->email)->send(new Email());
 
-        return "Email telah dikirim";
+        return back()->with('pesan','Emali berhasil di kirim');
 
     }
     //
