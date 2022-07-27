@@ -19,9 +19,9 @@ class Forgot_PasswordController extends Controller
         $credentials = $request->validate([
             'email' => 'required|email'
         ]);
-/*
-        Mail::to("4cae806432f8ad")->send(new MalasNgodingEmail());
-*/
+
+        Mail::to($request->email)->send(new MalasNgodingEmail());
+
         return "Email telah dikirim";
 
     }
