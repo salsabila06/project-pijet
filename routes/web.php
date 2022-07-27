@@ -50,7 +50,7 @@ Route::get('/Logout',[LoginController::class,'logout'])->name('logout')->middlew
 Route::get('/Forgot_Password',[Forgot_PasswordController::class,'index'])->name('forgot')->middleware('guest');
 Route::post('/Forgot_Password',[Forgot_PasswordController::class,'authenticate']);
 
-Route::get('/Reset_Password', [Reset_PasswordController::class,'index'])->name('reset')->middleware('auth');
+Route::get('/Reset_Password', [Reset_PasswordController::class,'index'])->name('reset-page')->middleware('auth');
 
 Route::get('/Dashboard',[DashboardController::class,'index'])->name('dashboard')->middleware('admin');
 
