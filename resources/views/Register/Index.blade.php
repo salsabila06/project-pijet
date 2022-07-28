@@ -9,7 +9,7 @@
         Sign in
     </p>
 </div>
-<form method="post" action="{{route('register-data')}}">
+<form method="post" action="{{route('create')}}">
     <fieldset>
     @csrf
     <div class="form-group">

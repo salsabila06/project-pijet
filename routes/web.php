@@ -38,27 +38,35 @@ Route::get('/', function () {
 
 Route::get('/',[PageController::class,'index'])->name('home');
 
-Route::get('/Register',[RegisterController::class,'create'])->name('register-page')->middleware('guest');;
-Route::post('/Register',[RegisterController::class,'store'])->name('register-data');
+Route::middleware(['guest:web'])->group(function (){
+    Route::get('/Login',[LoginController::class,'index'])->name('login');
+    Route::get('/Register',[RegisterController::class,'create'])->name('register-page');
+    Route::post('/create',[RegisterController::class,'store'])->name('create');
+    Route::post('/verify',[LoginController::class,'authenticate'])->name('verify');
 
-Route::get('/Login',[LoginController::class,'index'])->name('login')->middleware('guest');
-Route::post('/Login',[LoginController::class,'authenticate']);  1
-Route::get('/Layout',[AdminController::class,'index'])->name('admin')->middleware('admin');
-Route::post('/Logout',[LoginController::class,'logout'])->name('logout')->middleware('auth');
-Route::get('/Logout',[LoginController::class,'logout'])->name('logout')->middleware('admin');
+    Route::get('/Forgot_Password',[Forgot_PasswordController::class,'showForgotForm'])->name('forgot.password.form');
+    Route::post('/Forgot_Password',[Forgot_PasswordController::class,'sendResetLink'])->name('forgot.password.link');
+    Route::get('/Forgot_Password/{token}', [Forgot_PasswordController::class,'showResetForm'])->name('reset.password.form');
+    Route::post('/Reset_Password',[Forgot_PasswordController::class,'resetPassword'])->name('reset.password');
 
-Route::get('/Forgot_Password',[Forgot_PasswordController::class,'index'])->name('forgot')->middleware('guest');
-Route::post('/Forgot_Password',[Forgot_PasswordController::class,'authenticate'])->name('forgot-link');
-Route::get('/Forgot_Password/{token}', [Forgot_PasswordController::class,'show'])->name('reset')->middleware('guest');
+    Route::get('/Booking',[BookingController::class,'index'])->name('booking');
+});
 
-Route::get('/Dashboard',[DashboardController::class,'index'])->name('dashboard')->middleware('admin');
+Route::middleware(['auth:web'])->group(function(){
+    Route::post('/Logout',[LoginController::class,'logout'])->name('logout');
+    Route::get('/Profile',[LoginController::class,'show'])->name('profile');
+});
 
-Route::get('/Booking',[BookingController::class,'index'])->name('booking');
 
-Route::get('/Profile',[LoginController::class,'show'])->name('profile')->middleware('auth');
+Route::middleware(['admin:web'])->group(function(){
+    Route::get('/Layout',[AdminController::class,'index'])->name('admin');
+    Route::get('/Logout',[LoginController::class,'logout'])->name('logout');
+    Route::get('/Dashboard',[DashboardController::class,'index'])->name('dashboard');
+    Route::get('/Posts',[PostController::class,'index'])->name('posts');
+    Route::get('/Posts/{post}',[PostController::class,'show']);
+});
 
-Route::get('/Posts',[PostController::class,'index'])->name('posts');
-Route::get('/Posts/{post}',[PostController::class,'show']);
+
 
 
 

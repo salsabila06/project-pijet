@@ -24,7 +24,7 @@
 @endif
 
 <div>
-    <form method="post" action="{{route('login')}}">
+    <form method="post" action="{{route('verify')}}">
         @csrf
         <fieldset>
             <div>
@@ -39,7 +39,7 @@
                     Don't have account? <a href="{{route('register-page')}}">register</a>
                 </p>
                 <p>
-                    <a id="forgot-pass" href="{{route('forgot')}}">Forgot password?</a>
+                    <a id="forgot-pass" href="{{route('forgot.password.form')}}">Forgot password?</a>
                 </p>
             </div>
         </fieldset>

@@ -50,7 +50,7 @@
             Enter the email associated with your account and we’ll send an email with instruction to reset your password
         </p>
     </div>
-    <form method="post" action="{{route('forgot')}}">
+    <form method="post" action="{{route('forgot.password.form')}}">
         @csrf
         <fieldset >
             <div>
