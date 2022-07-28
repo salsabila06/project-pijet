@@ -20,12 +20,13 @@ $config = new PhpCsFixer\Config();
 $config->setRiskyAllowed(true);
 
 return $config->setRules([
-        '@PSR12' => true,
-        'array_syntax' => ['syntax' => 'short'],
-        'no_extra_blank_lines' => ['tokens' => ['extra']],
-        'no_unused_imports' => true,
-        'ordered_imports' => ['sort_algorithm' => 'alpha'],
-    ])
+    '@PSR12'               => true,
+    'array_syntax'         => ['syntax' => 'short'],
+    'line_ending'          => true,
+    'no_extra_blank_lines' => ['tokens' => ['extra']],
+    'no_unused_imports'    => true,
+    'ordered_imports'      => ['sort_algorithm' => 'alpha'],
+])
     ->setUsingCache(false)
     ->setLineEnding(PHP_EOL)
     ->setFinder($finder);
