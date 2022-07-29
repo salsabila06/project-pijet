@@ -10,6 +10,7 @@ use App\Http\Controllers\Forgot_PasswordController;
 use App\Http\Controllers\BookingController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\PenggunaController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -64,6 +65,8 @@ Route::middleware(['admin:web'])->group(function(){
     Route::get('/Dashboard',[DashboardController::class,'index'])->name('dashboard');
     Route::get('/Posts',[PostController::class,'index'])->name('posts');
     Route::get('/Posts/{post}',[PostController::class,'show']);
+    Route::get('/Pengguna',[PenggunaController::class,'index'])->name('pengguna');
+    Route::get('/Pengguna/{data}',[PenggunaController::class,'detail_pengguna']);
 });
 
 
