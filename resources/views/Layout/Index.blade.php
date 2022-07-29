@@ -4,6 +4,10 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
+<!--
+    <link href="{{asset('/vendor/datatables.net-dt/css/jquery.dataTables.min.css')}}" rel="stylesheet" />
+    <link href=".{{asset('/vendor/datatables.net-responsive-dt/css/responsive.dataTables.min.css')}}" rel="stylesheet" />
+    -->
     <!--my style -->
     <link rel="stylesheet" href="{{asset('css/layout.css')}}">
     <link rel="stylesheet" href="{{asset('/css/font-awesome.min.css')}}" />
@@ -42,7 +46,7 @@
 </label>
 <div class="sidebar">
     <ul class="nav nav-pills flex-column mb-auto">
-        <li><a href=""><i class="fa fa-home"> <span >Dashboard</span></i> </a> </li>
+        <li><a href="{{route('dashboard')}}"><i class="fa fa-home"> <span >Dashboard</span></i> </a> </li>
         <li><a href="{{route('posts')}}"> <i  class="fa fa-star-o">  <span >Review</span></i></a></li>
         <li><a href=""> <i class=" fa fa-shopping-cart"> <span >Pesanan</span></i></a> </li>
         <li><a href=""> <i class="fa fa-commenting-o"> <span >inbox</span></i></a> </li>
@@ -51,6 +55,9 @@
     </ul>
 </div>
 
+<div class="container">
+    @yield('container')
+</div>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.min.js" integrity="sha384-ODmDIVzN+pFdexxHEHFBQH3/9/vQ9uori45z4JjnFsRydbmQbmL5t1tQ0culUzyK" crossorigin="anonymous"></script>
