@@ -50,7 +50,7 @@
         <li><a href="{{route('posts')}}"> <i  class="fa fa-star-o">  <span >Review</span></i></a></li>
         <li><a href=""> <i class=" fa fa-shopping-cart"> <span >Pesanan</span></i></a> </li>
         <li><a href=""> <i class="fa fa-commenting-o"> <span >inbox</span></i></a> </li>
-        <li><a href=""> <i class="fa fa-user"> <span >Pengguna</span></i></a> </li>
+        <li><a href="{{route('pengguna')}}"> <i class="fa fa-user"> <span >Pengguna</span></i></a> </li>
         <li><a href=""> <i class="fa fa-check-square-o"> <span >Verifikasi</span></i></a> </li>
     </ul>
 </div>
