@@ -43,7 +43,9 @@
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <li><a class="dropdown-item" href="{{route('profile')}}">Profile</a></li>
-                        <li><a class="dropdown-item" href="{{route('admin')}}">My Dashboard</a></li>
+                        @can('admin')
+                        <li><a class="dropdown-item" href="{{route('dashboard')}}">My Dashboard</a></li>
+                        @endcan
                         <li><hr class="dropdown-divider"></li>
                         <li>
                             <form action="/Logout" method="post">
