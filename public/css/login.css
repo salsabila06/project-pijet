@@ -1,5 +1,5 @@
 .body{
-    position: relative;
+    position: wd;
     width: 1440px;
     height: 1024px;
     background-color:#DBFFF6;
@@ -89,28 +89,28 @@ input{
     width: 515px;
     height: 75px;
     left: 80px;
-    top: 386px;
+    top: 491px;
 }
 #last_name{
     position: absolute;
     width: 515px;
     height: 75px;
     left: 80px;
-    top: 491px;
+    top: 596px;
 }
 #email{
     position: absolute;
     width: 515px;
     height: 75px;
     left: 80px;
-    top: 596px;
+    top: 701px ;
 }
 #password-2{
     position: absolute;
     width: 515px;
     height: 75px;
     left: 80px;
-    top: 701px;
+    top: 806px;
 }
 #username-2{
 
@@ -125,7 +125,7 @@ input{
     width: 515px;
     height: 75px;
     left: 80px;
-    top: 539px;
+    top: 430px;
 }
 #email-3{
     position: absolute;
@@ -139,14 +139,14 @@ input{
     width: 515px;
     height: 75px;
     left: 80px;
-    top: 535px;
+    top: 440px;
 }
 #confirm-pass{
     position: absolute;
     width: 515px;
     height: 75px;
     left: 80px;
-    top: 644px;
+    top: 554px;
 }
 button{
     display: flex;
@@ -190,14 +190,21 @@ button{
     width: 515px;
     height: 75px;
     left: 80px;
-    top: 806px;
+    top: 910px;
 }
 #forgot-pass-btn{
     position: absolute;
     width: 515px;
     height: 74px;
     left: 80px;
-    top: 750px;
+    top: 550px;
+}
+#reset-pass-btn{
+    position: absolute;
+    width: 515px;
+    height: 74px;
+    left: 80px;
+    top: 670px;
 }
 .text{
     font-family: 'Poppins';
@@ -234,7 +241,7 @@ button{
     width: 515px;
     height: 26px;
     left: 80px;
-    top: 610px;
+    top: 520px;
 
     color: #545454;
 }
@@ -243,7 +250,7 @@ button{
     width: 515px;
     height: 26px;
     left: 80px;
-    top: 720px;
+    top: 630px;
     color: #545454;
 }
 .text #dont-have-account-2{
@@ -251,7 +258,16 @@ button{
     width: 267px;
     height: 26px;
     left: 243px;
-    top: 830px;
+    top: 650px;
+}
+
+
+.text #dont-have-account-3{
+    position: absolute;
+    width: 267px;
+    height: 26px;
+    left: 243px;
+    top: 750px;
 }
 .column-illustration-hero{
     display: flex;
@@ -260,14 +276,15 @@ button{
     padding: 0px;
 
     position: absolute;
-    width: 1664px;
+    width: auto;
     height: 1024px;
     left: 1080px;
     top: 0px;
 }
 #notice{
     position: absolute;
-
     left: 80px;
-    top: 615px;
+    top: 510px;
 }
+
+
