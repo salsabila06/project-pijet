@@ -5,16 +5,15 @@
 
 <div class="title">
     <p>
-        Login
+        ADMIN LOGIN
     </p>
 </div>
 
-<div id="message">
 @if(session()->has('success'))
-<div class="alert alert-success alert-dismissible fade show" role="alert">
-    {{session('success')}}
-    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-</div>
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        {{session('success')}}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
 @endif
 
 @if(session()->has('loginError'))
@@ -23,9 +22,9 @@
         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
     </div>
 @endif
-</div>
+
 <div>
-    <form method="post" action="{{route('verify')}}">
+    <form method="post" action="{{route('login_admin.check')}}">
         @csrf
         <fieldset>
             <div>

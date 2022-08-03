@@ -27,10 +27,7 @@
     @csrf
     <fieldset>
         <input type="hidden" name="token" value="{{$token}}">
-        <div >
-            <input type="email" id="email-3" name="email" value="{{$email ?? old('email')}}" placeholder="Email">
-            <span  id="notice-1" class="text-danger">@error('email'){{$message}}@enderror</span>
-        </div>
+        <input type="hidden" name="email" value="{{$email}}">
         <div>
             <input type="password" id="new-pass" name="password"  placeholder="New password">
         </div>
@@ -47,9 +44,9 @@
                 Both password must match
             </p>
             <div>
-                <button type="submit" id="forgot-pass-btn">Reset Now</button>
+                <button type="submit" id="reset-pass-btn">Reset Now</button>
                 <div class="text">
-                    <p id="dont-have-account-2">
+                    <p id="dont-have-account-3">
                         Don't have account? <a href="{{route('register-page')}}">register</a>
                     </p>
                 </div>

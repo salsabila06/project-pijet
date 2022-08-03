@@ -13,20 +13,27 @@
     <fieldset>
     @csrf
     <div class="form-group">
-        <input type="text" id="first_name" name="first_name"
-               class="form-control @error('first_name') is-invalid @enderror" value="{{old('first_name')}}"
-               placeholder="First Name">
-        @error('first_name')
+        <input type="text" id="username" name="username"
+               class="form-control @error('username') is-invalid @enderror" value="{{old('username')}}"
+               placeholder="username">
+        @error('username')
         <div class="invalid-feedback">{{$message}}</div>
         @enderror
     </div>
     <div class="form-group">
-        <input type="text" id="last_name" name="last_name" class="form-control @error('last_name') is-invalid @enderror"
-               value="{{old('last_name')}}" placeholder="Last Name">
-        @error('last_name')
+        <input type="text" id="first_name" name="first_name" class="form-control @error('first_name') is-invalid @enderror"
+               value="{{old('first_name')}}" placeholder="first Name">
+        @error('first_name')
         <div class="invalid-feedback">{{$message}}</div>
         @enderror
     </div>
+        <div class="form-group">
+            <input type="text" id="last_name" name="last_name" class="form-control @error('last_name') is-invalid @enderror"
+                   value="{{old('last_name')}}" placeholder="Last Name">
+            @error('last_name')
+            <div class="invalid-feedback">{{$message}}</div>
+            @enderror
+        </div>
     <div class="form-group">
         <input type="email" id="email" name="email" class=" form-control @error('email') is-invalid @enderror"
                value="{{old('email')}}" placeholder="Email">
