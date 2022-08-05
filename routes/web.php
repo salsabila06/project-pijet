@@ -1,16 +1,15 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\PageController;
-use App\Http\Controllers\RegisterController;
-use App\Http\Controllers\LoginController;
-use App\Http\Controllers\Reset_PasswordController;
+use App\Http\Controllers\Admin\AdminController;
+use App\Http\Controllers\BookingController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\Forgot_PasswordController;
-use App\Http\Controllers\BookingController;
+use App\Http\Controllers\LoginController;
+use App\Http\Controllers\PageController;
+use App\Http\Controllers\RegisterController;
+use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
-use App\Http\Controllers\AdminController;
-use App\Http\Controllers\PenggunaController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -39,41 +38,47 @@ Route::get('/', function () {
 
 Route::get('/',[PageController::class,'index'])->name('home');
 
-Route::middleware(['guest:web'])->group(function (){
-    Route::get('/Login',[LoginController::class,'index'])->name('login');
-    Route::get('/Register',[RegisterController::class,'create'])->name('register-page');
-    Route::post('/create',[RegisterController::class,'store'])->name('create');
-    Route::post('/verify',[LoginController::class,'authenticate'])->name('verify');
 
-    Route::get('/Forgot_Password',[Forgot_PasswordController::class,'showForgotForm'])->name('forgot.password.form');
-    Route::post('/Forgot_Password',[Forgot_PasswordController::class,'sendResetLink'])->name('forgot.password.link');
-    Route::get('/Forgot_Password/{token}', [Forgot_PasswordController::class,'showResetForm'])->name('reset.password.form');
-    Route::post('/Reset_Password',[Forgot_PasswordController::class,'resetPassword'])->name('reset.password');
+    Route::middleware(['guest:web'])->group(function (){
 
-    Route::get('/Booking',[BookingController::class,'index'])->name('booking');
+        Route::get('/Login',[LoginController::class,'index'])->name('login');
+        Route::post('/Login',[LoginController::class,'authenticate'])->name('verify');
+        Route::get('/Register',[RegisterController::class,'create'])->name('register-page');
+        Route::post('/create',[RegisterController::class,'store'])->name('create');
+
+        Route::get('/Forgot_Password',[Forgot_PasswordController::class,'showForgotForm'])->name('forgot.password.form');
+        Route::post('/Forgot_Password',[Forgot_PasswordController::class,'sendResetLink'])->name('forgot.password.link');
+        Route::get('/Forgot_Password/{token}', [Forgot_PasswordController::class,'showResetForm'])->name('reset.password.form');
+        Route::post('/Reset_Password',[Forgot_PasswordController::class,'resetPassword'])->name('reset.password');
+
+        Route::get('/Booking',[BookingController::class,'index'])->name('booking');
+    });
+
+    Route::middleware(['auth:web'])->group(function(){
+        Route::post('/Logout',[LoginController::class,'logout'])->name('logout');
+        Route::get('/Profile',[LoginController::class,'show'])->name('profile');
+    });
+
+
+        Route::get('/Login_Admin', [AdminController::class, 'index'])->name('login_admin');
+        Route::post('/Login_Admin', [AdminController::class, 'authenticate'])->name('login_admin.check');
+        Route::get('/Logout',[AdminController::class,'destroy'])->name('logout_admin');
+        Route::get('/Dashboard', [DashboardController::class, 'index'])->name('dashboard');
+
+        Route::get('/Profile', [AdminController::class, 'show'])->name('profile');
+
+        Route::get('/Posts', [PostController::class, 'index'])->name('posts');
+        Route::get('/Posts/{post}', [PostController::class, 'show']);
+
+/*
+
+
+
+
 });
 
-Route::middleware(['auth:web'])->group(function(){
-    Route::post('/Logout',[LoginController::class,'logout'])->name('logout');
-    Route::get('/Profile',[LoginController::class,'show'])->name('profile');
 });
 
-
-Route::middleware(['admin:web'])->group(function(){
-    Route::get('/Layout',[AdminController::class,'index'])->name('admin');
-    Route::get('/Logout',[LoginController::class,'logout'])->name('logout');
-    Route::get('/Dashboard',[DashboardController::class,'index'])->name('dashboard');
-    Route::get('/Posts',[PostController::class,'index'])->name('posts');
-    Route::get('/Posts/{post}',[PostController::class,'show']);
-    Route::get('/Pengguna',[PenggunaController::class,'index'])->name('pengguna');
-    Route::get('/Pengguna/{data}',[PenggunaController::class,'detail_pengguna']);
 });
-
-
-
-
-
-
-
-
+*/
 

@@ -29,11 +29,10 @@
         </div>
     </nav>
 
-
     <div class="column-illustration-hero">
         <img src="/image/Group 179.svg" alt="" srcset="">
     </div>
-
+</div>
 
 
 

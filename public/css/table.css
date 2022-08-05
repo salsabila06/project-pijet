@@ -1,0 +1,424 @@
+body {
+    font-family: 'Poppins';
+    font-style: normal;
+    padding: 50px;
+  }
+  .search {
+    background-color: #7ec8bb;
+    font-family: 'Poppins';
+    font-style: normal;
+    color: #ffffff;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+    border-radius: 10px;
+    border: none;
+  }
+  .riwayat-btn {
+    font-family: 'Poppins';
+    font-style: normal;
+    color: #696969;
+    background: #4becd4;
+    border-radius: 20px;
+  }
+  
+  input {
+    display: flex;
+    background: #7ec8bb;
+    font-family: 'Poppins';
+    font-style: normal;
+    color: #ffffff;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+    border-radius: 10px;
+  }
+  ul {
+    padding: 20px;
+    font-family: 'Poppins';
+    font: size 15px;
+  }
+  li {
+    display: inline;
+    margin: 10px;
+    padding: 0;
+  }
+  
+  ul a {
+    padding: 10px;
+    text-decoration: none;
+  }
+  
+  ul#berhasil a#menu-berhasil,
+  ul#pending a#menu-pending,
+  ul#ditolak a#menu-ditolak {
+    color: #fcfdfd;
+    background: #7ec8bb;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+    border-radius: 10px;
+  }
+  .pengguna {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 40px;
+    gap: 10px;
+  
+    position: absolute;
+    width: 90vw;
+    height: 90vh;
+    margin: 50px 50px;
+    background: #ffffff;
+  }
+  
+  .title {
+    font-family: 'Poppins';
+    font-weight: 500;
+    font-size: 30px;
+    line-height: 45px;
+    letter-spacing: 0.05em;
+    color: #000000;
+  }
+  
+  .nav-item {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 30px;
+    letter-spacing: 0.05em;
+    color: #000000;
+  }
+  
+  .col-style {
+    font-family: 'Poppins';
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0.05em;
+    color: #000000;
+    box-sizing: border-box;
+    border-top: 1px solid #000000;
+    margin: 10px 0;
+  }
+  
+  .isi-style {
+    font-family: 'Poppins';
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 20px;
+    letter-spacing: 0.05em;
+    color: #000000;
+  }
+  .a {
+    font-family: 'Poppins';
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 20px;
+    letter-spacing: 0.05em;
+    color: #428b35;
+  }
+  
+  .pengguna-btn {
+    background: #6cffdc;
+    border-radius: 9px;
+    border: none;
+    font-family: 'Poppins';
+    font-weight: 400;
+    font-size: 13px;
+    color: #000000;
+  }
+  
+  /* detail pengguna */
+  
+  .body-pengguna {
+    background-color: #ffffff;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    margin: 0;
+    box-sizing: border-box;
+  }
+  
+  .card-container {
+    background-color: #ffffff;
+    border-radius: 5px;
+    box-shadow: 0px 10px 20px -10px rgba(0, 0, 0, 0.75);
+    color: #000000;
+    padding-top: 10px;
+    position: relative;
+    width: 350px;
+    max-width: 100%;
+    text-align: center;
+  }
+  
+  .title-profil {
+    font-family: 'Poppins';
+    font-weight: 500;
+    font-size: 25px;
+    text-align: center;
+    color: #000000;
+    padding: 0;
+  }
+  
+  .det-pengguna {
+    font-family: 'Poppins';
+    font-weight: 400;
+    font-size: 18px;
+    text-align: justify;
+    padding: 15px;
+  }
+  
+  .round {
+    width: 180px;
+    height: 150px;
+    padding: 7px;
+    justify-content: center;
+  }
+  
+  /* review */
+  .review {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 40px;
+    gap: 10px;
+  
+    position: absolute;
+    width: 90vw;
+    height: 90vh;
+    margin: 50px 50px;
+    background: #ffffff;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.14);
+    border-radius: 10px;
+  }
+  
+  .card-body {
+    display: flex;
+    flex-direction: column;
+    width: 80vw;
+    height: 80vh;
+  }
+  
+  .col-review {
+    box-sizing: border-box;
+    border-bottom: 1px solid #000000;
+    margin: 10px 0;
+  }
+  
+  .review-sty {
+    font-family: 'Poppins';
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 30px;
+    color: #000000;
+  }
+  
+  .fa {
+    font-size: 25px;
+  }
+  
+  .checked {
+    color: orange;
+  }
+  
+  /* .body-det {
+    height: 100vh;
+    width: 100vw;
+  } */
+  
+  .det {
+    height: 100vh;
+    background: #ffffff;
+  }
+  .pembatalan {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 40px;
+    gap: 10px;
+  
+    position: absolute;
+    width: 90vw;
+    height: 90vh;
+    margin: 50px 50px;
+    background: #ffffff;
+  }
+  
+  .dtl-pembatalan {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 40px;
+    gap: 10px;
+  
+    position: absolute;
+    width: 90vw;
+    height: 90vh;
+    margin: 50px 50px;
+    background: #ffffff;
+  }
+  
+  .card-pembatalan {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 15px;
+    width: 45vw;
+    height: 30vh;
+    border: none;
+    margin-top: 22px;
+    margin-left: 59px;
+  }
+  
+  .card-title {
+    font-family: 'Poppins';
+    font-weight: 500;
+    font-size: 20px;
+    text-align: center;
+    color: #000000;
+    margin-bottom: 11px;
+  }
+  
+  .subtitle {
+    font-family: 'Poppins';
+    font-weight: 400;
+    font-size: 15px;
+    color: #000000;
+    margin-top: 11px;
+  }
+  
+  .form-control {
+    font-family: 'Poppins';
+    font-weight: 400;
+    font-size: 12px;
+    color: #000000;
+    margin-top: 22px;
+    margin-bottom: 22px;
+  }
+  
+  .poto {
+    width: 162px;
+    height: 79px;
+    background: url(image);
+    border-radius: 5px;
+  }
+  
+  .decline {
+    position: absolute;
+    color: #ffffff;
+    height: 30px;
+    width: 100px;
+    background: #ff0000;
+    border-radius: 10px;
+    border: none;
+    margin-left: 143px;
+    font-family: 'Poppins';
+    font-weight: 400;
+    font-size: 12px;
+  }
+  
+  .accept {
+    position: absolute;
+    color: #ffffff;
+    width: 140px;
+    height: 30px;
+    background: #50abff;
+    border-radius: 10px;
+    border: none;
+    font-family: 'Poppins';
+    font-weight: 400;
+    font-size: 12px;
+  }
+  .status-btn {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 5px;
+    gap: 10px;
+    background: #33b128;
+    border-radius: 20px;
+    color: #ffffff;
+    border: solid 0px;
+  }
+  .form-control-i {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 0px;
+    border-radius: 10px;
+  }
+  .status-btn1 {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 5px;
+    gap: 10px;
+    background: #009d76;
+    border-radius: 20px;
+    color: #ffffff;
+    border: solid 0px;
+  }
+  ul {
+    padding: 20px;
+    font-family: 'Poppins';
+    font: size 15px;
+  }
+  li {
+    display: inline;
+    margin: 10px;
+    padding: 0;
+  }
+  ul a {
+    padding: 10px;
+    text-decoration: none;
+  }
+  ul#diterima a#menu-diterima,
+  ul#pending a#menu-menunggu-verifikasi,
+  ul#ditolak1 a#menu-ditolak {
+    color: #fcfdfd;
+    background: #7ec8bb;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+    border-radius: 10px;
+  }
+  .card-text-bg-dark {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 70;
+    padding: 120px 0;
+  }
+  .card-img-overlay {
+    position: absolute;
+    width: 800px;
+    height: 700px;
+    left: 300px;
+    top: 129px;
+    margin: 0 auto;
+    background: #fcfdfd;
+  }
+  .card-title {
+    font-family: 'Poppins';
+    font-weight: 500;
+    font-size: 30px;
+    line-height: 45px;
+    letter-spacing: 0.05em;
+    color: #000000;
+  }
+  .isi-style1 {
+    font-family: 'Poppins';
+    font-weight: 200;
+    font-size: 15px;
+    line-height: 18px;
+    letter-spacing: 0.05em;
+    color: #000000;
+  }

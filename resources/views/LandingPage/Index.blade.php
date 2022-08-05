@@ -42,7 +42,7 @@
                         Welcome Back, {{auth()->user()->first_name }}
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <li><a class="dropdown-item" href="{{route('profile')}}">Profile</a></li>
+                        <li><a class="dropdown-item" href="">Profile</a></li>
                         @can('admin')
                         <li><a class="dropdown-item" href="{{route('dashboard')}}">My Dashboard</a></li>
                         @endcan

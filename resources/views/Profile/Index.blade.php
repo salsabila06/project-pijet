@@ -1,18 +1,18 @@
 @extends('Layout.Index')
 
 @section('container')
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Profile Page</title>
+
+        <!-- Custom Css -->
+        <link rel="stylesheet" href="{{ asset('/css/styleProfile.css') }}">
+    </head>
+
 <div class="container">
     <div class="row">
         <div class="">
-            <head>
-                <meta charset="UTF-8">
-                <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                <title>Profile Page</title>
-
-                <!-- Custom Css -->
-                <link rel="stylesheet" href="{{ asset('/css/styleProfile.css') }}">
-            </head>
-
             <body>
             <!-- Navbar top -->
             <div class="navbar-top">
@@ -44,7 +44,7 @@
                                 <tr>
                                     <td>Name</td>
                                     <td>:</td>
-                                    <td>{{ $data->first_name }} {{ $data->last_name }}</td>
+                                    <td>{{ $data->username }} </td>
                                 </tr>
                                 <tr>
                                     <td>Tanggal Lahir</td>
@@ -57,9 +57,9 @@
                                     <td>{{ $data->email }}</td>
                                 </tr>
                                 <tr>
-                                    <td>Kota Dasar</td>
+                                    <td>Alamat</td>
                                     <td>:</td>
-                                    <td>#</td>
+                                    <td>{{ $data->address }}</td>
                                 </tr>
                                 </tbody>
                             </table>
@@ -75,17 +75,17 @@
                                 <tr>
                                     <td>Bahasa</td>
                                     <td>:</td>
-                                    <td>#</td>
+                                    <td>Bahasa Indonesia</td>
                                 </tr>
                                 <tr>
                                     <td>Email</td>
                                     <td>:</td>
-                                    <td>#</td>
+                                    <td>{{ $data->email }}</td>
                                 </tr>
                                 <tr>
                                     <td>Telepon</td>
                                     <td>:</td>
-                                    <td>#</td>
+                                    <td>{{ $data->number }}</td>
                                 </tr>
                                 <tr>
                                     <td>Verifikasi 2 Langkah</td>
@@ -98,7 +98,6 @@
                     </div>
                 @endforeach
             </body>
-            </div>
         </div>
     </div>
 </div>
