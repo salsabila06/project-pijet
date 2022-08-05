@@ -41,7 +41,7 @@ class AdminController extends Controller
      */
     public function authenticate(LoginAdminRequest $request)
     {
-        $request=authenticate();
+        $request->authenticate();
 
         $request->session()->regenerate();
 
