@@ -59,12 +59,22 @@ Route::get('/',[PageController::class,'index'])->name('home');
         Route::get('/Profile',[LoginController::class,'show'])->name('profile');
     });
 
-
+Route::middleware(['Admin:web'])->group(function(){
         Route::get('/Login_Admin', [AdminController::class, 'index'])->name('login_admin');
         Route::post('/Login_Admin', [AdminController::class, 'authenticate'])->name('login_admin.check');
         Route::get('/Logout',[AdminController::class,'destroy'])->name('logout_admin');
-        Route::get('/Dashboard', [DashboardController::class, 'index'])->name('dashboard');
+    
+    
+        Route::get('/Dashboard',[DashboardController::class,'index'])->name('dashboard');
+        Route::get('/Pemesanan/berhasil',[PemesananController::class,'berhasil'])->name('pemesanan.berhasil');
+        Route::get('/Pemesanan/menunggu',[PemesananController::class,'menunggu'])->name('pemesanan.menunggu');
+        Route::get('/Pemesanan/ditolak',[PemesananController::class,'ditolak'])->name('pemesanan.ditolak');
+        Route::get('/Pengguna',[PenggunaController::class,'index'])->name('pengguna');
+        Route::get('/Verifikasi/diterima',[VerifikasiController::class,'diterima'])->name('verifikasi.diterima');
+        Route::get('/Verifikasi/menunggu',[VerifikasiController::class,'menunggu'])->name('verifikasi.menunggu');
+        Route::get('/Verifikasi/ditolak',[VerifikasiController::class,'ditolak'])->name('verifikasi.ditolak');
 
+    
         Route::get('/Profile', [AdminController::class, 'show'])->name('profile');
 
         Route::get('/Posts', [PostController::class, 'index'])->name('posts');
