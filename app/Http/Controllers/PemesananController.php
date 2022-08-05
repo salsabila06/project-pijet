@@ -2,20 +2,32 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\pengguna;
+use App\Models\pemesanan;
 use Illuminate\Http\Request;
 
-class PenggunaController extends Controller
+class PemesananController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function berhasil()
     {
-        $pengguna = pengguna::latest()->get();
-        return view('Pengguna.index',compact('pengguna'));
+        $status = pemesanan::where('status','like','Berhasil')->get();
+        return view('Pemesanan.berhasil', compact('status'));
+    }
+
+    public function menunggu()
+    {
+        $status = pemesanan::where('status','like','Menunggu')->get();
+        return view('Pemesanan.menunggu', compact('status'));
+    }
+
+    public function ditolak()
+    {
+        $status = pemesanan::where('status','like','Ditolak')->get();
+        return view('Pemesanan.ditolak', compact('status'));
     }
 
     /**
@@ -42,10 +54,10 @@ class PenggunaController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\pengguna  $pengguna
+     * @param  \App\Models\pemesanan  $pemesanan
      * @return \Illuminate\Http\Response
      */
-    public function show(pengguna $pengguna)
+    public function show(pemesanan $pemesanan)
     {
         //
     }
@@ -53,10 +65,10 @@ class PenggunaController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\pengguna  $pengguna
+     * @param  \App\Models\pemesanan  $pemesanan
      * @return \Illuminate\Http\Response
      */
-    public function edit(pengguna $pengguna)
+    public function edit(pemesanan $pemesanan)
     {
         //
     }
@@ -65,10 +77,10 @@ class PenggunaController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\pengguna  $pengguna
+     * @param  \App\Models\pemesanan  $pemesanan
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, pengguna $pengguna)
+    public function update(Request $request, pemesanan $pemesanan)
     {
         //
     }
@@ -76,10 +88,10 @@ class PenggunaController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\pengguna  $pengguna
+     * @param  \App\Models\pemesanan  $pemesanan
      * @return \Illuminate\Http\Response
      */
-    public function destroy(pengguna $pengguna)
+    public function destroy(pemesanan $pemesanan)
     {
         //
     }

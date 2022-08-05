@@ -1,11 +1,14 @@
 <?php
 
-namespace App\Http\Controllers;
-
-use App\Models\pengguna;
+namespace App\Http\Controllers\Admin;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use App\Http\Requests\LoginAdminRequest;
+use App\Models\Admin;
+use App\Providers\RouteServiceProvider;
+use Illuminate\Support\Facades\Auth;
 
-class PenggunaController extends Controller
+class AdminController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +17,8 @@ class PenggunaController extends Controller
      */
     public function index()
     {
-        $pengguna = pengguna::latest()->get();
-        return view('Pengguna.index',compact('pengguna'));
+        return view('Login_Admin.Index');
+        //
     }
 
     /**
@@ -23,6 +26,8 @@ class PenggunaController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+
     public function create()
     {
         //
@@ -34,29 +39,37 @@ class PenggunaController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function authenticate(LoginAdminRequest $request)
     {
-        //
+        $request=authenticate();
+
+        $request->session()->regenerate();
+
+        return redirect()->intended(RouteServiceProvider::ADMIN_HOME);
+
+            //
     }
+
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\pengguna  $pengguna
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(pengguna $pengguna)
+    public function show()
     {
-        //
+        return view('Profile.Index',['datas' => admin::where('id',auth('admin')->user()->id)->get()]);
+
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\pengguna  $pengguna
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(pengguna $pengguna)
+    public function edit($id)
     {
         //
     }
@@ -65,10 +78,10 @@ class PenggunaController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\pengguna  $pengguna
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, pengguna $pengguna)
+    public function update(Request $request, $id)
     {
         //
     }
@@ -76,11 +89,19 @@ class PenggunaController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\pengguna  $pengguna
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(pengguna $pengguna)
+    public function destroy()
     {
+        Auth::guard('admin')->logout();
+
+        request()->session()->invalidate();
+
+        request()->session()->regenerateToken();
+
+        return redirect('/Login_Admin');
         //
     }
 }
+

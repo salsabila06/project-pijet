@@ -37,15 +37,6 @@ class Forgot_PasswordController extends Controller
 
         return back()->with('success', 'We have e-mailed your password reset link');
 
-        /*
-         *
-         if (Auth::attempt($credentials)){
-            $request->session()->regenerate();
-            return redirect()->intended('/Reset');
-        }
-
-        return back()->with('Error','Emails doesnt  exists!');
-*/
     }
 
     public function showResetForm(Request $request, $token=null  )
@@ -57,7 +48,6 @@ class Forgot_PasswordController extends Controller
     {
 
         $request->validate([
-            'email'=>'required|email|exists:data,email',
             'password'=>'required|min:5|confirmed',
             'password_confirmation'=>'required',
         ]);
