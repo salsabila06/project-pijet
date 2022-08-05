@@ -14,20 +14,20 @@ class PemesananController extends Controller
      */
     public function berhasil()
     {
-        $status = pemesanan::where('status','like','Berhasil')->get();
-        return view('Pemesanan.berhasil', compact('status'));
+        $status = pemesanan::where('status', 'like', 'Berhasil')->get();
+        return view('Pemesanan.index', compact('status'));
     }
 
     public function menunggu()
     {
-        $status = pemesanan::where('status','like','Menunggu')->get();
-        return view('Pemesanan.menunggu', compact('status'));
+        $status = pemesanan::where('status', 'like', 'Menunggu')->get();
+        return view('Pemesanan.index', compact('status'));
     }
 
     public function ditolak()
     {
-        $status = pemesanan::where('status','like','Ditolak')->get();
-        return view('Pemesanan.ditolak', compact('status'));
+        $status = pemesanan::where('status', 'like', 'Ditolak')->get();
+        return view('Pemesanan.index', compact('status'));
     }
 
     /**
