@@ -25,7 +25,7 @@
                                 <td>{{ $data['email'] }}</td>
                                 <td>{{ $data['no_telp'] }}</td>
                                 <td>{{ $data['no_ktp'] }}</td>
-                                <td><a><button type="button" class="pengguna-btn"
+                                <td><a><button type="button" class="admin-btn"
                                             data-bs-toggle="modal" data-bs-target="#penggunaModal-{{ $data->id }}">Detail Pengguna</button></a></td>
                             </tr>
                         @endforeach
