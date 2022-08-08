@@ -19,27 +19,34 @@ class VerifikasiController extends Controller
 
     public function diterima()
     {
-        $status = verifikasi::where('status','like','Diterima')->get();
+        $status = verifikasi::where('status','like',1)->get();
         return view('Verifikasi.index', compact('status'));
     }
 
     public function menunggu()
     {
-        $status = verifikasi::where('status','like','Menunggu')->get();
+        $status = verifikasi::where('status','like',2)->get();
         return view('Verifikasi.index', compact('status'));
     }
 
     public function ditolak()
     {
-        $status = verifikasi::where('status','like','Ditolak')->get();
+        $status = verifikasi::where('status','like',3)->get();
         return view('Verifikasi.index', compact('status'));
     }
 
-    public function data_diterima($stat){
-        $status = verifikasi::findOrFail($stat);
-        $status->status='Diterima';
-        $status->save();
-        return back();
+    public function data_diterima($id){
+        $data = verifikasi::find($id);
+        $data->status=1;
+        $data->save();
+        return redirect()->back();
+    }
+
+    public function data_ditolak($id){
+        $data = verifikasi::find($id);
+        $data->status=3;
+        $data->save();
+        return redirect()->back();
     }
 
     /**
