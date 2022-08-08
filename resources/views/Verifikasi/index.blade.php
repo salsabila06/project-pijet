@@ -11,8 +11,8 @@
                 <div class="row">
                     <p class="col-sm-3" style="padding-left: 20px"><a
                             href="{{ route('verifikasi.diterima') }}"><b>Diterima</b></a></p>
-                    <p class="col-sm-4" style="padding-left: 20px"><a href="{{ route('verifikasi.menunggu') }}"><b>Menunggu
-                                Verifikasi</b></a></p>
+                    <p class="col-sm-4" style="padding-left: 20px"><a
+                            href="{{ route('verifikasi.menunggu') }}"><b>MenungguVerifikasi</b></a></p>
                     <p class="col-sm-3" style="padding-left: 20px"><a
                             href="{{ route('verifikasi.ditolak') }}"><b>Ditolak</b></a></p>
                     <table id="example2" class="table display">
@@ -28,8 +28,18 @@
                                 <tr>
                                     <td>{{ $stat['username'] }}</td>
                                     <td>{{ $stat['email'] }}</td>
-                                    <td><a><button type="button" class="admin-btn" data-bs-toggle="modal"
-                                                data-bs-target="#verifikasiModal-{{ $stat->id }}">{{ $stat->status }}</button></a>
+                                    <td>
+                                        @if ($stat->status == 1)
+                                            <span class="badge rounded-pill bg-success">Diterima</span>
+                                        @elseif ($stat->status == 2)
+                                            <a>
+                                                <button type="button" class="admin-btn" data-bs-toggle="modal"
+                                                    data-bs-target="#verifikasiModal-{{ $stat->id }}">Detail
+                                                    Verifikasi</button>
+                                            </a>
+                                        @else
+                                            <span class="badge rounded-pill bg-danger">Ditolak</span>
+                                        @endif
                                     </td>
                                 </tr>
                             @endforeach
@@ -89,12 +99,16 @@
                     <img src="/image/doraemon.png" class="rounded" style="width:90px" alt="">
                     <div class="modal-footer">
                         <div class="container-fluid">
-                            <button type="button" class="btn btn-danger mx-auto d-block"
-                                style="border-radius: 25px; width:175px" data-bs-dismiss="modal">Tolak</button>
+                            <a href="{{ route('verifikasi.data.ditolak', $stat->id) }}"><button type="button"
+                                    class="badge rounded-pill bg-danger mx-auto d-block"
+                                    style="font-size:15px; border:none; height: 40px; width:175px"
+                                    data-bs-dismiss="modal">Tolak Verifikasi</button></a>
                         </div>
                         <div class="container-fluid">
-                            <a href="#"><button type="button" class="btn btn-info mx-auto d-block"
-                                style="border-radius: 25px; width:175px" data-bs-dismiss="modal">Setujui Verifikasi</button></a>
+                            <a href="{{ route('verifikasi.data.diterima', $stat->id) }}"><button type="button"
+                                    class="badge rounded-pill bg-primary mx-auto d-block"
+                                    style="font-size:15px; border:none; width:175px; height:40px;"
+                                    data-bs-dismiss="modal">Setujui Verifikasi</button></a>
                         </div>
                     </div>
                 </div>
