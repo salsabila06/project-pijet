@@ -9,6 +9,8 @@ use App\Http\Controllers\PageController;
 use App\Http\Controllers\RegisterController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\VerifikasiController;
+use App\Http\Controllers\PembatalanController;
 
 /*
 |--------------------------------------------------------------------------
@@ -70,10 +72,14 @@ Route::middleware(['Admin:web'])->group(function(){
         Route::get('/Pemesanan/menunggu',[PemesananController::class,'menunggu'])->name('pemesanan.menunggu');
         Route::get('/Pemesanan/ditolak',[PemesananController::class,'ditolak'])->name('pemesanan.ditolak');
         Route::get('/Pengguna',[PenggunaController::class,'index'])->name('pengguna');
-        Route::get('/Verifikasi/diterima',[VerifikasiController::class,'diterima'])->name('verifikasi.diterima');
-        Route::get('/Verifikasi/menunggu',[VerifikasiController::class,'menunggu'])->name('verifikasi.menunggu');
-        Route::get('/Verifikasi/ditolak',[VerifikasiController::class,'ditolak'])->name('verifikasi.ditolak');
+    
+        Route::get('/Verifikasi/diterima', [VerifikasiController::class, 'diterima'])->name('verifikasi.diterima');
+        Route::get('/Verifikasi/menunggu/diterima/{id}', [VerifikasiController::class, 'data_diterima'])->name('verifikasi.data.diterima');
+        Route::get('/Verifikasi/menunggu/ditolak/{id}', [VerifikasiController::class, 'data_ditolak'])->name('verifikasi.data.ditolak');
+        Route::get('/Verifikasi/menunggu', [VerifikasiController::class, 'menunggu'])->name('verifikasi.menunggu');
+        Route::get('/Verifikasi/ditolak', [VerifikasiController::class, 'ditolak'])->name('verifikasi.ditolak');
 
+        Route::get('Pembatalan', [PembatalanController::class, 'index'])->name('pembatalan');
     
         Route::get('/Profile', [AdminController::class, 'show'])->name('profile');
 
