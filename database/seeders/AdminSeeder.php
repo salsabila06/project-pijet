@@ -23,6 +23,8 @@ class AdminSeeder extends Seeder
             'number'=>'089694413511',
             'email'=>'kennyariadi@gmail.com',
             'password'=>Hash::make('11111'),
+            'TTL'=>'11-10-2000',
+            'bahasa'=>'Indonesia',
         ];
         Admin::create($admin);
         //

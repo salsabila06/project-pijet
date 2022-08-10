@@ -10,5 +10,12 @@ class verifikasi extends Model
     use HasFactory;
 
     protected $table='verifikasi';
-    protected $fillable=['username','email','status','jenis_kelamin','tanggal_lahir','no_telp'];
+    protected $fillable=['status',];
+    protected $guarded=['id'];
+
+
+    public function data()
+    {
+        return $this->hasMany(data::class);
+    }
 }

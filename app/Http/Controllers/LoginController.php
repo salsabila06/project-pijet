@@ -22,6 +22,7 @@ class LoginController extends Controller
 
         if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
+
             return redirect()->intended('/');
             }
 
@@ -31,7 +32,7 @@ class LoginController extends Controller
 
     public function show()
     {
-        return view('Profile.Index',['datas'=>data::where('id',auth()->user()->id)->get()]);
+        return view('Profile.Index',['datas'=>dataz::where('id',auth()->user()->id)->get()]);
     }
 
     public function logout()

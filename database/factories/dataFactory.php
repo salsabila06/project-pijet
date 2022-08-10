@@ -3,11 +3,12 @@
 namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
+use Illuminate\Support\Facades\Hash;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\pengguna>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\data>
  */
-class penggunaFactory extends Factory
+class dataFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -18,16 +19,13 @@ class penggunaFactory extends Factory
     {
         return [
             'username' => $this->faker->userName(),
+            'verifikasi_id'=>'2',
             'first_name' => $this->faker->firstName(),
             'last_name' => $this->faker->lastName(),
-            'password' => $this->faker->password(),
-            'jenis_kelamin' => 'Laki-laki',
-            'tanggal_lahir' => $this->faker->dateTime(),
+            'password' =>Hash::make('11111'),
             'email' => $this->faker->unique()->email(),
-            'no_telp' => $this->faker->phoneNumber(),
-            'no_ktp' => $this->faker->nik(),
-            'alamat' => $this->faker->address(),
-            'domisili' => $this->faker->city(),
+            'number' => $this->faker->phoneNumber(),
+            //
         ];
     }
 }

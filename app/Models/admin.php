@@ -23,7 +23,9 @@ class Admin extends Authenticatable implements MustVerifyEmail
     protected $fillable = [
         'role',
         'username',
-        'email',
+        'TTL',
+        'bahasa'
+,       'email',
         'password',
         'address',
         'number'

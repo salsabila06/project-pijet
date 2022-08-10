@@ -50,6 +50,7 @@ class Forgot_PasswordController extends Controller
         $request->validate([
             'password'=>'required|min:5|confirmed',
             'password_confirmation'=>'required',
+
         ]);
 
         $check_token=reset::where([

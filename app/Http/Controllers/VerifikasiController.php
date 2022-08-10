@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\data;
 use App\Models\verifikasi;
 use Illuminate\Http\Request;
 
@@ -19,32 +20,32 @@ class VerifikasiController extends Controller
 
     public function diterima()
     {
-        $status = verifikasi::where('status','like',1)->get();
+        $status = data::where('verifikasi_id','like',1)->get();
         return view('Verifikasi.index', compact('status'));
     }
 
     public function menunggu()
     {
-        $status = verifikasi::where('status','like',2)->get();
+        $status = data::where('verifikasi_id','like',2)->get();
         return view('Verifikasi.index', compact('status'));
     }
 
     public function ditolak()
     {
-        $status = verifikasi::where('status','like',3)->get();
+        $status = data::where('verifikasi_id','like',3)->get();
         return view('Verifikasi.index', compact('status'));
     }
 
     public function data_diterima($id){
-        $data = verifikasi::find($id);
-        $data->status=1;
+        $data = data::find($id);
+        $data->verifikasi_id=1;
         $data->save();
         return redirect()->back();
     }
 
     public function data_ditolak($id){
-        $data = verifikasi::find($id);
-        $data->status=3;
+        $data = data::find($id);
+        $data->verifikasi_id=3;
         $data->save();
         return redirect()->back();
     }
