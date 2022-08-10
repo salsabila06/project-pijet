@@ -9,22 +9,12 @@
     </p>
 </div>
 
-@if(session()->has('success'))
-    <div class="alert alert-success alert-dismissible fade show" role="alert">
-        {{session('success')}}
-        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-    </div>
-@endif
-
-@if(session()->has('loginError'))
-    <div class="alert alert-danger alert-dismissible fade show" role="alert">
-        {{session('loginError')}}
-        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-    </div>
+@if(session()->has('error'))
+    <div class="text-green-600 mb-4">{{session()->get('error')}}</div>
 @endif
 
 <div>
-    <form method="post" action="{{route('login_admin.check')}}">
+    <form method="post" action="{{route('admin.verify')}}">
         @csrf
         <fieldset>
             <div>

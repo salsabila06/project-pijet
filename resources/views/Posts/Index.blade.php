@@ -1,7 +1,9 @@
 @extends('Layout.Index')
 
 @section('link')
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.3/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/1.12.1/css/dataTables.bootstrap5.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.2.3/css/buttons.bootstrap5.min.css">
 @endsection
 
 
@@ -13,9 +15,7 @@
                 <h4>Responsive</h4>
             </div>
             <div class="card-body">
-                <p class="form-text mb-2">Datatables also provide responsive table</p>
-                <table id=table" class="table display">
-
+                <table id="example" class="table table-striped" style="width:100%">
                     <thead>
                     <tr>
                         <th>Name</th>
@@ -499,16 +499,11 @@
         </div>
     </div>
 
-@endsection
-
-@section('script')
-    <script>
-        $(document).ready(function () {
-            $('#table').DataTable();
-        });
-    </script>
 
     <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
     <script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/1.12.1/js/dataTables.bootstrap5.min.js"></script>
+    <script src="{{asset('/js/app.js')}}" ></script>
+
 @endsection
+
