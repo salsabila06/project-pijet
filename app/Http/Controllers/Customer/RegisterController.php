@@ -1,15 +1,15 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
-use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
-use App\Http\Requests\LoginAdminRequest;
-use App\Models\Admin;
-use App\Providers\RouteServiceProvider;
-use Illuminate\Support\Facades\Auth;
+namespace App\Http\Controllers\Customer;
 
-class AdminController extends Controller
+use App\Http\Controllers\Controller;
+use App\Models\data;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
+
+class RegisterController extends Controller
 {
+
     /**
      * Display a listing of the resource.
      *
@@ -17,7 +17,6 @@ class AdminController extends Controller
      */
     public function index()
     {
-        return view('Admin.Login_Admin.Index');
         //
     }
 
@@ -26,10 +25,9 @@ class AdminController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-
-
     public function create()
     {
+        return view('Customer.Register.Index');
         //
     }
 
@@ -39,17 +37,24 @@ class AdminController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function authenticate(LoginAdminRequest $request)
+    public function store(Request $request)
     {
-        $request->authenticate();
+        $validateData=$request->validate([
+            'username' =>'required',
+            'first_name' => 'required',
+            'last_name' => 'required',
+            'email' => 'required|email:dns|unique:data',
+            'password' => 'required|min:5|max:255',
+        ]);
 
-        $request->session()->regenerate();
-
-        return redirect()->intended(RouteServiceProvider::ADMIN_HOME);
-
-            //
+/*
+        $validateData['password']=bcrypt($validateData['password']);
+*/
+        $validateData['password']=Hash::make($validateData['password']);
+        data::create($validateData);
+        return redirect('/Login')->with('success','Berhasil Mendaftar');
+        //
     }
-
 
     /**
      * Display the specified resource.
@@ -57,10 +62,9 @@ class AdminController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show()
+    public function show($id)
     {
-        return view('Profile.Index',['datas' => admin::where('id',auth('admin')->user()->id)->get()]);
-
+        //
     }
 
     /**
@@ -92,16 +96,8 @@ class AdminController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy()
+    public function destroy($id)
     {
-        Auth::guard('admin')->logout();
-
-        request()->session()->invalidate();
-
-        request()->session()->regenerateToken();
-
-        return redirect('/Login_Admin');
         //
     }
 }
-

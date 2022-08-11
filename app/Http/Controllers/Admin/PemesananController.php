@@ -1,24 +1,34 @@
 <?php
 
 namespace App\Http\Controllers\Admin;
-use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
-use App\Http\Requests\LoginAdminRequest;
-use App\Models\Admin;
-use App\Providers\RouteServiceProvider;
-use Illuminate\Support\Facades\Auth;
 
-class AdminController extends Controller
+use App\Http\Controllers\Controller;
+use App\Models\pemesanan;
+use Illuminate\Http\Request;
+
+class PemesananController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function berhasil()
     {
-        return view('Admin.Login_Admin.Index');
-        //
+        $status = pemesanan::where('status','like','Berhasil')->get();
+        return view('Admin.Pemesanan.berhasil', compact('status'));
+    }
+
+    public function menunggu()
+    {
+        $status = pemesanan::where('status','like','Menunggu')->get();
+        return view('Admin.Pemesanan.menunggu', compact('status'));
+    }
+
+    public function ditolak()
+    {
+        $status = pemesanan::where('status','like','Ditolak')->get();
+        return view('Admin.Pemesanan.ditolak', compact('status'));
     }
 
     /**
@@ -26,8 +36,6 @@ class AdminController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-
-
     public function create()
     {
         //
@@ -39,37 +47,29 @@ class AdminController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function authenticate(LoginAdminRequest $request)
+    public function store(Request $request)
     {
-        $request->authenticate();
-
-        $request->session()->regenerate();
-
-        return redirect()->intended(RouteServiceProvider::ADMIN_HOME);
-
-            //
+        //
     }
-
 
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Models\pemesanan  $pemesanan
      * @return \Illuminate\Http\Response
      */
-    public function show()
+    public function show(pemesanan $pemesanan)
     {
-        return view('Profile.Index',['datas' => admin::where('id',auth('admin')->user()->id)->get()]);
-
+        //
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Models\pemesanan  $pemesanan
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(pemesanan $pemesanan)
     {
         //
     }
@@ -78,10 +78,10 @@ class AdminController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \App\Models\pemesanan  $pemesanan
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, pemesanan $pemesanan)
     {
         //
     }
@@ -89,19 +89,11 @@ class AdminController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  \App\Models\pemesanan  $pemesanan
      * @return \Illuminate\Http\Response
      */
-    public function destroy()
+    public function destroy(pemesanan $pemesanan)
     {
-        Auth::guard('admin')->logout();
-
-        request()->session()->invalidate();
-
-        request()->session()->regenerateToken();
-
-        return redirect('/Login_Admin');
         //
     }
 }
-
