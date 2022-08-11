@@ -11,6 +11,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\VerifikasiController;
 use App\Http\Controllers\PembatalanController;
+use App\Http\Controllers\ReviewController;
 
 /*
 |--------------------------------------------------------------------------
@@ -68,6 +69,9 @@ Route::middleware(['Admin:web'])->group(function(){
     
     
         Route::get('/Dashboard',[DashboardController::class,'index'])->name('dashboard');
+    
+        Route::get('Review', [ReviewController::class, 'index'])->name('review');
+    
         Route::get('/Pemesanan/berhasil',[PemesananController::class,'berhasil'])->name('pemesanan.berhasil');
         Route::get('/Pemesanan/menunggu',[PemesananController::class,'menunggu'])->name('pemesanan.menunggu');
         Route::get('/Pemesanan/ditolak',[PemesananController::class,'ditolak'])->name('pemesanan.ditolak');
