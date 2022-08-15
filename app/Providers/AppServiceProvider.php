@@ -4,6 +4,8 @@ namespace App\Providers;
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\ServiceProvider;
 use App\Models\User;
+use Laravel\Sanctum\Sanctum;
+use Illuminate\Pagination\Paginator;
 
 class AppServiceProvider extends ServiceProvider
 
@@ -15,7 +17,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+        Sanctum::ignoreMigrations();
     }
 
     /**
@@ -25,8 +27,6 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-
-
-        //
+        Paginator::useBootstrap();
     }
 }
