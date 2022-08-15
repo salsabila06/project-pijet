@@ -63,6 +63,7 @@
         <li><a href="{{ route('pengguna') }}"> <i class="fa fa-user"> <span>Pengguna</span></i></a> </li>
         <li><a href="{{ route('verifikasi.menunggu') }}"> <i class="fa fa-check-square-o">
                     <span>Verifikasi</span></i></a> </li>
+        <li><a href="{{ route('pembatalan') }}"> <i class="fa fa-times"> <span>Pembatalan</span></i></a> </li>
     </ul>
 </div>
 
