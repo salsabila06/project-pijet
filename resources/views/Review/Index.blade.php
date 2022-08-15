@@ -12,7 +12,7 @@
             <div class="card-header">
                 <h4>Review</h4>
             </div>
-            <div class="card-body">
+            <div class="card-body scroll">
                 <table id="table" class="table display">
 
                     <thead>
@@ -67,6 +67,9 @@
                         @endforeach
                     </tbody>
                 </table>
+            </div>
+            <div class="d-flex justify-content-center">
+                {{ $review->links() }}
             </div>
         </div>
     </div>
