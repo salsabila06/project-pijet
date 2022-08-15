@@ -86,3 +86,108 @@ a i{
     width: 80%;
 }
 
+.admin-btn {
+    background: #6cffdc;
+    border-radius: 9px;
+    border: none;
+    width: 150px;
+    height: 25px;
+    font-family: 'Poppins';
+    font-weight: 400;
+    font-size: 13px;
+    color: #000000;
+}
+
+#username {
+    padding-left: 50px;
+}
+
+#jasa {
+    padding-left: 40px;
+}
+
+#status {
+    padding-left: 50px;
+}
+
+#berhasil {
+    margin-left: 30px;
+}
+
+#ditolak {
+    left: 150px;
+}
+
+#e-username {
+    font-size: 25px;
+}
+
+#e-TTL {
+    font-size: 25px;
+}
+
+#e-email {
+    font-size: 25px;
+}
+
+#e-address {
+    font-size: 25px;
+}
+
+#e-bahasa {
+    font-size: 25px;
+}
+
+#e-email2 {
+    font-size: 25px;
+}
+
+#e-number {
+    font-size: 25px;
+}
+
+#e-verifikasi {
+    font-size: 25px;
+}
+
+#e-username label {
+    padding-right: 250px;
+}
+
+#e-TTL label {
+    padding-right: 212px;
+}
+
+#e-email label {
+    padding-right: 293px;
+}
+
+#e-address label {
+    padding-right: 272px;
+}
+
+#e-bahasa label {
+    padding-right: 287px;
+}
+
+#e-email2 label {
+    padding-right: 203px;
+}
+
+#e-number label {
+    padding-right: 238px;
+}
+
+#e-verifikasi label {
+    padding-right: 160px;
+}
+
+input {
+    padding-right: 300px;
+}
+
+.scroll {
+    display: block;
+    overflow: auto;
+    height: 540px;
+}
