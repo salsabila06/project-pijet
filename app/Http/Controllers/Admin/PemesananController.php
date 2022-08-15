@@ -15,19 +15,19 @@ class PemesananController extends Controller
      */
     public function berhasil()
     {
-        $status = pemesanan::where('status','like','Berhasil')->get();
+        $status = pemesanan::where('status','like','Berhasil')->paginate(10);
         return view('Admin.Pemesanan.berhasil', compact('status'));
     }
 
     public function menunggu()
     {
-        $status = pemesanan::where('status','like','Menunggu')->get();
+        $status = pemesanan::where('status','like','Menunggu')->paginate(10);
         return view('Admin.Pemesanan.menunggu', compact('status'));
     }
 
     public function ditolak()
     {
-        $status = pemesanan::where('status','like','Ditolak')->get();
+        $status = pemesanan::where('status','like','Ditolak')->paginate(10);
         return view('Admin.Pemesanan.ditolak', compact('status'));
     }
 
