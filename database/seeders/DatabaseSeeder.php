@@ -8,6 +8,7 @@ use App\Models\pemesanan;
 use App\Models\pengguna;
 use App\Models\verifikasi;
 use App\Models\pembatalan;
+use App\Models\review;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -43,6 +44,7 @@ class DatabaseSeeder extends Seeder
        pemesanan::factory(20)->create();
        data::factory(20)->create();
        pembatalan::factory(20)->create();
+       review::factory(50)->create();
        // verifikasi::factory(20)->create();
        // jasaPijat::factory(10)->create();
         // \App\Models\User::factory(10)->create();
