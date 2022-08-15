@@ -15,7 +15,7 @@ class PenggunaController extends Controller
      */
     public function index()
     {
-        $pengguna = pengguna::latest()->get();
+        $pengguna = pengguna::paginate(10);
         return view('Admin.Pengguna.index',compact('pengguna'));
     }
 
