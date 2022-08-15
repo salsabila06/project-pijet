@@ -84,21 +84,9 @@ Route::middleware(['Admin:web'])->group(function(){
         Route::get('/Verifikasi/ditolak', [VerifikasiController::class, 'ditolak'])->name('verifikasi.ditolak');
 
         Route::get('Pembatalan', [PembatalanController::class, 'index'])->name('pembatalan');
+        Route::get('Pembatalan/detail', [PembatalanController::class, 'detail'])->name('detail_pembatalan');
     
         Route::get('/Profile', [AdminController::class, 'show'])->name('profile');
 
         Route::get('/Posts', [PostController::class, 'index'])->name('posts');
         Route::get('/Posts/{post}', [PostController::class, 'show']);
-
-/*
-
-
-
-
-});
-
-});
-
-});
-*/
-
