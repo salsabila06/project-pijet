@@ -20,19 +20,19 @@ class VerifikasiController extends Controller
 
     public function diterima()
     {
-        $status = data::where('verifikasi_id','like',1)->get();
+        $status = data::where('verifikasi_id','like',1)->paginate(20);
         return view('Verifikasi.index', compact('status'));
     }
 
     public function menunggu()
     {
-        $status = data::where('verifikasi_id','like',2)->get();
+        $status = data::where('verifikasi_id','like',2)->paginate(20);
         return view('Verifikasi.index', compact('status'));
     }
 
     public function ditolak()
     {
-        $status = data::where('verifikasi_id','like',3)->get();
+        $status = data::where('verifikasi_id','like',3)->paginate(20);
         return view('Verifikasi.index', compact('status'));
     }
 
