@@ -9,17 +9,8 @@ class ReviewController extends Controller
 {
     public function index()
     {
-        return view('Admin.Posts.Index',[
-            "posts" => Post::all()
-        ]);
+        $review = review::paginate(20);
+        return view('Admin.Review.Index',compact('review'));
     }
-
-    public function show(Post $post)
-    {
-        return view('Admin.Post.Index',[
-            "post" => $post
-        ]);
-    }
-    //
 }
 
