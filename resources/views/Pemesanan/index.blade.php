@@ -28,7 +28,7 @@
             <div class="card-header">
                 <h4><b>Pemesanan</b></h4>
             </div>
-            <div class="card-body">
+            <div class="card-body scroll">
                 <div class="row">
                     <p class="col-sm-3" style="padding-left: 20px"><a class="statusMenu"
                             href="{{ route('pemesanan.berhasil') }}"><b>Berhasil</b></a></p>
@@ -57,6 +57,9 @@
                         </tbody>
                     </table>
                 </div>
+            </div>
+            <div class="d-flex justify-content-center">
+                {{ $status->links() }}
             </div>
         </div>
     </div>
