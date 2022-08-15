@@ -12,7 +12,7 @@
             <div class="card-header">
                 <h4><b>Pengguna</b></h4>
             </div>
-            <div class="card-body">
+            <div class="card-body scroll">
                 <p style="padding-left: 20px"><b>Daftar Pengguna</b></p>
                 <table id="example" class="table display">
                     <thead>
@@ -36,6 +36,9 @@
                     @endforeach
                     </tbody>
                 </table>
+            </div>
+            <div class="d-flex justify-content-center">
+                {{ $pengguna->links() }}
             </div>
         </div>
     </div>
