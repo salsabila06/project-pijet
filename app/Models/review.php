@@ -11,4 +11,13 @@ class review extends Model
 
     protected $table='review';
     protected $guarded=['id'];
+    
+    public function scopeFilters($query, array $filters)
+    {
+        $query->when($filters['search'] ?? false, function ($query,$search){
+            return $query->where('first_name', 'like', "%{$search}%")
+                         ->orwhere('Last_name', 'like', "%{$search}%")
+                         ->orwhere('jasa_pijat', 'like', "%{$search}%");
+        });
+    }
 }
