@@ -12,4 +12,14 @@ class pengguna extends Model
     protected $table='pengguna';
     protected $fillable=['username','jenis_kelamin','tanggal_lahir','email','no_telp','no_ktp','alamat','domisili'];
     protected $guarded='id';
+    
+    public function scopeFilters($query, array $filters)
+    {
+        $query->when($filters['search'] ?? false, function ($query,$search){
+            return $query->where('username', 'like', "%{$search}%")
+                         ->orwhere('email', 'like', "%{$search}%")
+                         ->orwhere('no_telp', 'like', "%{$search}%")
+                         ->orwhere('no_ktp', 'like', "%{$search}%");
+        });
+    }
 }
