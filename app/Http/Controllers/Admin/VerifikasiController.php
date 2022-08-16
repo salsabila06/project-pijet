@@ -19,21 +19,21 @@ class VerifikasiController extends Controller
         //
     }
 
-    public function diterima()
+   public function diterima()
     {
-        $status = data::where('verifikasi_id','like',1)-->paginate(20);
+        $status = data::where('verifikasi_id','like',1)->filters(request(['search']))->paginate(10);
         return view('Admin.Verifikasi.index', compact('status'));
     }
 
     public function menunggu()
     {
-        $status = data::where('verifikasi_id','like',2)->paginate(20);
+        $status = data::where('verifikasi_id','like',2)->filters(request(['search']))->paginate(10);
         return view('Admin.Verifikasi.index', compact('status'));
     }
 
     public function ditolak()
     {
-        $status = data::where('verifikasi_id','like',3)->paginate(20);
+        $status = data::where('verifikasi_id','like',3)->filters(request(['search']))->paginate(10);
         return view('Admin.Verifikasi.index', compact('status'));
     }
 
