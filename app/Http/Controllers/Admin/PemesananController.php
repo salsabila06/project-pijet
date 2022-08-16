@@ -13,22 +13,22 @@ class PemesananController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function berhasil()
+     public function berhasil(Request $request)
     {
-        $status = pemesanan::where('status','like','Berhasil')->paginate(10);
-        return view('Admin.Pemesanan.berhasil', compact('status'));
+        $status = pemesanan::where('status','like','Berhasil')->filters(request(['search']))->paginate(10);
+        return view('Admin.Pemesanan.Index', compact('status'));
     }
 
-    public function menunggu()
+    public function menunggu(Request $request)
     {
-        $status = pemesanan::where('status','like','Menunggu')->paginate(10);
-        return view('Admin.Pemesanan.menunggu', compact('status'));
+        $status = pemesanan::where('status','like','Menunggu')->filters(request(['search']))->paginate(10);
+        return view('Admin.Pemesanan.Index', compact('status'));
     }
 
-    public function ditolak()
+    public function ditolak(Request $request)
     {
-        $status = pemesanan::where('status','like','Ditolak')->paginate(10);
-        return view('Admin.Pemesanan.ditolak', compact('status'));
+        $status = pemesanan::where('status','like','Ditolak')->filters(request(['search']))->paginate(10);
+        return view('Admin.Pemesanan.Index', compact('status'));
     }
 
     /**
