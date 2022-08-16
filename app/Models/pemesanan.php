@@ -12,4 +12,9 @@ class pemesanan extends Model
     protected $table='pemesanan';
     protected $fillable=['username','jasa_pijat','status'];
     protected $guarded='id';
+   
+    $query->when($filters['search'] ?? false, function ($query,$search){
+            return $query->where('username', 'like', "%{$search}%")
+                         ->orwhere('jasa_pijat', 'like', "%{$search}%");
+        });
 }
