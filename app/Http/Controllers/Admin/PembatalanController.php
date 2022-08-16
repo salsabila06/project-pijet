@@ -10,7 +10,7 @@ class PembatalanController extends Controller
 
     public function index()
     {
-        $pembatalan = pembatalan::paginate(10);
+          $pembatalan = pembatalan::latest()->filters(request(['search']))->paginate(10);
         return view('Admin.Pembatalan.index',compact('pembatalan'));
     }
 
