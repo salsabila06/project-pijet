@@ -11,4 +11,12 @@ class pembatalan extends Model
 
     protected $table='pembatalan';
     protected $guarded='id';
+    
+    public function scopeFilters($query, array $filters)
+    {
+        $query->when($filters['search'] ?? false, function ($query,$search){
+            return $query->where('username', 'like', "%{$search}%")
+                ->orwhere('email', 'like', "%{$search}%");
+        });
+    }
 }
