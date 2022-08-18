@@ -1,4 +1,3 @@
-
 @extends('Main.Index')
 
 @section('title','Login')
@@ -12,7 +11,12 @@
 @if(session()->has('error'))
     <div class="text-green-600 mb-4">{{session()->get('error')}}</div>
 @endif
-
+@if(session()->has('loginError'))
+    <div class="alert alert-danger alert-dismissible fade show" role="alert" id="message">
+        {{session('loginError')}}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+@endif
 <div>
     <form method="post" action="{{route('admin.verify')}}">
         @csrf

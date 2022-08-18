@@ -11,7 +11,7 @@ class pembatalan extends Model
 
     protected $table='pembatalan';
     protected $guarded='id';
-    
+
     public function scopeFilters($query, array $filters)
     {
         $query->when($filters['search'] ?? false, function ($query,$search){
@@ -19,4 +19,5 @@ class pembatalan extends Model
                 ->orwhere('email', 'like', "%{$search}%");
         });
     }
+
 }

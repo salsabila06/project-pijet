@@ -14,12 +14,8 @@ class VerifikasiController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
-        //
-    }
 
-   public function diterima()
+    public function diterima()
     {
         $status = data::where('verifikasi_id','like',1)->filters(request(['search']))->paginate(10);
         return view('Admin.Verifikasi.index', compact('status'));

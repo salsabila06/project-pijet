@@ -12,7 +12,7 @@ class pengguna extends Model
     protected $table='pengguna';
     protected $fillable=['username','jenis_kelamin','tanggal_lahir','email','no_telp','no_ktp','alamat','domisili'];
     protected $guarded='id';
-    
+
     public function scopeFilters($query, array $filters)
     {
         $query->when($filters['search'] ?? false, function ($query,$search){
@@ -22,4 +22,6 @@ class pengguna extends Model
                          ->orwhere('no_ktp', 'like', "%{$search}%");
         });
     }
+
+
 }

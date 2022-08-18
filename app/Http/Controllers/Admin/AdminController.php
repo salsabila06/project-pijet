@@ -59,7 +59,7 @@ class AdminController extends Controller
      */
     public function show()
     {
-        return view('Profile.Index',['datas' => admin::where('id',auth('admin')->user()->id)->get()]);
+        return view('admin.Profile.Index',['datas' => admin::where('id',auth('admin')->user()->id)->get()]);
 
     }
 

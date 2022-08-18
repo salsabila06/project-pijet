@@ -15,7 +15,7 @@ class PenggunaController extends Controller
      */
     public function index()
     {
-      $pengguna = pengguna::latest()->filters(request(['search']))->paginate(10);
+        $pengguna = pengguna::latest()->filters(request(['search']))->paginate(10);
         return view('Admin.Pengguna.index',compact('pengguna'));
     }
 

@@ -7,8 +7,15 @@
     @endif
     <div class="main">
         @foreach ($datas as $data)
-            <a href="{{route('edit_profile')}}">edit</a>
-            <h2>Info Dasar</h2>
+            <div class="row">
+                <div class="col-auto">
+                    <h2>Info Dasar</h2>
+                </div>
+                <div class="col-auto ms-auto">
+                    <a href="{{route('edit_profile')}}">edit</a>
+                </div>
+            </div>
+
             <div class="card">
                 <div class="card-body">
                     <i class="fa fa-pen fa-xs edit"></i>

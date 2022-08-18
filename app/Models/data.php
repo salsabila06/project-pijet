@@ -21,7 +21,7 @@ class data extends Model
                 ->orwhere('email', 'like', "%{$search}%");
         });
     }
-    
+
     public function verifikasi()
     {
         return $this->belongsTo(verifikasi::class);

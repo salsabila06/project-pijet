@@ -22,10 +22,10 @@
           integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
     <title>pijetin</title>
 
-</head>
 
-<body>
-    <nav class="navbar">
+</head>
+<header>
+    <nav  id="navbar" class="navbar">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">
                 <img src="/image/Pijetin 2.svg" alt="" srcset="">
@@ -39,35 +39,32 @@
             </form>
         </div>
     </nav>
-
-
+</header>
+<body>
 <input type="checkbox" class="d-none d-block" name="" id="chk" />
-    <main>
-        <div class="container" ">
-            @yield('container')
-        </div>
-    </main>
 <label for="chk" class="show-btn">
     <i class="fa fa-bars"></i>
 </label>
-
 <label for="chk" class="hide-btn">
     <i class="fa fa-bars"></i>
 </label>
 <div class="sidebar">
     <ul class="nav nav-pills flex-column mb-auto">
-        <li><a href="{{ route('dashboard') }}"><i class="fa fa-home"> <span>Dashboard</span></i> </a> </li>
-        <li><a href="{{ route('posts') }}"> <i class="fa fa-star-o"> <span>Review</span></i></a></li>
-        <li><a href="{{ route('pemesanan_berhasil') }}"> <i
+        <li><a class="nav-link{{Request::is('dashboard') ? 'active':''}}" href="{{ route('dashboard') }}"><i class="fa fa-home"> <span>Dashboard</span></i> </a> </li>
+        <li><a class="nav-link{{Request::is('review') ? 'active':''}}" href="{{ route('review') }}"> <i class="fa fa-star-o"> <span>Review</span></i></a></li>
+        <li><a class="nav-link{{Request::is('pemesanan_berhasil') ? 'active':''}}" href="{{ route('pemesanan_berhasil') }}"> <i
                     class=" fa fa-shopping-cart"><span>Pemesanan</span></i></a> </li>
-        <li><a href="{{ route('pengguna') }}"> <i class="fa fa-user"> <span>Pengguna</span></i></a> </li>
-        <li><a href="{{ route('verifikasi.menunggu') }}"> <i class="fa fa-check-square-o">
+        <li><a class="nav-link{{Request::is('pengguna') ? 'active':''}}" href="{{ route('pengguna') }}"> <i class="fa fa-user"> <span>Pengguna</span></i></a> </li>
+        <li><a class="nav-link{{Request::is('verifikasi.menunggu') ? 'active':''}}" href="{{ route('verifikasi.menunggu') }}"> <i class="fa fa-check-square-o">
                     <span>Verifikasi</span></i></a> </li>
-        <li><a href="{{ route('pembatalan') }}"> <i class="fa fa-times"> <span>Pembatalan</span></i></a> </li>
+        <li><a class="nav-link{{Request::is('pembatalan') ? 'active':''}}" href="{{ route('pembatalan') }}"> <i class="fa fa-times"> <span>Pembatalan</span></i></a> </li>
     </ul>
 </div>
-
-
+<main>
+<div class="container">
+    @yield('container')
+</div>
+</main>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous">
 </script>

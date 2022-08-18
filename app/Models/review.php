@@ -11,7 +11,7 @@ class review extends Model
 
     protected $table='review';
     protected $guarded=['id'];
-    
+
     public function scopeFilters($query, array $filters)
     {
         $query->when($filters['search'] ?? false, function ($query,$search){

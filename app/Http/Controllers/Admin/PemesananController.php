@@ -13,7 +13,9 @@ class PemesananController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-     public function berhasil(Request $request)
+
+
+    public function berhasil(Request $request)
     {
         $status = pemesanan::where('status','like','Berhasil')->filters(request(['search']))->paginate(10);
         return view('Admin.Pemesanan.Index', compact('status'));
