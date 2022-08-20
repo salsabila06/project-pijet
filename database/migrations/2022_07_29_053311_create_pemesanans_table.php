@@ -15,17 +15,15 @@ return new class extends Migration
     {
         Schema::create('pemesanan', function (Blueprint $table) {
             $table->id();
-            $table->bigInteger('customer_id')->unsigned()->nullable();
-            $table->string('username');
-            $table->string('jasa_pijat');
-            $table->string('status');
+            $table->foreignId('customer_id')->nullable()->constrained('pengguna');;
+            $table->date('waktu_booking')->nullable();
+            $table->time('durasi_waktu')->nullable();
+            $table->string('alamat');
+            $table->string('jenis_pijat');
+            $table->string('status')->nullable();
             $table->timestamps();
         });
 
-        Schema::table('pemesanan',function (Blueprint $table){
-            $table->foreign('customer_id')->references('id')->on('data')->onDelete('cascade')->onUpdate('cascade');
-
-        });
     }
 
     /**
