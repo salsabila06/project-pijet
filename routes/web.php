@@ -60,6 +60,7 @@ Route::get('/',[PageController::class,'index'])->name('home');
     Route::middleware(['auth:web'])->group(function(){
         Route::post('/Logout',[LoginController::class,'logout'])->name('logout');
         Route::get('/Profile',[LoginController::class,'show'])->name('profile');
+         Route::post('test', [BookingController::class, 'store'])->name('create.booking');
     });
 
 Route::middleware(['Admin:web'])->group(function(){
