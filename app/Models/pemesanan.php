@@ -10,7 +10,7 @@ class pemesanan extends Model
     use HasFactory;
 
     protected $table='pemesanan';
-    protected $fillable=['username','jasa_pijat','status'];
+    protected $fillable=['waktu_booking','durasi_waktu','alamat','jenis_pijat','status'];
     protected $guarded='id';
 
     public function scopeFilters($query, array $filters)
