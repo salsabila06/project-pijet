@@ -1,35 +1,38 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="utf-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <title>Pijetin</title>
+@extends('Main.Index')
 
-    <!-- font google -->
+@section('link')
     <link rel="preconnect" href="https://fonts.googleapis.com"/>
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;1,700&display=swap"
           rel="stylesheet"/>
 
     <!-- my style -->
+    <link rel="stylesheet" href="{{asset('/css/login.css')}}"/>
     <link rel="stylesheet" href="{{asset('/css/style.css')}}"/>
 
     <!-- responsive style -->
     <link rel="stylesheet" href="{{asset('/css/responsive.css')}}"/>
-</head>
 
-<body>
-<!-- navbar brand -->
-<nav class="navbar-form bg-white w-100">
-    <div class="container">
-        <a class="navbar-brand" href="#">
-            <img src="/image/logonama.svg" alt="" width="100" height="38"/>
-        </a>
-    </div>
-</nav>
+    <style type="text/css">
+        label > input {
+            visibility: hidden;
+            position: absolute;
+        }
 
-<!-- content -->
+        label > input + img {
+            cursor: pointer;
+            border: 2px solid transparent;
+        }
 
+        label > input:checked + img {
+            border: 2px solid #f00;
+        }
+        .row{
+            height: 400px;
+        }
+
+    </style>
+@endsection
 <div class="container">
     <div class="row">
         <div class="col-md-3 my-5" id="form-tagline">
@@ -41,14 +44,14 @@
             <div class="d-flex justify-content-start">
                 <input type="date" id="waktubooking" name="waktu_booking" placeholder="Waktu booking"/>
             </div>
-            <div class="d-flex justify-content-start">
+            <div class="d-flex justify-content-start" style="margin-bottom: 20px;">
                 <fieldset id="jenispijat">
                     <select name="jenis_pijat" id="jenispijat">
                         <option style="font-size: 20px" selected disabled> Pilih Jasa Pijat</option>
                         <option style="font-size: 20px" value="Pijat Thai"> Pijat Thai</option>
-                        <option value="Pijat Prenatal"> Pijat Prenatal</option>
-                        <option value="Pijat Refleksi"> Pijat Refleksi</option>
-                        <option value="Pijat Olahraga"> Pijat Olahraga</option>
+                        <option style="font-size: 20px" value="Pijat Prenatal"> Pijat Prenatal</option>
+                        <option style="font-size: 20px" value="Pijat Refleksi"> Pijat Refleksi</option>
+                        <option style="font-size: 20px" value="Pijat Olahraga"> Pijat Olahraga</option>
                     </select>
                 </fieldset>
             </div>
@@ -59,49 +62,23 @@
             <div class="d-flex justify-content-start">
                 <input type="address" id="alamat" name="alamat" placeholder="Alamat"/>
             </div>
-            <div class="col-md-3">
-                <div class="form-check">
-                    <input type="hidden" id="priavalue" value="pria">
-                    <input type="hidden" id="wanitavalue" value="wanita">
-                    <p type="text" id="gender">
-                    <button id="pria"  href="#"><img src="/image/search-lk.svg" alt="" class="me-5"/></button>
-                    <button id="wanita"  value="click me"><img src="/image/search-pr.svg" alt="" class="me-5"/></button>
-                </div>
-
+            <div>
+                <label>
+                    <input type="radio" id="" name="jenis_kelamin" value="Laki-laki">
+                    <img src="/image/search-lk.svg" alt="" class="me-5"/>
+                </label>
+                <label>
+                    <input type="radio" id="gender" name="jenis_kelamin" value="Perempuan">
+                    <img src="/image/search-pr.svg" alt="" class="me-5"/>
+                </label>
             </div>
-            <button type="submit">Pesan</button>
+            <div style="margin-top: 30px">
+                <button type="submit">Pesan</button>
+            </div>
         </form>
-        <a href="{{route('home')}}">
+        <a href="{{route('home')}}" style="margin-top: 30px">
             <button>Cancel</button>
         </a>
     </div>
-
-    <!-- button search -->
-    <div class="container">
-        <div class="row">
-
-
-        </div>
-    </div>
 </div>
-<script>
-    const valueP=document.getElementById('priavalue');
-    const valueW=document.getElementById('wanitavalue');
-    const pria=document.getElementById('pria');
-    const wanita=document.getElementById('wanita');
-    const value=document.getElementById('gender');
-
-    function fun1(){
-        value.innerHTML=valueP.value;
-    }
-
-    function fun2(){
-        value.innerHTML=valueW.value;
-    }
-    pria.addEventListener('click',fun1);
-    wanita.addEventListener('click',fun2);
-
-</script>
-</body>
-</html>
 
