@@ -1,7 +1,6 @@
 .body{
-    position: wd;
     width: 1440px;
-    height: 1024px;
+    height: 1050px;
     background-color:#DBFFF6;
     font-family:'Poppins', sans-serif ;
 }
@@ -24,6 +23,11 @@
     height: 38px;
     left: 80px;
     top: 56px;
+}
+#message{
+    position: absolute;
+    left: 80px;
+    top: 200px;
 }
 .title{
     font-family: 'Poppins';
