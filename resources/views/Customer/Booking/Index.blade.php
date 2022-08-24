@@ -33,7 +33,7 @@
 
     </style>
 @endsection
-<div class="container">
+@section('contain')
     <div class="row">
         <div class="col-md-3 my-5" id="form-tagline">
             <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"></div>
@@ -46,12 +46,12 @@
             </div>
             <div class="d-flex justify-content-start" style="margin-bottom: 20px;">
                 <fieldset id="jenispijat">
-                    <select name="jenis_pijat" id="jenispijat">
+                    <select name="jasaPijat_id" id="jenispijat">
                         <option style="font-size: 20px" selected disabled> Pilih Jasa Pijat</option>
-                        <option style="font-size: 20px" value="Pijat Thai"> Pijat Thai</option>
-                        <option style="font-size: 20px" value="Pijat Prenatal"> Pijat Prenatal</option>
-                        <option style="font-size: 20px" value="Pijat Refleksi"> Pijat Refleksi</option>
-                        <option style="font-size: 20px" value="Pijat Olahraga"> Pijat Olahraga</option>
+                        <option style="font-size: 20px" value="1"> Pijat Thai</option>
+                        <option style="font-size: 20px" value="2"> Pijat Prenatal</option>
+                        <option style="font-size: 20px" value="3"> Pijat Refleksi</option>
+                        <option style="font-size: 20px" value="4"> Pijat Olahraga</option>
                     </select>
                 </fieldset>
             </div>
@@ -80,5 +80,4 @@
             <button>Cancel</button>
         </a>
     </div>
-</div>
-
+@endsection
