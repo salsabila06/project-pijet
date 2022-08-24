@@ -210,6 +210,14 @@ button{
     left: 80px;
     top: 670px;
 }
+#update-btn{
+    position: absolute;
+    width: 515px;
+    height: 75px;
+    left: 80px;
+    top: 596px;
+}
+
 .text{
     font-family: 'Poppins';
     font-style: normal;
