@@ -22,6 +22,8 @@ class dataFactory extends Factory
             'verifikasi_id'=>'2',
             'first_name' => $this->faker->firstName(),
             'last_name' => $this->faker->lastName(),
+            'jenis_kelamin' => 'Laki-laki',
+            'tanggal_lahir' => $this->faker->dateTime(),
             'password' =>Hash::make('11111'),
             'email' => $this->faker->unique()->email(),
             'number' => $this->faker->phoneNumber(),
