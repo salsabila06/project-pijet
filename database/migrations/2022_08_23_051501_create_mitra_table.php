@@ -13,16 +13,19 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('pemesanan', function (Blueprint $table) {
+        Schema::create('mitra', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('customer_id')->nullable()->constrained('pengguna');
             $table->foreignId('jasa_pijat_id')->nullable()->constrained('jasa_pijat');
-            $table->date('waktu_booking')->nullable();
-            $table->time('durasi_waktu')->nullable();
-            $table->string('alamat');
-            $table->string('jenis_pijat');
-            $table->string('jenis_kelamin');
-            $table->string('status')->nullable();
+            $table->String('username');
+            $table->String('email');
+            $table->String('password');
+            $table->String('gender');
+            $table->String('number');
+            $table->String('alamat');
+            $table->String('foto_mitra')->nullable();
+            $table->String('foto_ktp')->nullable();
+            $table->String('foto_skck')->nullable();
+            $table->String('foto_rekening_bank')->nullable();
             $table->timestamps();
         });
     }
@@ -34,6 +37,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('pemesanan');
+        Schema::dropIfExists('mitra');
     }
 };
