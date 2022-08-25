@@ -1,17 +1,21 @@
 <?php
 
 use App\Http\Controllers\Admin\AdminController;
-use App\Http\Controllers\BookingController;
-use App\Http\Controllers\DashboardController;
-use App\Http\Controllers\Forgot_PasswordController;
-use App\Http\Controllers\LoginController;
-use App\Http\Controllers\PageController;
-use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\Admin\ReviewController;
+use App\Http\Controllers\Admin\EditProfileController;
+use App\Http\Controllers\Admin\PembatalanController;
+use App\Http\Controllers\Admin\PemesananController;
+use App\Http\Controllers\Admin\PenggunaController;
+use App\Http\Controllers\Admin\PostController;
+use App\Http\Controllers\Admin\VerifikasiController;
+use App\Http\Controllers\Customer\BookingController;
+use App\Http\Controllers\Customer\Forgot_PasswordController;
+use App\Http\Controllers\Customer\LoginController;
+use App\Http\Controllers\Customer\RegisterController;
+use App\Http\Controllers\PembayaranController;
+use App\Http\Controllers\Layout\PageController;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\PostController;
-use App\Http\Controllers\VerifikasiController;
-use App\Http\Controllers\PembatalanController;
-use App\Http\Controllers\ReviewController;
 
 /*
 |--------------------------------------------------------------------------
@@ -60,7 +64,9 @@ Route::get('/',[PageController::class,'index'])->name('home');
     Route::middleware(['auth:web'])->group(function(){
         Route::post('/Logout',[LoginController::class,'logout'])->name('logout');
         Route::get('/Profile',[LoginController::class,'show'])->name('profile');
-         Route::post('test', [BookingController::class, 'store'])->name('create.booking');
+        
+        Route::get('Booking',[BookingController::class,'create'])->name('booking');
+        Route::post('test', [PembayaranController::class, 'store'])->name('create.booking');
     });
 
 Route::middleware(['Admin:web'])->group(function(){
