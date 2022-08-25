@@ -34,7 +34,7 @@
     </style>
 @endsection
 @section('contain')
-    <div class="row">
+    <div class="row" style="margin-top: 40px">
         <div class="col-md-3 my-5" id="form-tagline">
             <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"></div>
             <h2 class="fw-bolder">Lengkapi data dibawah dan pilih pijatmu</h2>
@@ -46,7 +46,7 @@
             </div>
             <div class="d-flex justify-content-start" style="margin-bottom: 20px;">
                 <fieldset id="jenispijat">
-                    <select name="jasaPijat_id" id="jenispijat">
+                    <select name="JasaPijat_id" id="jenispijat">
                         <option style="font-size: 20px" selected disabled> Pilih Jasa Pijat</option>
                         <option style="font-size: 20px" value="1"> Pijat Thai</option>
                         <option style="font-size: 20px" value="2"> Pijat Prenatal</option>
@@ -55,9 +55,17 @@
                     </select>
                 </fieldset>
             </div>
-            <div class="d-flex justify-content-start">
-                <input type="time" id="durasiwaktu" name="durasi_waktu" placeholder="Durasi waktu"/>
+            <div class="d-flex justify-content-start" style="margin-bottom: 20px;">
+                <fieldset id="durasiwaktu">
+                    <select name="durasi_waktu" id="durasiwaktu">
+                        <option style="font-size: 20px" selected disabled> Pilih Durasi Waktu</option>
+                        <option style="font-size: 20px" value="30 Menit"> 30 Menit</option>
+                        <option style="font-size: 20px" value="60 Menit"> 60 Menit</option>
+                        <option style="font-size: 20px" value="90 Menit"> 90 Menit</option>
+                    </select>
+                </fieldset>
             </div>
+
 
             <div class="d-flex justify-content-start">
                 <input type="address" id="alamat" name="alamat" placeholder="Alamat"/>
@@ -76,7 +84,7 @@
                 <button type="submit">Pesan</button>
             </div>
         </form>
-        <a href="{{route('home')}}" style="margin-top: 30px">
+        <a href="{{route('home')}}" style="margin-top: 30px; float: left">
             <button>Cancel</button>
         </a>
     </div>
