@@ -1,0 +1,545 @@
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #ffffff;
+}
+/* navbar style */
+
+.navbar {
+  z-index: 3;
+}
+
+/* navbar color */
+.nav-color {
+  background-color: #dbfff6;
+  transition: all ease-in-out 0.3s;
+}
+
+.bg-transparent {
+  transition: all ease-in 0.1s;
+}
+
+* {
+  z-index: 2;
+}
+
+.ellipse-img {
+  z-index: 1;
+}
+
+.hero-img {
+  z-index: 1;
+}
+
+.nav-link {
+  font-size: 18px;
+}
+
+.nav-link.active {
+  width: 83px;
+  height: 27px;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 14px;
+}
+
+.button-primary {
+  width: 120px;
+  height: 50px;
+  background-color: transparent;
+  box-sizing: border-box;
+  border-radius: 10px;
+  border-color: #4cf0c9;
+  /* border-inline-color: linear-gradient(82.49deg, #45def2 -10.14%, #4cf0c9 116.62%); */
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 30px;
+}
+
+.button-secondary {
+  width: 120px;
+  height: 50px;
+  background: linear-gradient(82.49deg, #45def2 -10.14%, #4cf0c9 116.62%);
+  border: none;
+  border-radius: 10px;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 30px;
+}
+/* hero section */
+
+#hero {
+  background: #dbfff6;
+  height: 100vh;
+  /* width: 1440px;
+    height: 1000px; */
+  left: 40px;
+  top: 0px;
+}
+
+.img-hero {
+  /* position: absolute; */
+  width: 650px;
+  height: 400px;
+  left: 710px;
+  top: 100px;
+  flex: 0 0 auto;
+}
+
+.hero-tagline h1 {
+  width: 630px;
+  height: 189px;
+  left: 80px;
+  top: 274px;
+  color: #000;
+  font-family: 'Quicksand';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 50px;
+  line-height: 50px;
+  letter-spacing: 0.1em;
+  /* margin-top: 20px; */
+}
+
+.hero-tagline p {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 20px;
+  letter-spacing: 0.05em;
+  color: #4c4c4c;
+  margin-bottom: 50px;
+  margin-top: 20px;
+}
+
+/* komunitas section */
+#komunitas {
+  background: #ffffff;
+  padding: 0px 0;
+}
+
+/* .row-gx-5 {
+  background-image: #dbfff6;
+} */
+
+.col-lg-4 {
+  flex: 0 0 auto;
+}
+
+.card-com {
+  height: 400px;
+  width: 376px;
+}
+/* #card-foto1 {
+  height: 400px;
+  width: 390px;
+  left: 79px;
+  border-radius: 0px;
+} */
+
+/* #card-foto2 {
+  height: 400px;
+  width: 390px;
+  left: 513px;
+  top: 858px;
+  border-radius: 0px;
+}
+
+#card-foto3 {
+  height: 400px;
+  width: 390px;
+  left: 947px;
+  top: 858px;
+  border-radius: 0px;
+} */
+
+.card-komunitas {
+  width: 100%;
+  height: 299px;
+  background-color: transparent;
+  padding: 40px;
+  box-shadow: 0 0 7 rgba(0, 0, 0, 0.05);
+}
+
+.mangkok-icon {
+  width: 117.86px;
+  height: 108.36px;
+  background-color: transparent;
+  border-radius: none;
+}
+
+.card-komunitas h3 {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 36px;
+  line-height: 54px;
+  /* identical to box height */
+  letter-spacing: 0.05em;
+  color: #000000;
+}
+
+.card-komunitas p {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 30px;
+  text-align: center;
+  color: #000000;
+}
+
+/* Tentang kami section */
+
+#Tentang {
+  background: linear-gradient(260.47deg, #5ac8d7 -19.89%, #4cf0c9 103.4%);
+  height: 100vh 0;
+  /* width: 1440px;
+    height: 550px; */
+}
+
+.ponsel-img {
+  width: 575px;
+  height: 855px;
+  bottom: 0px;
+}
+
+#Tentang h3 {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 40px;
+  line-height: 60px;
+  letter-spacing: 0.05em;
+  color: #000000;
+}
+
+#Tentang p {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  color: #000000;
+}
+
+.button-sm-primary {
+  background: linear-gradient(82.49deg, #45def2 -10.14%, #4cf0c9 116.62%);
+  border: none;
+  height: 48px;
+  width: 177px;
+  left: 0px;
+  top: 316px;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+#choice {
+  background: #ffffff;
+}
+
+#choice h3 {
+  font-family: 'Quicksand';
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 50px;
+  text-align: center;
+  color: #000000;
+}
+
+.card-choice {
+  flex-direction: column;
+  box-sizing: border-box;
+  border: 1px solid #989898;
+  border-radius: 10px;
+  width: 410px;
+  height: 128px;
+}
+
+.card-choice h5 {
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 30px;
+  color: #000000;
+}
+
+.card-choice p {
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 30px;
+  color: #000000;
+}
+
+/* dukungan */
+
+#dukungan {
+  height: 100vh 0;
+  /* width: 1440px;
+    height: 250px; */
+  left: 0px;
+  top: 3027px;
+  background: radial-gradient(104.31% 1102.11% at 6.91% 14.11%, rgba(157, 255, 231, 0.99) 11.48%, #45def2 100%);
+}
+
+.card-dukungan h6 {
+  font-weight: 500;
+  font-size: 30px;
+  line-height: 48px;
+  color: #000000;
+}
+
+.card-dukungan p {
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 36px;
+  color: #000000;
+}
+
+/* form booking */
+
+.form {
+  font-family: 'Poppins';
+  background-color: #dbfff6;
+}
+.form-title {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 32px;
+  line-height: 120%;
+  color: #000000;
+  margin-bottom: 40px;
+}
+
+.card-form {
+  padding: 50px;
+  justify-content: center;
+}
+
+.inputbox {
+  position: relative;
+  width: 300px;
+  height: 50px;
+  margin-bottom: 35px;
+  color: #8b8b8b;
+  font-family: 'Poppins';
+}
+.inputbox input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  border: 2px solid #000;
+  outline: none;
+  background: none;
+  padding: 10px;
+  border-radius: 10px;
+  font-size: 15px;
+}
+.inputbox:last-child {
+  margin-bottom: 0;
+  font-family: 'Poppins';
+}
+.inputbox label {
+  text-transform: uppercase;
+  top: 14px;
+  left: 20px;
+  font-size: 13px;
+  transition: 0.6s;
+  font-family: 'Poppins';
+  margin-left: 10px;
+}
+.inputbox input:focus ~ label,
+.inputbox input:valid ~ label {
+  transform: translateX(-13px) translateY(-35px);
+  font-size: 1em;
+  font-family: 'Poppins';
+}
+/* .inputbox [type='button'] {
+  width: 50%;
+  background: dodgerblue;
+  color: #fff;
+  border: #fff;
+}
+
+.inputbox-c [type='button'] {
+  width: 50%;
+  background: dodgerblue;
+  color: #fff;
+  border: #fff;
+} */
+
+/* .inputbox:hover [type='button'] {
+  background: linear-gradient(45deg, greenyellow, dodgerblue);
+} */
+.but-atas {
+  width: 50%;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  justify-content: space-between;
+  border-radius: 10px;
+}
+
+.but-atas [type='button'] {
+  font-family: 'Poppins';
+  margin: 5px;
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 36px;
+  color: #a8a8a8;
+  align-items: center;
+}
+
+.form label {
+  font-family: 'Poppins';
+}
+.but-bawah {
+  margin-bottom: 23px;
+  justify-content: space-between;
+}
+.laki {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 30px 30px 10px;
+  gap: 30px;
+  border: none;
+  background: #f1f9ff;
+  border-radius: 10px;
+}
+
+.laki:hover {
+  background-color: #d5edff;
+  transition: all 0.3s;
+}
+
+.pr {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 30px 30px 10px;
+  gap: 30px;
+  border: none;
+  background: #f7dfff;
+  border-radius: 10px;
+}
+
+.pr:hover {
+  background-color: #f0c7ff;
+  transition: all 0.3s;
+}
+
+.bookingacc {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 6px 10px;
+  gap: 10px;
+  background: #4cf0c9;
+  border-radius: 10px;
+  border: none;
+}
+
+.cancel-c {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 6px 10px;
+  gap: 10px;
+  border: 1px solid #f41d1d;
+  border-radius: 10px;
+}
+
+.formpoto {
+  width: 430px;
+  height: 625px;
+  border-radius: 7%;
+  margin: 50px;
+}
+/* Landing page pengguna */
+
+/* hero section */
+
+#hero h2 {
+  font-family: 'Quicksand';
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 60px;
+  letter-spacing: 0.1em;
+  color: #000000;
+}
+
+#hero h3 {
+  font-family: 'Poppins';
+  font-weight: 500;
+  font-size: 30px;
+  line-height: 40px;
+  letter-spacing: 0.05em;
+  color: #000000;
+}
+
+#hero-kecil {
+  height: 106.43px;
+  width: 154px;
+  left: 10px;
+  top: 10px;
+  border-radius: [object Object]px;
+}
+
+#link {
+  font-family: Poppins;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 30px;
+  margin-top: 5%;
+  color: #000000;
+}
+
+.bi-arrow-right {
+  width: 25px;
+  height: 0px;
+}
+
+/* review section */
+
+#coba-review {
+  padding: 50px 0;
+}
+#coba-review h3 {
+  font-weight: 500;
+  font-size: 30px;
+  color: #000000;
+}
+
+.card-bodyreview {
+  width: 100%;
+  height: 290px;
+  background: #dbfff6;
+  border: 1px solid #d0d0d0;
+  border-radius: 15px;
+}
+
+.foto-pijat {
+  width: 70px;
+  height: 70px;
+}
+
+.fa {
+  font-size: 25px;
+}
+
+.checked {
+  color: orange;
+}
+/* more massage info section */
+
+.card {
+  width: 412px;
+  height: 324px;
+  border: none;
+}
+
+.card-body h6 {
+  color: #000000;
+  font-weight: 500;
+  font-size: 25px;
+}

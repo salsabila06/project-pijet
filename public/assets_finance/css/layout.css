@@ -1,0 +1,120 @@
+body {
+    font-family: 'Poppins';
+    font-style: normal;
+    margin: 0;
+    color: white;
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    grid-template-rows: 1fr auto;
+    grid-template-areas:
+      'navbar navbar'
+      'sibar content ';
+      width: 120vh;
+  }
+
+  nav {
+    grid-area: navbar;
+    background: radial-gradient(100% 8419.2% at 11.63% 34.67%, #9fead7 0%, #cef8ed 100%);
+    box-shadow: 0px -4px 30px 3px rgba(56, 56, 56, 0.25);
+    padding: 0em;
+    height: 100px;
+    width: 215vh;
+
+  }
+  .navbar #brand {
+    position: absolute;
+    width: 104px;
+    height: 38px;
+    left: 70px;
+    top: 30px;
+  }
+
+  /* .dropdown-item{
+      height: 50px;
+      width: 600px;
+      display: flex;
+      align-items: flex-start;
+  } */
+  .search {
+    background-color: #7ec8bb;
+    font-family: 'Poppins';
+    font-style: normal;
+    color: #ffffff;
+    flex: none;
+    border-radius: 10px;
+    border: none;
+  }
+
+  .sidebar {
+    grid-area: sibar;
+    display: grid;
+    grid-template-columns: auto;
+    background: #dbfff6;
+    padding: 1em 1em;
+    height: 67em;
+  }
+
+
+  .sidebar ul {
+    list-style: none;
+  }
+  .sidebar ul li {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border-bottom: 2px solid #dbfff6;
+    gap: 10px;
+  }
+  .sidebar ul li a {
+    display: grid;
+    text-decoration: none;
+    color: #6d7f7b;
+    font-family: 'Poppins';
+    font-size: 15px;
+    padding: 5px 20px;
+    transition: 0.4s;
+    text-decoration: none;
+  }
+  .sidebar ul li a:hover {
+    border-left: 10px solid #6d7f7b;
+  }
+
+  .container {
+    grid-area: content;
+    display: grid;
+    grid-template-columns: 66% auto;
+    padding: 1em 1em;
+    font-size: 39px;
+    padding-right: 100vh;
+  }
+
+  span {
+    display: block;
+    font-size: 1.4em;
+    margin-bottom: 1.2em;
+  }
+
+  .notify_info {
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 100%;
+    color: #000000;
+    padding: 0;
+  }
+
+  @media only screen and (max-width: 500px) {
+    body {
+      grid-template-areas:
+        'navbar navbar'
+        'sibar content ';
+    }
+    ul,
+    .container {
+      grid-template-columns: auto;
+      grid-template-rows: auto;
+    }
+
+    .container {
+      text-align: center;
+    }
+  }
