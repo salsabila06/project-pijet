@@ -79,9 +79,13 @@ Route::middleware(['Admin:web'])->group(function(){
     
         Route::get('Review', [ReviewController::class, 'index'])->name('review');
     
-        Route::get('/Pemesanan/berhasil',[PemesananController::class,'berhasil'])->name('pemesanan.berhasil');
-        Route::get('/Pemesanan/menunggu',[PemesananController::class,'menunggu'])->name('pemesanan.menunggu');
-        Route::get('/Pemesanan/ditolak',[PemesananController::class,'ditolak'])->name('pemesanan.ditolak');
+    Route::prefix('Pemesanan')->group(function () {
+        Route::get('/berhasil', [PemesananController::class, 'berhasil'])->name('tampil_pemesanan_berhasil');
+        Route::get('/menunggu', [PemesananController::class, 'menunggu'])->name('tampil_pemesanan_menunggu');
+        Route::get('/ditolak', [PemesananController::class, 'ditolak'])->name('tampil_pemesanan_ditolak');
+        Route::get('/sukses',[PemesananController::class,'pemesanan_Berhasil'])->name('pemesanan_berhasil');
+        Route::get('/failed',[PemesananController::class,'pemesanan_Ditolak'])->name('pemesanan_Ditolak');
+    });
         Route::get('/Pengguna',[PenggunaController::class,'index'])->name('pengguna');
     
         Route::get('/Verifikasi/diterima', [VerifikasiController::class, 'diterima'])->name('verifikasi.diterima');
