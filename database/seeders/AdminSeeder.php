@@ -27,6 +27,18 @@ class AdminSeeder extends Seeder
             'bahasa'=>'Indonesia',
         ];
         Admin::create($admin);
+        
+        
+        $finance = ['username' => 'finance',
+            'role' => '2',
+            'address' => 'jln pulang',
+            'number' => '089694413511',
+            'email' => 'artemiz@gmail.com',
+            'password' => Hash::make('11111'),
+            'TTL' => '11-10-2000',
+            'bahasa' => 'Indonesia',];
+        Admin::create($finance);
+        //
         //
     }
 }
