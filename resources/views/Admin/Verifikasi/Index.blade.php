@@ -24,66 +24,69 @@
     }
 </style>
 @section('container')
-    <div class="content">
-        <div class="card-header ">
-            <div class="col-auto">
-                <h2>Verifikasi</h2>
-            </div>
-        </div>
-        <nav class="navbar navbar-expand-lg">
-            <ul class="navbar-nav" style="text-align: left">
-                <li class="nav-item">
-                    <a class="statusMenu " id="menu-berhasil" aria-current="page"
-                       href="{{ route('verifikasi.diterima') }}"><b> Diterima</b></a>
-                <li class="nav-item">
-                    <a class="statusMenu ms-5" id="menu-menunggu" aria-current="page"
-                       href="{{ route('verifikasi.menunggu') }}"><b> MenungguVerifikasi</b></a>
-                </li>
-                <li class="nav-item">
-                    <a class="statusMenu ms-5" id="menu-ditolak" aria-current="page"
-                       href="{{ route('verifikasi.ditolak') }}"><b> Ditolak</b></a>
-                </li>
-            </ul>
-            <form action="?" class="col-auto ms-auto">
-                <div class="input-group mb-3">
-                    <input type="text" class="form-control" value="{{ request()->search }}" placeholder="Search..."
-                           name="search">
-                    <button class="btn btn-secondary" type="submit">Search</button>
+    <div class="card" style="margin-top: 25px">
+        <div class="content">
+            <div class="card-header " style="margin-bottom: 30px">
+                <div class="row">
+                    <div class="col-auto">
+                        <h4>Verifikasi</h4>
+                    </div>
                 </div>
-            </form>
-        </nav>
-        <table id="example2" class="table display">
-            <thead>
-            <tr>
-                <th>Username</th>
-                <th>Email</th>
-                <th>Status</th>
-            </tr>
-            </thead>
-            <tbody>
-            @foreach ($status as $stat)
+            </div>
+            <nav class="navbar navbar-expand-lg" style="margin-left: 20px">
+                <ul class="navbar-nav" style="text-align: left">
+                    <li class="nav-item">
+                        <a class="statusMenu " id="menu-berhasil" aria-current="page"
+                           href="{{ route('verifikasi.diterima') }}"><b> Diterima</b></a>
+                    <li class="nav-item">
+                        <a class="statusMenu ms-5" id="menu-menunggu" aria-current="page"
+                           href="{{ route('verifikasi.menunggu') }}"><b> MenungguVerifikasi</b></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="statusMenu ms-5" id="menu-ditolak" aria-current="page"
+                           href="{{ route('verifikasi.ditolak') }}"><b> Ditolak</b></a>
+                    </li>
+                </ul>
+                <form action="?" class="col-auto ms-auto" style="margin-right: 20px">
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control" value="{{ request()->search }}" placeholder="Search..."
+                               name="search">
+                        <button class="btn btn-secondary" type="submit">Search</button>
+                    </div>
+                </form>
+            </nav>
+            <table id="example2" class="table display">
+                <thead>
                 <tr>
-                    <td>{{ $stat['username'] }}</td>
-                    <td>{{ $stat['email'] }}</td>
-                    <td>
-                        @if ($stat->verifikasi_id == 1)
-                            <span class="badge rounded-pill bg-success">Diterima</span>
-                        @elseif ($stat->verifikasi_id == 2)
-                            <a>
-                                <button type="button" class="admin-btn" data-bs-toggle="modal"
-                                        data-bs-target="#verifikasiModal-{{ $stat->id }}">Detail
-                                    Verifikasi
-                                </button>
-                            </a>
-                        @else
-                            <span class="badge rounded-pill bg-danger">Ditolak</span>
-                        @endif
-                    </td>
+                    <th>Username</th>
+                    <th>Email</th>
+                    <th>Status</th>
                 </tr>
-            @endforeach
-            </tbody>
-        </table>
-    </div>
+                </thead>
+                <tbody>
+                @foreach ($status as $stat)
+                    <tr>
+                        <td>{{ $stat['username'] }}</td>
+                        <td>{{ $stat['email'] }}</td>
+                        <td>
+                            @if ($stat->verifikasi_id == 1)
+                                <span class="badge rounded-pill bg-success">Diterima</span>
+                            @elseif ($stat->verifikasi_id == 2)
+                                <a>
+                                    <button type="button" class="admin-btn" data-bs-toggle="modal"
+                                            data-bs-target="#verifikasiModal-{{ $stat->id }}">Detail
+                                        Verifikasi
+                                    </button>
+                                </a>
+                            @else
+                                <span class="badge rounded-pill bg-danger">Ditolak</span>
+                            @endif
+                        </td>
+                    </tr>
+                @endforeach
+                </tbody>
+            </table>
+        </div>
     </div>
     <div class="d-flex justify-content-center">
         {{ $status->links() }}

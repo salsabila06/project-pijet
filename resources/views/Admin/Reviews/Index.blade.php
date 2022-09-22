@@ -4,81 +4,83 @@
 
 
 @section('container')
-
-    <div class="content">
-        <div class="card-header ">
-            <div class="row">
-                <div class="col-auto">
-                    <h4>Review</h4>
-                </div>
-                <form action="?" class="col-auto ms-auto">
-                    <div class="input-group mb-3">
-                        <input type="text" class="form-control" value="{{ request()->search }}" placeholder="Search..."
-                               name="search">
-                        <button class="btn btn-secondary" type="submit">Search</button>
+    <div class="card" style="margin-top: 50px">
+        <div class="content" >
+            <div class="card-header ">
+                <div class="row">
+                    <div class="col-auto">
+                        <h4>Review</h4>
                     </div>
-                </form>
+                    <form action="?" class="col-auto ms-auto">
+                        <div class="input-group mb-3">
+                            <input type="text" class="form-control" value="{{ request()->search }}"
+                                   placeholder="Search..."
+                                   name="search">
+                            <button class="btn btn-secondary" type="submit">Search</button>
+                        </div>
+                    </form>
+                </div>
             </div>
-        </div>
-        <div class="card-body scroll">
-            <table id="example2" class="table display">
-                <thead>
-                <tr>
-                    <th>Name</th>
-                    <th>Jasa Pijat</th>
-                    <th>Rating</th>
-                </tr>
-                </thead>
-                <tbody>
-                @foreach ($review as $data)
+            <div class="card-body scroll">
+                <table id="example2" class="table display">
+                    <thead>
                     <tr>
-                        <td>{{ $data['first_name'] }} {{ $data['last_name'] }}</td>
-                        <td>{{ $data['jasa_pijat'] }}</td>
-                        <td class="rating mt-2 mb-2">
-                            @if ($data->rating == 1)
-                                <span class="fa fa-star checked" style="color:yellow;"></span>
-                                <span class="fa fa-star checked" style="opacity: 30%"></span>
-                                <span class="fa fa-star checked" style="opacity: 30%"></span>
-                                <span class="fa fa-star checked" style="opacity: 30%"></span>
-                                <span class="fa fa-star checked" style="opacity: 30%"></span>
-                            @elseif ($data->rating == 2)
-                                <span class="fa fa-star checked" style="color:yellow;"></span>
-                                <span class="fa fa-star checked" style="color:yellow;"></span>
-                                <span class="fa fa-star checked" style="opacity: 30%"></span>
-                                <span class="fa fa-star checked" style="opacity: 30%"></span>
-                                <span class="fa fa-star checked" style="opacity: 30%"></span>
-                            @elseif ($data->rating == 3)
-                                <span class="fa fa-star checked" style="color:yellow;"></span>
-                                <span class="fa fa-star checked" style="color:yellow;"></span>
-                                <span class="fa fa-star checked" style="color:yellow;"></span>
-                                <span class="fa fa-star checked" style="opacity: 30%"></span>
-                                <span class="fa fa-star checked" style="opacity: 30%"></span>
-                            @elseif ($data->rating == 4)
-                                <span class="fa fa-star checked" style="color:yellow;"></span>
-                                <span class="fa fa-star checked" style="color:yellow;"></span>
-                                <span class="fa fa-star checked" style="color:yellow;"></span>
-                                <span class="fa fa-star checked" style="color:yellow;"></span>
-                                <span class="fa fa-star checked" style="opacity: 30%"></span>
-                            @else
-                                <span class="fa fa-star checked" style="color:yellow;"></span>
-                                <span class="fa fa-star checked" style="color:yellow;"></span>
-                                <span class="fa fa-star checked" style="color:yellow;"></span>
-                                <span class="fa fa-star checked" style="color:yellow;"></span>
-                                <span class="fa fa-star checked" style="color:yellow;"></span>
-                            @endif
-                        </td>
-                        <td>
-                            <button type="button" class="admin-btn" data-bs-toggle="modal"
-                                    data-bs-target="#reviewModal-{{ $data->id }}">Detail Ulasan
-                            </button>
-                        </td>
+                        <th>Name</th>
+                        <th>Jasa Pijat</th>
+                        <th>Rating</th>
                     </tr>
-                @endforeach
-                </tbody>
-            </table>
-        </div>
-        <div class="d-flex justify-content-center">
-            {{ $review->links() }}
+                    </thead>
+                    <tbody>
+                    @foreach ($review as $data)
+                        <tr>
+                            <td>{{ $data['first_name'] }} {{ $data['last_name'] }}</td>
+                            <td>{{ $data['jasa_pijat'] }}</td>
+                            <td class="rating mt-2 mb-2">
+                                @if ($data->rating == 1)
+                                    <span class="fa fa-star checked" style="color:yellow;"></span>
+                                    <span class="fa fa-star checked" style="opacity: 30%"></span>
+                                    <span class="fa fa-star checked" style="opacity: 30%"></span>
+                                    <span class="fa fa-star checked" style="opacity: 30%"></span>
+                                    <span class="fa fa-star checked" style="opacity: 30%"></span>
+                                @elseif ($data->rating == 2)
+                                    <span class="fa fa-star checked" style="color:yellow;"></span>
+                                    <span class="fa fa-star checked" style="color:yellow;"></span>
+                                    <span class="fa fa-star checked" style="opacity: 30%"></span>
+                                    <span class="fa fa-star checked" style="opacity: 30%"></span>
+                                    <span class="fa fa-star checked" style="opacity: 30%"></span>
+                                @elseif ($data->rating == 3)
+                                    <span class="fa fa-star checked" style="color:yellow;"></span>
+                                    <span class="fa fa-star checked" style="color:yellow;"></span>
+                                    <span class="fa fa-star checked" style="color:yellow;"></span>
+                                    <span class="fa fa-star checked" style="opacity: 30%"></span>
+                                    <span class="fa fa-star checked" style="opacity: 30%"></span>
+                                @elseif ($data->rating == 4)
+                                    <span class="fa fa-star checked" style="color:yellow;"></span>
+                                    <span class="fa fa-star checked" style="color:yellow;"></span>
+                                    <span class="fa fa-star checked" style="color:yellow;"></span>
+                                    <span class="fa fa-star checked" style="color:yellow;"></span>
+                                    <span class="fa fa-star checked" style="opacity: 30%"></span>
+                                @else
+                                    <span class="fa fa-star checked" style="color:yellow;"></span>
+                                    <span class="fa fa-star checked" style="color:yellow;"></span>
+                                    <span class="fa fa-star checked" style="color:yellow;"></span>
+                                    <span class="fa fa-star checked" style="color:yellow;"></span>
+                                    <span class="fa fa-star checked" style="color:yellow;"></span>
+                                @endif
+                            </td>
+                            <td>
+                                <button type="button" class="admin-btn" data-bs-toggle="modal"
+                                        data-bs-target="#reviewModal-{{ $data->id }}">Detail Ulasan
+                                </button>
+                            </td>
+                        </tr>
+                    @endforeach
+                    </tbody>
+                </table>
+            </div>
+            <div class="d-flex justify-content-center">
+                {{ $review->links() }}
+            </div>
         </div>
     </div>
     @foreach ($review as $data)
@@ -166,5 +168,6 @@
                 </div>
             </div>
         </div>
+
     @endforeach
 @endsection

@@ -55,7 +55,7 @@
                         <tr id="e-bahasa">
                             <td>Bahasa</td>
                             <td>:</td>
-                            <td>{{$data->bahasa}}</td>
+                            <td>{{$data->language}}</td>
                         </tr>
                         <tr id="e-email2">
                             <td>Email</td>
