@@ -16,13 +16,14 @@ return new class extends Migration
         Schema::create('admins', function (Blueprint $table) {
             $table->id();
             $table->String('role');
+            $table->String('name');
             $table->string('username');
-            $table->string('address')->nullable();
-            $table->string('number')->nullable();
-            $table->string('TTL')->nullable();
-            $table->string('bahasa')->nullable();
-            $table->string('email')->unique();
             $table->string('password');
+            $table->string('email')->unique();
+            $table->string('TTL')->nullable();
+            $table->string('number')->nullable();
+            $table->string('address')->nullable();
+            $table->string('language')->nullable();
             $table->timestamps();
         });
     }

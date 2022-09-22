@@ -19,18 +19,17 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-       $this->call(AdminSeeder::class);
+        $this->call(AdminSeeder::class);
 
-       $this->call(VerifikasiSeeder::class);
-       $this->call(JasaPijatSeeder::class);
+        $this->call(VerifikasiSeeder::class);
+        $this->call(jenisPijatSeeder::class);
 
-       pengguna::factory(20)->create();
-       //pemesanan::factory(20)->create();
-       data::factory(20)->create();
-       pembatalan::factory(20)->create();
-       review::factory(20)->create();
-       // verifikasi::factory(20)->create();
-      // jasaPijat::factory(10)->create();
+        pengguna::factory(20)->create();
+        //pemesanan::factory(20)->create();
+        pembatalan::factory(20)->create();
+        review::factory(20)->create();
+        // verifikasi::factory(20)->create();
+        // jasaPijat::factory(10)->create();
         // \App\Models\User::factory(10)->create();
     }
 }

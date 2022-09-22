@@ -16,29 +16,43 @@ class AdminSeeder extends Seeder
      */
     public function run()
     {
-        $admin=[
-            'username'=>'admin',
-            'role'=>'2',
-            'address'=>'jln pulang',
-            'number'=>'089694413511',
-            'email'=>'kennyariadi@gmail.com',
-            'password'=>Hash::make('11111'),
-            'TTL'=>'11-10-2000',
-            'bahasa'=>'Indonesia',
+        $admin = [
+            'name'=>'admin',
+            'username' => 'admin',
+            'role' => '1',
+            'address' => 'jln pulang',
+            'number' => '089694413511',
+            'email' => 'kennyariadi@gmail.com',
+            'password' => Hash::make('11111'),
+            'TTL' => '11-10-2000',
+            'language' => 'Indonesia',
         ];
         Admin::create($admin);
-        
-        
-        $finance = ['username' => 'finance',
+        //
+
+        $finance = [
+            'name'=>'finance',
+            'username' => 'finance',
             'role' => '2',
             'address' => 'jln pulang',
             'number' => '089694413511',
             'email' => 'artemiz@gmail.com',
             'password' => Hash::make('11111'),
             'TTL' => '11-10-2000',
-            'bahasa' => 'Indonesia',];
+            'language' => 'Indonesia',];
         Admin::create($finance);
         //
-        //
+
+        $SA=[
+            'name'=>'SA',
+            'username' => 'SA',
+            'role' => '3',
+            'address' => 'jln pulang',
+            'number' => '089694413511',
+            'email' => 'test@gmail.com',
+            'password' => Hash::make('11111'),
+            'TTL' => '11-10-2000',
+            'language' => 'Indonesia',];
+        Admin::create($SA);
     }
 }

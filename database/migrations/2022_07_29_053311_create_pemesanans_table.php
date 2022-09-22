@@ -15,12 +15,11 @@ return new class extends Migration
     {
         Schema::create('pemesanan', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('customer_id')->nullable()->constrained('pengguna');
-            $table->foreignId('jasa_pijat_id')->nullable()->constrained('jasa_pijat');
+            $table->foreignId('pengguna_id')->nullable()->constrained('pengguna');
+            $table->foreignId('jenispijat_id')->nullable()->constrained('jenispijat');
             $table->date('waktu_booking')->nullable();
-            $table->time('durasi_waktu')->nullable();
+            $table->string('durasi_waktu')->nullable();
             $table->string('alamat');
-            $table->string('jenis_pijat');
             $table->string('jenis_kelamin');
             $table->string('status')->nullable();
             $table->timestamps();

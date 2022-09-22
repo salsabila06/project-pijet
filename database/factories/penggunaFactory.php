@@ -18,6 +18,7 @@ class penggunaFactory extends Factory
     {
         return [
             'username' => $this->faker->userName(),
+            'verifikasi_id'=>'2',
             'first_name' => $this->faker->firstName(),
             'last_name' => $this->faker->lastName(),
             'password' => $this->faker->password(),

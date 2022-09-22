@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('mitra', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('jasa_pijat_id')->nullable()->constrained('jasa_pijat');
+            $table->foreignId('JenisPijat_id')->nullable()->constrained('JenisPijat');
             $table->String('username');
             $table->String('email');
             $table->String('password');
