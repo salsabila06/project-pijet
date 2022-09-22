@@ -51,27 +51,38 @@
 
 <div class="sidebar">
     <ul class="nav nav-pills flex-column mb-auto">
-
         <li><a class="nav-link{{Request::is('dashboard') ? 'active':''}}" href="{{ route('dashboard') }}"><i
                     class="fa fa-home"> <span>Dashboard</span></i> </a></li>
-        <li><a class="nav-link{{Request::is('pengguna') ? 'active':''}}" href="{{ route('pengguna') }}"> <i
-                    class="fa fa-user"> <span>Pengguna</span></i></a></li>
-        <li><a class="nav-link{{Request::is('pemesanan_berhasil') ? 'active':''}}"
-               href="{{ route('pemesanan_berhasil') }}">
-                <i class=" fa fa-shopping-cart"><span>Pemesanan</span></i></a></li>
-        <li><a class="nav-link{{Request::is('pembatalan') ? 'active':''}}" href="{{ route('pembatalan') }}"> <i
-                    class="fa fa-times"> <span>Pembatalan</span></i></a></li>
-        @if(Auth::guard('admin')->user()->role=="1")
-        <li><a class="nav-link{{Request::is('review') ? 'active':''}}" href="{{ route('review') }}"> <i
-                    class="fa fa-star-o"> <span>Review</span></i></a></li>
-        <li><a class="nav-link{{Request::is('verifikasi.menunggu') ? 'active':''}}"
-               href="{{ route('verifikasi.menunggu') }}"> <i class="fa fa-check-square-o">
-                    <span>Verifikasi</span></i></a></li>
+        @if(Auth::guard('admin')->user()->role=="2")
+            <li><a class="nav-link{{Request::is('pengguna') ? 'active':''}}" href="{{ route('pengguna') }}"> <i
+                        class="fa fa-user"> <span>Pengguna</span></i></a></li>
+            <li><a class="nav-link{{Request::is('tampil_pemesanan_berhasil') ? 'active':''}}"
+                   href="{{ route('tampil_pemesanan_berhasil') }}">
+                    <i class=" fa fa-shopping-cart"><span>Pemesanan</span></i></a></li>
+            <li><a class="nav-link{{Request::is('pembatalan') ? 'active':''}}" href="{{ route('pembatalan') }}"> <i
+                        class="fa fa-times"> <span>Pembatalan</span></i></a></li>
+        @elseif(Auth::guard('admin')->user()->role=="1")
+            <li><a class="nav-link{{Request::is('pengguna') ? 'active':''}}" href="{{ route('pengguna') }}"> <i
+                        class="fa fa-user"> <span>Pengguna</span></i></a></li>
+            <li><a class="nav-link{{Request::is('tampil_pemesanan_berhasil') ? 'active':''}}"
+                   href="{{ route('tampil_pemesanan_berhasil') }}">
+                    <i class=" fa fa-shopping-cart"><span>Pemesanan</span></i></a></li>
+            <li><a class="nav-link{{Request::is('pembatalan') ? 'active':''}}" href="{{ route('pembatalan') }}"> <i
+                        class="fa fa-times"> <span>Pembatalan</span></i></a></li>
+            <li><a class="nav-link{{Request::is('review') ? 'active':''}}" href="{{ route('review') }}"> <i
+                        class="fa fa-star-o"> <span>Review</span></i></a></li>
+            <li><a class="nav-link{{Request::is('verifikasi.menunggu') ? 'active':''}}"
+                   href="{{ route('verifikasi.menunggu') }}"> <i class="fa fa-check-square-o">
+                        <span>Verifikasi</span></i></a></li>
+        @elseif(Auth::guard('admin')->user()->role=='3')
+            <li><a class="nav-link{{Request::is('dashboard') ? 'active':''}}" href="{{ route('superadmin')}}"><i
+                        class="fa fa-home"> <span>Admin</span></i> </a></li>
+            <li><a href=""></a></li>
         @endif
     </ul>
 </div>
-<main>
-    <div class="container">
+<main class="scroll">
+    <div class="container " >
         @yield('container')
     </div>
 </main>
