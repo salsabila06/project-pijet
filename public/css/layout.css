@@ -193,5 +193,20 @@ input {
 .scroll {
     display: block;
     overflow: auto;
-    height: 540px;
+    height: 850px;
 }
+.btn-tambah {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-size: 15px;
+    color: #ffffff;
+    text-align: center;
+    line-height: 20px;
+    background: #00ca97;
+    border-radius: 10px;
+    border: none;
+    text-decoration: none;
+    height: 37px;
+    width: 170px;
+}
+
