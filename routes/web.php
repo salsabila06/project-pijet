@@ -19,6 +19,7 @@ use App\Http\Controllers\Admin\ReviewController;
 use App\Http\Controllers\Customer\ProfileController;
 use App\Http\Controllers\FinanceController;
 use App\Http\Controllers\SuperAdmin\EditDataController;
+use App\Http\Controllers\Admin\ResetPassword;
 
 /*
 |--------------------------------------------------------------------------
@@ -46,6 +47,11 @@ Route::middleware(['guest:web'])->group(function () {
     Route::get('Forgot_Password/{token}', [Forgot_PasswordController::class, 'showResetForm'])->name('reset.password.form');
     Route::post('Reset_Password', [Forgot_PasswordController::class, 'resetPassword'])->name('reset.password');
 
+    Route::get('Forgot_Password_account', [ResetPassword::class, 'showForgotForm'])->name('forgot.password.account.form');
+    Route::post('Forgot_Password_account', [ResetPassword::class, 'sendResetLink'])->name('forgot.password.account.link');
+    Route::get('Forgot_Password-account/{token}', [ResetPassword::class, 'showResetForm'])->name('reset.password.account.form');
+    Route::post('Reset_Password_account', [ResetPassword::class, 'resetPassword'])->name('reset.password.account');
+
 });
 
 Route::middleware(['auth:web'])->group(function () {
@@ -59,7 +65,7 @@ Route::middleware(['auth:web'])->group(function () {
 });
 
 Route::middleware(['admin:web'])->group(function () {
-    Route::get('Logout', [AdminController::class, 'destroy'])->name('logout_admin');
+    Route::get('Logout', [AdminController::class, 'logout'])->name('logout_admin');
     Route::get('Dashboard', [DashboardController::class, 'index'])->name('dashboard');
 
     Route::prefix('/profile')->group(function () {
@@ -98,6 +104,7 @@ Route::middleware(['admin:web'])->group(function () {
 
     Route::post('SuperAdmin/CreateAccount',[SuperAdminMenu::class,'store'])->name('createAccount');
     Route::put('SuperAdmin/EditData',[EditDataController::class,'edit'])->name('editData');
+    Route::get('SuperAdmin/{id}',[EditDataController::class,'destroy'])->name('deleteData');
 });
 
 
