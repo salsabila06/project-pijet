@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Customer;
 
 use App\Http\Controllers\Controller;
-use App\Models\data;
+use App\Models\pengguna;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 
@@ -43,7 +43,7 @@ class RegisterController extends Controller
             'username' =>'required',
             'first_name' => 'required',
             'last_name' => 'required',
-            'email' => 'required|email:dns|unique:data',
+            'email' => 'required|email:dns|unique:pengguna',
             'password' => 'required|min:5|max:255',
         ]);
 
@@ -51,8 +51,8 @@ class RegisterController extends Controller
         $validateData['password']=bcrypt($validateData['password']);
 */
         $validateData['password']=Hash::make($validateData['password']);
-        data::create($validateData);
-        return redirect('/Login')->with('success','Berhasil Mendaftar');
+        pengguna::create($validateData);
+        return redirect()->route('login')->with('success','Berhasil Mendaftar');
         //
     }
 
