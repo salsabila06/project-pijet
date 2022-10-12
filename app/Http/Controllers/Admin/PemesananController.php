@@ -15,24 +15,45 @@ class PemesananController extends Controller
      */
 
 
-    public function berhasil(Request $request)
+    public function berhasil()
     {
         $status = pemesanan::where('status','like','Berhasil')->filters(request(['search']))->paginate(10);
         return view('Admin.Pemesanan.Index', compact('status'));
+
     }
 
-    public function menunggu(Request $request)
+    public function menunggu()
     {
         $status = pemesanan::where('status','like','Menunggu')->filters(request(['search']))->paginate(10);
         return view('Admin.Pemesanan.Index', compact('status'));
     }
 
-    public function ditolak(Request $request)
+    public function ditolak()
     {
         $status = pemesanan::where('status','like','Ditolak')->filters(request(['search']))->paginate(10);
         return view('Admin.Pemesanan.Index', compact('status'));
     }
 
+    public function pemesanan_Berhasil($id)
+    {
+        $data = pemesanan::find($id);
+        $data->status='Berhasil';
+        $data->save();
+        return redirect()->back();
+    }
+
+    public function pemesanan_Ditolak($id)
+    {
+        $data = pemesanan::find($id);
+        $data->status='Ditolak';
+        $data->save();
+        return redirect()->back();
+    }
+
+    public function riwayat_transaksi(Request $request){
+        $datas =  pemesanan::where('pengguna_id','=',$request->idUser)->with('pengguna')->with('jenispijat')->get();
+        return response()->json($datas);
+    }
     /**
      * Show the form for creating a new resource.
      *
