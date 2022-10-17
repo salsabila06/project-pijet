@@ -5,56 +5,99 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.1/Chart.bundle.js"></script>
 @endsection
+<style>
+    .donut-size {
+        font-size: 7em;
+    }
 
+    .pie-wrapper {
+        position: relative;
+        width: 1em;
+        height: 1em;
+        margin: 0px auto;
+    }
+
+    .pie {
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        width: 100%;
+        height: 100%;
+        clip: rect(0, 1em, 1em, 0.5em);
+    }
+
+    .half-circle {
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        width: 100%;
+        height: 100%;
+        border: 0.1em solid #348727;
+        border-radius: 50%;
+        clip: rect(0em, 0.5em, 1em, 0em);
+    }
+
+    .right-side {
+        transform: rotate(0deg);
+    }
+
+    .label {
+        position: absolute;
+        top: 0.52em;
+        right: 0.4em;
+        bottom: 0.4em;
+        left: 0.4em;
+        display: block;
+        background: none;
+        border-radius: 50%;
+        color: #7F8C8D;
+        font-size: 0.25em;
+        line-height: 2.6em;
+        text-align: center;
+        cursor: default;
+        z-index: 2;
+    }
+
+    .smaller {
+        padding-bottom: 20px;
+        color: #BDC3C7;
+        font-size: .45em;
+        vertical-align: super;
+    }
+
+    .shadow {
+        width: 100%;
+        height: 100%;
+        border: 0.1em solid #A8FF9A;
+        border-radius: 50%;
+    }
+</style>
 @section('container')
-
-    <div class="dashboard" >
+    <div class="dashboard">
         <div class="content1">
-            <div class="chartBox">
-                <canvas id="myChart" ></canvas></div>
-            <script>
-                const ctx = document.getElementById('myChart').getContext('2d');
-                const myChart = new Chart(ctx, {
-                    type: 'doughnut',
-                    data: {
-                        labels: ['green', 'green'],
-                        datasets: [{
-                            label: '# of Votes',
-                            data: [13, 18],
-                            backgroundColor: [
-                                '#92FF80',
-
-                                '#348727'
-                            ],
-                            borderColor: [
-                                'rgba(255, 99, 132, 0)',
-
-                                'rgba(255, 159, 64, 0)'
-                            ],
-                            borderWidth: 4
-                        }]
-                    },
-                    options: {
-                        scales: {
-                            y: {
-                                beginAtZero: true
-                            }
-                        }
-                    }
-                });
-            </script>
-            <div class="container-fluid" style=" ">
+            <div id="specificChart" class="donut-size">
+                <div class="pie-wrapper">
+                    <span class="label">
+                        <span class="num">0</span><span class="smaller">%</span>
+                    </span>
+                    <div class="pie">
+                        <div class="left-side half-circle"></div>
+                        <div class="right-side half-circle"></div>
+                    </div>
+                    <div class="shadow"></div>
+                </div>
+            </div>
+            <div class="container-fluid">
                 <div class="d-flex align-items-center">
                     <div class="d-flex flex-column mb-0">
                         <p>Profit ratio</p>
-                        <h3>Rp 4.250.000</h3>
+                        <h3>
+                            Rp. {{ $profit }}
+                        </h3>
                         <i class="fa fa-arrow-up" aria-hidden="true"> Meningkat dari minggu lalu</i>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="content1" style="margin-top: 50px">
-
         </div>
         <div class="content2" style="margin-top: 50px">
             <div class="container-fluid">
@@ -76,6 +119,8 @@
 @endsection
 
 @section('script')
+    <script src="/js/dasboard.js"></script>
+
     <script src="https://code.highcharts.com/highcharts.js"></script>
 
     <script>
@@ -136,4 +181,3 @@
         });
     </script>
 @endsection
-
