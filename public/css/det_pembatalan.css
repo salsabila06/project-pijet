@@ -1,0 +1,90 @@
+//detail pembatalan
+.leftcontent {
+    height: 10vh;
+    width: 60%;
+    float: left;
+  }
+
+  .leftcontent h5 {
+    font-family: 'Poppins';
+    font-weight: 500px;
+    font-size: 20px;
+    line-height: 30px;
+    text-align: center;
+    color: #000000;
+  }
+  .title_det_pemabatalan {
+    font-family: 'Poppins';
+    font-weight: 500;
+    font-size: 30px;
+    line-height: 45px;
+    letter-spacing: 0.05em;
+    color: #000000;
+    padding: 50px 0;
+  }
+  .card-title {
+    font-family: 'Poppins';
+    font-weight: 500;
+    font-size: 30px;
+    line-height: 45px;
+    letter-spacing: 0.05em;
+    color: #000000;
+  }
+  .subtitle {
+    font-family: 'Poppins';
+    font-weight: 400;
+    font-size: 15px;
+    color: #000000;
+    margin-top: 11px;
+  }
+
+  .rightcontent {
+    height: 100vh;
+    float: right;
+    width: 40%;
+    padding: 100px 0;
+  }
+  .bdy {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 24px;
+    color: #000000;
+  }
+  .bborder {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0 50px;
+    gap: 15px;
+    width: 80vw;
+    height: 80vh;
+    border: none;
+  }
+  .decline {
+    /* position: absolute; */
+    color: #ffffff;
+    height: 30px;
+    width: 100px;
+    background: #ff0000;
+    border-radius: 10px;
+    border: none;
+    /* margin-left: 143px; */
+    font-family: 'Poppins';
+    font-weight: 400;
+    font-size: 12px;
+  }
+
+  .accept {
+    /* position: absolute; */
+    color: #ffffff;
+    width: 140px;
+    height: 30px;
+    background: #50abff;
+    border-radius: 10px;
+    border: none;
+    font-family: 'Poppins';
+    font-weight: 400;
+    font-size: 12px;
+  }
