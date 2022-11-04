@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Customer;
 
-use Illuminate\Http\Request;
-use App\Models\data;
+use App\Http\Controllers\Controller;
+use App\Models\jenispijat;
 use App\Models\pemesanan;
-use App\Models\jenisPijat;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
 class PembayaranController extends Controller
@@ -48,7 +48,7 @@ class PembayaranController extends Controller
         \Midtrans\Config::$is3ds = true;
 
 
-        $data=jenisPijat::where('id',$request->JasaPijat_id)->get();
+        $data=jenispijat::where('id',$request->jenispijat_id)->get();
         // dd($datas);
 
         $params = array(
@@ -65,10 +65,10 @@ class PembayaranController extends Controller
                 ]
             ),
             'customer_details' => array(
-                'first_name' => Auth::user()->first_name,
-                'last_name' => Auth::user()->last_name,
-                'email' => Auth::user()->email,
-                'phone' => Auth::user()->number,
+                'first_name' => auth::user()->first_name,
+                'last_name' => auth::user()->last_name,
+                'email' => auth::user()->email,
+                'phone' => auth::user()->number,
             ),
         );
 
@@ -78,11 +78,11 @@ class PembayaranController extends Controller
             'waktu_booking'=>'required',
             'durasi_waktu'=>'required',
             'alamat'=>'required',
-            'JasaPijat_id'=>'required',
+            'jenispijat_id'=>'required',
             'jenis_kelamin'=>'required',
         ]);
 
-        pemesanan::create($validateData+['customer_id'=>auth()->id(), 'status'=>'menunggu']);
+        pemesanan::create($validateData+['pengguna_id'=>auth()->id(), 'status'=>'menunggu']);
 
         return view('Post.Index',['snap_token' => $snapToken]);
     }

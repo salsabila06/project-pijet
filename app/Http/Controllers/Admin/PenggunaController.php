@@ -43,7 +43,7 @@ class PenggunaController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\pengguna  $pengguna
+     * @param  \App\Models\pengguna
      * @return \Illuminate\Http\Response
      */
     public function show(pengguna $pengguna)
@@ -66,7 +66,6 @@ class PenggunaController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\pengguna  $pengguna
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, pengguna $pengguna)

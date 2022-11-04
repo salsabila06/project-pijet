@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Customer;
 
 use App\Http\Controllers\Controller;
-use App\Models\data;
+use App\Models\pengguna;
 use App\Models\reset;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
@@ -20,7 +20,7 @@ class Forgot_PasswordController extends Controller
     public function sendResetLink(Request $request)
     {
         $request->validate([
-            'email' => 'required|email|exists:data,email'
+            'email' => 'required|email|exists:pengguna,email'
         ]);
         $token=\Str::random(64);
         reset::create([
@@ -64,7 +64,7 @@ class Forgot_PasswordController extends Controller
             return back()->withInput()->with('fail','Invalid Token');
         }else{
 
-            data::where('email',$request->email)->update([
+            pengguna::where('email',$request->email)->update([
                 'password'=>Hash::make($request->password)
             ]);
 

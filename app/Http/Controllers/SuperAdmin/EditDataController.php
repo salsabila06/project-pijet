@@ -23,8 +23,10 @@ class EditDataController extends Controller
         return redirect()->intended(route('superadmin'))->with('message', 'Your Profile has been updated');
     }
 
-    public function destroy(Request $request)
+    public function destroy($id)
     {
-
+        $data = Admin::find($id);
+        $data->delete();
+        return redirect()->intended(route('superadmin'))->with('delete', 'Data has been Delete');
     }
 }

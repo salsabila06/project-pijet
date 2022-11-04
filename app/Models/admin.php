@@ -19,13 +19,14 @@ class Admin extends Authenticatable implements MustVerifyEmail
      *
      * @var array<int, string>
      */
-    protected $table='admins';
+    protected $table = 'admins';
     protected $fillable = [
+        'name',
         'role',
         'username',
         'TTL',
-        'bahasa'
-,       'email',
+        'language'
+        , 'email',
         'password',
         'address',
         'number'
@@ -49,4 +50,11 @@ class Admin extends Authenticatable implements MustVerifyEmail
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+    public function scopeFilters($query, array $filters)
+    {
+        $query->when($filters['search'] ?? false, function ($query,$search){
+            return $query->where('username', 'like', "%{$search}%")
+                ->orwhere('email', 'like', "%{$search}%");
+        });
+    }
 }

@@ -1,4 +1,3 @@
-
 @extends('Main.Index')
 
 @section('title','Login')
@@ -10,19 +9,19 @@
 </div>
 
 <div>
-@if(session()->has('success'))
-<div class="alert alert-success alert-dismissible fade show" role="alert"  id="message" >
-    {{session('success')}}
-    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-</div>
-@endif
+    @if(session()->has('success'))
+        <div class="alert alert-success alert-dismissible fade show" role="alert" id="message">
+            {{session('success')}}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    @endif
 
-@if(session()->has('loginError'))
-    <div class="alert alert-danger alert-dismissible fade show" role="alert" id="message">
-        {{session('loginError')}}
-        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-    </div>
-@endif
+    @if(session()->has('loginError'))
+        <div class="alert alert-danger alert-dismissible fade show" role="alert" id="message">
+            {{session('loginError')}}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    @endif
 </div>
 <div>
     <form method="post" action="{{route('verify')}}">

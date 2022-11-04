@@ -35,6 +35,11 @@
                 <input type="password" id="password" name="password" placeholder="password" required>
             </div>
             <button type="submit" id="login-btn">Login</button>
+            <div class="text">
+                <p>
+                    <a id="forgot-pass_admin" href="{{route('forgot.password.account.form')}}">Forgot password?</a>
+                </p>
+            </div>
         </fieldset>
     </form>
 </div>

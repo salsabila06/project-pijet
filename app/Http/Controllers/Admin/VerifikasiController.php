@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Models\data;
+use App\Models\pengguna;
 use App\Models\verifikasi;
 use Illuminate\Http\Request;
 
@@ -17,31 +17,31 @@ class VerifikasiController extends Controller
 
     public function diterima()
     {
-        $status = data::where('verifikasi_id','like',1)->filters(request(['search']))->paginate(10);
+        $status = pengguna::where('verifikasi_id','like',1)->filters(request(['search']))->paginate(10);
         return view('Admin.Verifikasi.index', compact('status'));
     }
 
     public function menunggu()
     {
-        $status = data::where('verifikasi_id','like',2)->filters(request(['search']))->paginate(10);
+        $status = pengguna::where('verifikasi_id','like',2)->filters(request(['search']))->paginate(10);
         return view('Admin.Verifikasi.index', compact('status'));
     }
 
     public function ditolak()
     {
-        $status = data::where('verifikasi_id','like',3)->filters(request(['search']))->paginate(10);
+        $status = pengguna::where('verifikasi_id','like',3)->filters(request(['search']))->paginate(10);
         return view('Admin.Verifikasi.index', compact('status'));
     }
 
     public function data_diterima($id){
-        $data = data::find($id);
+        $data = pengguna::find($id);
         $data->verifikasi_id=1;
         $data->save();
         return redirect()->back();
     }
 
     public function data_ditolak($id){
-        $data = data::find($id);
+        $data = pengguna::find($id);
         $data->verifikasi_id=3;
         $data->save();
         return redirect()->back();

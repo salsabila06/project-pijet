@@ -42,11 +42,14 @@
         <form action="{{route('create.booking')}}" class="form-floating" method="post">
             @csrf
             <div class="d-flex justify-content-start">
-                <input type="date" id="waktubooking" name="waktu_booking" placeholder="Waktu booking"/>
+                <input type="date" id="waktubooking" name="waktu_booking" placeholder="Waktu booking" class="form-control @error('waktu_booking') is-invalid @enderror" value="{{old('waktu_booking')}}"/>
             </div>
+            @error('waktu_booking')
+            <div class="invalid-feedback">{{$message}}</div>
+            @enderror
             <div class="d-flex justify-content-start" style="margin-bottom: 20px;">
                 <fieldset id="jenispijat">
-                    <select name="JasaPijat_id" id="jenispijat">
+                    <select name="jenispijat_id" id="jenispijat" class="form-control @error('jenispijat_id') is-invalid @enderror">
                         <option style="font-size: 20px" selected disabled> Pilih Jasa Pijat</option>
                         <option style="font-size: 20px" value="1"> Pijat Thai</option>
                         <option style="font-size: 20px" value="2"> Pijat Prenatal</option>
@@ -54,22 +57,31 @@
                         <option style="font-size: 20px" value="4"> Pijat Olahraga</option>
                     </select>
                 </fieldset>
+                @error('jenispijat_id')
+                <div class="invalid-feedback">{{$message}}</div>
+                @enderror
             </div>
             <div class="d-flex justify-content-start" style="margin-bottom: 20px;">
                 <fieldset id="durasiwaktu">
-                    <select name="durasi_waktu" id="durasiwaktu">
+                    <select name="durasi_waktu" id="durasiwaktu" class="form-control @error('durasi_waktu') is-invalid @enderror"   >
                         <option style="font-size: 20px" selected disabled> Pilih Durasi Waktu</option>
                         <option style="font-size: 20px" value="30 Menit"> 30 Menit</option>
                         <option style="font-size: 20px" value="60 Menit"> 60 Menit</option>
                         <option style="font-size: 20px" value="90 Menit"> 90 Menit</option>
                     </select>
                 </fieldset>
+                @error('durasi_waktu')
+                <div class="invalid-feedback">{{$message}}</div>
+                @enderror
             </div>
 
 
             <div class="d-flex justify-content-start">
-                <input type="address" id="alamat" name="alamat" placeholder="Alamat"/>
+                <input type="text" id="alamat" name="alamat" placeholder="Alamat" class="form-control @error('alamat') is-invalid @enderror" value="{{old('alamat')}}"/>
             </div>
+            @error('alamat')
+            <div class="invalid-feedback">{{$message}}</div>
+            @enderror
             <div>
                 <label>
                     <input type="radio" id="" name="jenis_kelamin" value="Laki-laki">

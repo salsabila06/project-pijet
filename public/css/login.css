@@ -1,35 +1,41 @@
-.body{
+.body {
     width: 1440px;
     height: 1050px;
-    background-color:#DBFFF6;
-    font-family:'Poppins', sans-serif ;
+    background-color: #DBFFF6;
+    font-family: 'Poppins', sans-serif;
 }
-*{
+
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     list-style: none;
 }
+
 .container {
     width: 1440px;
     margin: 0 auto;
 }
-.form-control{
+
+.form-control {
     background-color: #DBFFF6;
 }
-.nav-brand{
+
+.nav-brand {
     position: absolute;
     width: 104px;
     height: 38px;
     left: 80px;
     top: 56px;
 }
-#message{
+
+#message {
     position: absolute;
     left: 80px;
     top: 200px;
 }
-.title{
+
+.title {
     font-family: 'Poppins';
     font-style: normal;
     font-weight: 600;
@@ -45,7 +51,8 @@
     top: 270px;
 
 }
-input{
+
+input {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -73,14 +80,16 @@ input{
     order: 0;
     flex-grow: 0;
 }
-#username{
+
+#username {
     position: absolute;
     width: 515px;
     height: 75px;
     left: 80px;
     top: 386px;
 }
-#password{
+
+#password {
     position: absolute;
     width: 515px;
     height: 75px;
@@ -88,35 +97,39 @@ input{
     top: 491px;
 }
 
-#first_name{
+#first_name {
     position: absolute;
     width: 515px;
     height: 75px;
     left: 80px;
     top: 491px;
 }
-#last_name{
+
+#last_name {
     position: absolute;
     width: 515px;
     height: 75px;
     left: 80px;
     top: 596px;
 }
-#email{
+
+#email {
     position: absolute;
     width: 515px;
     height: 75px;
     left: 80px;
-    top: 701px ;
+    top: 701px;
 }
-#password-2{
+
+#password-2 {
     position: absolute;
     width: 515px;
     height: 75px;
     left: 80px;
     top: 806px;
 }
-#username-2{
+
+#username-2 {
 
     position: absolute;
     width: 515px;
@@ -124,35 +137,40 @@ input{
     left: 80px;
     top: 434px;
 }
-#email-2{
+
+#email-2 {
     position: absolute;
     width: 515px;
     height: 75px;
     left: 80px;
     top: 430px;
 }
-#email-3{
+
+#email-3 {
     position: absolute;
     width: 515px;
     height: 75px;
     left: 80px;
     top: 425px;
 }
-#new-pass{
+
+#new-pass {
     position: absolute;
     width: 515px;
     height: 75px;
     left: 80px;
     top: 440px;
 }
-#confirm-pass{
+
+#confirm-pass {
     position: absolute;
     width: 515px;
     height: 75px;
     left: 80px;
     top: 554px;
 }
-button{
+
+button {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -182,35 +200,8 @@ button{
     order: 0;
     flex-grow: 0;
 }
-#login-btn{
-    position: absolute;
-    width: 515px;
-    height: 75px;
-    left: 80px;
-    top: 596px;
-}
-#signin-btn{
-    position: absolute;
-    width: 515px;
-    height: 75px;
-    left: 80px;
-    top: 910px;
-}
-#forgot-pass-btn{
-    position: absolute;
-    width: 515px;
-    height: 74px;
-    left: 80px;
-    top: 550px;
-}
-#reset-pass-btn{
-    position: absolute;
-    width: 515px;
-    height: 74px;
-    left: 80px;
-    top: 670px;
-}
-#update-btn{
+
+#login-btn {
     position: absolute;
     width: 515px;
     height: 75px;
@@ -218,7 +209,39 @@ button{
     top: 596px;
 }
 
-.text{
+#signin-btn {
+    position: absolute;
+    width: 515px;
+    height: 75px;
+    left: 80px;
+    top: 910px;
+}
+
+#forgot-pass-btn {
+    position: absolute;
+    width: 515px;
+    height: 74px;
+    left: 80px;
+    top: 550px;
+}
+
+#reset-pass-btn {
+    position: absolute;
+    width: 515px;
+    height: 74px;
+    left: 80px;
+    top: 670px;
+}
+
+#update-btn {
+    position: absolute;
+    width: 515px;
+    height: 75px;
+    left: 80px;
+    top: 596px;
+}
+
+.text {
     font-family: 'Poppins';
     font-style: normal;
     font-weight: 400;
@@ -227,28 +250,32 @@ button{
     letter-spacing: 0.05em;
     color: #000000;
 }
-.text #dont-have-account{
+
+.text #dont-have-account {
     position: absolute;
     width: 267px;
     height: 26px;
     left: 243px;
     top: 691px;
 }
-.text #forgot-pass{
+
+.text #forgot-pass {
     position: absolute;
     width: 164px;
     height: 26px;
     left: 293px;
     top: 717px;
 }
-.text #note{
+
+.text #note {
     position: absolute;
     width: 515px;
     height: 46px;
     left: 80px;
     top: 369px;
 }
-.text #note-2{
+
+.text #note-2 {
     position: absolute;
     width: 515px;
     height: 26px;
@@ -257,7 +284,8 @@ button{
 
     color: #545454;
 }
-.text #note-3{
+
+.text #note-3 {
     position: absolute;
     width: 515px;
     height: 26px;
@@ -265,7 +293,8 @@ button{
     top: 630px;
     color: #545454;
 }
-.text #dont-have-account-2{
+
+.text #dont-have-account-2 {
     position: absolute;
     width: 267px;
     height: 26px;
@@ -274,14 +303,15 @@ button{
 }
 
 
-.text #dont-have-account-3{
+.text #dont-have-account-3 {
     position: absolute;
     width: 267px;
     height: 26px;
     left: 243px;
     top: 750px;
 }
-.column-illustration-hero{
+
+.column-illustration-hero {
     display: flex;
     flex-direction: row;
     align-items: flex-start;
@@ -293,10 +323,58 @@ button{
     left: 1080px;
     top: 0px;
 }
-#notice{
+
+#notice {
     position: absolute;
     left: 80px;
     top: 510px;
+}
+
+#username_error {
+    position: absolute;
+    width: 515px;
+    height: 75px;
+    left: 80px;
+    top: 456px;
+}
+
+#first_name_error {
+    position: absolute;
+    width: 515px;
+    height: 75px;
+    left: 80px;
+    top: 561px;
+}
+
+#last_name_error {
+    position: absolute;
+    width: 515px;
+    height: 75px;
+    left: 80px;
+    top: 666px;
+}
+
+#email_error {
+    position: absolute;
+    width: 515px;
+    height: 75px;
+    left: 80px;
+    top: 771px;
+}
+
+#password_error {
+    position: absolute;
+    width: 515px;
+    height: 75px;
+    left: 80px;
+    top: 875px;
+}
+#forgot-pass_admin{
+    position: absolute;
+    width: 164px;
+    height: 26px;
+    left: 293px;
+    top: 680px;
 }
 
 

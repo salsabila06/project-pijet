@@ -71,161 +71,278 @@
                 </tbody>
             </table>
         </div>
-        <div class="d-flex justify-content-center">
-        </div>
+    </div>
 
-        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
-             aria-hidden="true">
-            <div class="modal-dialog  modal-dialog-scrollable">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h4 class="modal-title" id="exampleModalLabel">Tambah Data</h4>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        <form action="{{route('createAccount')}}" method="post">
-                            @csrf
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+         aria-hidden="true">
+        <div class="modal-dialog  modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="exampleModalLabel">Tambah Data</h4>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                            aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form action="{{route('createAccount')}}" method="post">
+                        @csrf
+                        <div class="row g-3 align-items-center">
                             <div class="row g-3 align-items-center">
-                                <div class="row g-3 align-items-center">
-                                    <div class="col-3">
-                                        <label for="inputNama" class="col-form-label">Name</label>
-                                    </div>
-                                    <div class="col-1">
-                                        <label class="col-form-label">:</label>
-                                    </div>
-                                    <div class="col-8">
-                                        <input id="inputNama" name="name" class="form-control"
-                                               placeholder="Name" required>
-                                    </div>
+                                <div class="col-3">
+                                    <label for="inputNama" class="col-form-label">Name</label>
                                 </div>
-                                <div class="row g-3 align-items-center">
-                                    <div class="col-3">
-                                        <label for="inputUsername" class="col-form-label">Username</label>
-                                    </div>
-                                    <div class="col-1">
-                                        <label class="col-form-label">:</label>
-                                    </div>
-                                    <div class="col-8">
-                                        <input id="inputUsername" name="username" class="form-control"
-                                               placeholder="Username" required>
-                                    </div>
+                                <div class="col-1">
+                                    <label class="col-form-label">:</label>
                                 </div>
-                                <div class="row g-3 align-items-center">
-                                    <div class="col-3">
-                                        <label for="inputPassword" class="col-form-label">Password</label>
-                                    </div>
-                                    <div class="col-1">
-                                        <label class="col-form-label">:</label>
-                                    </div>
-                                    <div class="col-8">
-                                        <input type="password" id="inputPassword" name="password"
-                                               class="form-control"
-                                               placeholder="Password" required>
-                                    </div>
-                                </div>
-                                <div class="row g-3 align-items-center">
-                                    <div class="col-3">
-                                        <label for="inputEmail" class="col-form-label">Email</label>
-                                    </div>
-                                    <div class="col-1">
-                                        <label class="col-form-label">:</label>
-                                    </div>
-                                    <div class="col-8">
-                                        <input id="inputEmail" name="email" class="form-control"
-                                               placeholder="Email" required>
-                                    </div>
-                                </div>
-                                <div class="row g-3 align-items-center">
-                                    <div class="col-3">
-                                        <label for="inputTtl" class="col-form-label">Tanggal Lahir</label>
-                                    </div>
-                                    <div class="col-1">
-                                        <label class="col-form-label">:</label>
-                                    </div>
-                                    <div class="col-8">
-                                        <input type="date" id="inputTtl" name="TTL" class="form-control" required>
-                                    </div>
-                                </div>
-                                <div class="row g-3 align-items-center">
-                                    <div class="col-3">
-                                        <label for="inputNoTlpn" class="col-form-label">No Telepon</label>
-                                    </div>
-                                    <div class="col-1">
-                                        <label class="col-form-label">:</label>
-                                    </div>
-                                    <div class="col-8">
-                                        <input id="inputNoTlpn" name="number" class="form-control"
-                                               placeholder="No Telepon" required>
-                                    </div>
-                                </div>
-                                <div class="row g-3 align-items-center">
-                                    <div class="col-3">
-                                        <label for="inputAlamat" class="col-form-label">Alamat</label>
-                                    </div>
-                                    <div class="col-1">
-                                        <label class="col-form-label">:</label>
-                                    </div>
-                                    <div class="col-8">
-                                        <input id="inputAlamat" name="address" class="form-control"
-                                               placeholder="Alamat" required>
-                                    </div>
-                                </div>
-                                <div class="row g-3 align-items-center">
-                                    <div class="col-3">
-                                        <label for="inputAlamat" class="col-form-label">Posisi</label>
-                                    </div>
-                                    <div class="col-1">
-                                        <label class="col-form-label">:</label>
-                                    </div>
-                                    <div class="col-8 ">
-                                        <div>
-                                            <label for="admin">
-                                                <input type="radio" id="admin" name="role" value="1" required>Admin
-                                            </label>
-                                            <br>
-                                            <br>
-                                            <label for="finance">
-                                                <input type="radio" id="finance" name="role" value="2" required>Finance
-                                            </label>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="modal-footer justify-content-center">
-                                    <button type="submit" class="btn-save">Simpan</button>
+                                <div class="col-8">
+                                    <input id="inputNama" name="name" class="form-control"
+                                           placeholder="Name" required>
                                 </div>
                             </div>
-                        </form>
+                            <div class="row g-3 align-items-center">
+                                <div class="col-3">
+                                    <label for="inputUsername" class="col-form-label">Username</label>
+                                </div>
+                                <div class="col-1">
+                                    <label class="col-form-label">:</label>
+                                </div>
+                                <div class="col-8">
+                                    <input id="inputUsername" name="username" class="form-control"
+                                           placeholder="Username" required>
+                                </div>
+                            </div>
+                            <div class="row g-3 align-items-center">
+                                <div class="col-3">
+                                    <label for="inputPassword" class="col-form-label">Password</label>
+                                </div>
+                                <div class="col-1">
+                                    <label class="col-form-label">:</label>
+                                </div>
+                                <div class="col-8">
+                                    <input type="password" id="inputPassword" name="password"
+                                           class="form-control"
+                                           placeholder="Password" required>
+                                </div>
+                            </div>
+                            <div class="row g-3 align-items-center">
+                                <div class="col-3">
+                                    <label for="inputEmail" class="col-form-label">Email</label>
+                                </div>
+                                <div class="col-1">
+                                    <label class="col-form-label">:</label>
+                                </div>
+                                <div class="col-8">
+                                    <input id="inputEmail" name="email" class="form-control"
+                                           placeholder="Email" required>
+                                </div>
+                            </div>
+                            <div class="row g-3 align-items-center">
+                                <div class="col-3">
+                                    <label for="inputTtl" class="col-form-label">Tanggal Lahir</label>
+                                </div>
+                                <div class="col-1">
+                                    <label class="col-form-label">:</label>
+                                </div>
+                                <div class="col-8">
+                                    <input type="date" id="inputTtl" name="TTL" class="form-control" required>
+                                </div>
+                            </div>
+                            <div class="row g-3 align-items-center">
+                                <div class="col-3">
+                                    <label for="inputNoTlpn" class="col-form-label">No Telepon</label>
+                                </div>
+                                <div class="col-1">
+                                    <label class="col-form-label">:</label>
+                                </div>
+                                <div class="col-8">
+                                    <input id="inputNoTlpn" name="number" class="form-control"
+                                           placeholder="No Telepon" required>
+                                </div>
+                            </div>
+                            <div class="row g-3 align-items-center">
+                                <div class="col-3">
+                                    <label for="inputAlamat" class="col-form-label">Alamat</label>
+                                </div>
+                                <div class="col-1">
+                                    <label class="col-form-label">:</label>
+                                </div>
+                                <div class="col-8">
+                                    <input id="inputAlamat" name="address" class="form-control"
+                                           placeholder="Alamat" required>
+                                </div>
+                            </div>
+                            <div class="row g-3 align-items-center">
+                                <div class="col-3">
+                                    <label for="inputAlamat" class="col-form-label">Posisi</label>
+                                </div>
+                                <div class="col-1">
+                                    <label class="col-form-label">:</label>
+                                </div>
+                                <div class="col-8 ">
+                                    <div>
+                                        <label for="admin">
+                                            <input type="radio" id="admin" name="role" value="1" required>Admin
+                                        </label>
+                                        <br>
+                                        <br>
+                                        <label for="finance">
+                                            <input type="radio" id="finance" name="role" value="2" required>Finance
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="modal-footer justify-content-center">
+                                <button type="submit" class="btn-save">Simpan</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    @foreach ($admin as $stat)
+        <div class="modal fade" id="Detailakun-{{ $stat->id }}">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+
+                    <!-- Modal Header -->
+                    <div class="modal-header">
+                        <h4 class="modal-title">Detail Admin</h4>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+
+                    <div class="detail-main">
+                        <img src="/image/Chat.svg" class="float-start" style="width:90px" alt="">
+                        <table>
+                            <tbody>
+                            <tr>
+                                <td>{{ $stat->username }}</td>
+                            </tr>
+                            <td>{{ $stat->role }}</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="modal-footer">
+                        <div class="row g-3 align-items-center">
+                            <div class="row g-3 align-items-center">
+                                <div class="col-3">
+                                    <label for="inputUsername" class="col-form-label">Username</label>
+                                </div>
+                                <div class="col-1">
+                                    <label class="col-form-label">:</label>
+                                </div>
+                                <div class="col-8">
+                                    <input id="inputUsername" name="username" class="form-control"
+                                           placeholder="Username" value="{{$stat->username}}" disabled>
+                                </div>
+                            </div>
+                            <div class="row g-3 align-items-center">
+                                <div class="col-3">
+                                    <label for="inputEmail" class="col-form-label">Email</label>
+                                </div>
+                                <div class="col-1">
+                                    <label class="col-form-label">:</label>
+                                </div>
+                                <div class="col-8">
+                                    <input id="inputEmail" name="email" class="form-control"
+                                           placeholder="Email" value="{{$stat->email}}" disabled>
+                                </div>
+                            </div>
+                            <div class="row g-3 align-items-center">
+                                <div class="col-3">
+                                    <label for="inputTtl" class="col-form-label">Tanggal Lahir</label>
+                                </div>
+                                <div class="col-1">
+                                    <label class="col-form-label">:</label>
+                                </div>
+                                <div class="col-8">
+                                    <input type="text" id="inputTtl" name="TTL" class="form-control"
+                                           value="{{$stat->TTL}}" disabled>
+                                </div>
+                            </div>
+                            <div class="row g-3 align-items-center">
+                                <div class="col-3">
+                                    <label for="inputNoTlpn" class="col-form-label">No Telepon</label>
+                                </div>
+                                <div class="col-1">
+                                    <label class="col-form-label">:</label>
+                                </div>
+                                <div class="col-8">
+                                    <input id="inputNoTlpn" name="number" class="form-control"
+                                           placeholder="No Telepon" value="{{$stat->number}}" disabled>
+                                </div>
+                            </div>
+                            <div class="row g-3 align-items-center">
+                                <div class="col-3">
+                                    <label for="inputAlamat" class="col-form-label">Alamat</label>
+                                </div>
+                                <div class="col-1">
+                                    <label class="col-form-label">:</label>
+                                </div>
+                                <div class="col-8">
+                                    <input id="inputAlamat" name="address" class="form-control"
+                                           placeholder="Alamat" value="{{$stat->address}}" disabled>
+                                </div>
+                            </div>
+                            <div class="row g-3 align-items-center">
+                                <div class="col-3">
+                                    <label for="inputRole" class="col-form-label">Posisi</label>
+                                </div>
+                                <div class="col-1">
+                                    <label class="col-form-label">:</label>
+                                </div>
+                                <div class="col-8">
+                                    <input id="inputRole" name="role" class="form-control"
+                                           placeholder="role" value="{{$stat->role}}" disabled>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Modal footer -->
+                    <div class="modal-footer">
+                        <div class="container-fluid">
+
+                        </div>
+                        <div class="container-fluid">
+                            <a>
+                                <button type="button" class="btn btn-info" data-bs-toggle="modal"
+                                        data-bs-dimiss="modal"
+                                        data-bs-target="#EditData-{{ $stat->id }}">Edit Data
+                                </button>
+                            </a>
+                            <a href="{{ route('deleteData', $stat->id) }}">
+                                <button type="button"
+                                        class="badge rounded-pill bg-danger mx-auto d-block"
+                                        style="font-size:15px; border:none; height: 40px; width:175px"
+                                        data-bs-dismiss="modal">Delete
+                                </button>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
+    @endforeach
 
+    @foreach ($admin as $stat)
+        <div class="modal fade" id="EditData-{{ $stat->id }}">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
 
-        @foreach ($admin as $stat)
-            <div class="modal fade" id="Detailakun-{{ $stat->id }}">
-                <div class="modal-dialog modal-dialog-centered">
-                    <div class="modal-content">
+                    <!-- Modal Header -->
+                    <div class="modal-header">
+                        <h4 class="modal-title">Detail Admin</h4>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
 
-                        <!-- Modal Header -->
-                        <div class="modal-header">
-                            <h4 class="modal-title">Detail Admin</h4>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-                        </div>
-
-                        <div class="detail-main">
-                            <img src="/image/Chat.svg" class="float-start" style="width:90px" alt="">
-                            <table>
-                                <tbody>
-                                <tr>
-                                    <td>{{ $stat->username }}</td>
-                                </tr>
-                                <td>{{ $stat->role }}</td>
-                                </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                        <div class="modal-footer">
+                    <div class="detail-main">
+                        <img src="/image/Chat.svg" class="float-start" style="width:90px" alt="">
+                    </div>
+                    <div class="modal-footer">
+                        <form action="{{route('editData')}}" method="post">
+                            @method("put")
+                            @csrf
                             <div class="row g-3 align-items-center">
                                 <div class="row g-3 align-items-center">
                                     <div class="col-3">
@@ -236,7 +353,7 @@
                                     </div>
                                     <div class="col-8">
                                         <input id="inputUsername" name="username" class="form-control"
-                                               placeholder="Username" value="{{$stat->username}}" disabled>
+                                               placeholder="Username" value="{{old('username',$stat->username)}}">
                                     </div>
                                 </div>
                                 <div class="row g-3 align-items-center">
@@ -248,7 +365,7 @@
                                     </div>
                                     <div class="col-8">
                                         <input id="inputEmail" name="email" class="form-control"
-                                               placeholder="Email" value="{{$stat->email}}" disabled>
+                                               placeholder="Email" value="{{old('email',$stat->email)}}">
                                     </div>
                                 </div>
                                 <div class="row g-3 align-items-center">
@@ -260,7 +377,7 @@
                                     </div>
                                     <div class="col-8">
                                         <input type="text" id="inputTtl" name="TTL" class="form-control"
-                                               value="{{$stat->TTL}}" disabled>
+                                               value="{{old('TTL',$stat->TTL)}}">
                                     </div>
                                 </div>
                                 <div class="row g-3 align-items-center">
@@ -272,7 +389,7 @@
                                     </div>
                                     <div class="col-8">
                                         <input id="inputNoTlpn" name="number" class="form-control"
-                                               placeholder="No Telepon" value="{{$stat->number}}" disabled>
+                                               placeholder="No Telepon" value="{{old('number',$stat->number)}}">
                                     </div>
                                 </div>
                                 <div class="row g-3 align-items-center">
@@ -284,10 +401,10 @@
                                     </div>
                                     <div class="col-8">
                                         <input id="inputAlamat" name="address" class="form-control"
-                                               placeholder="Alamat" value="{{$stat->address}}" disabled>
+                                               placeholder="Alamat" value="{{old('address',$stat->address)}}">
                                     </div>
                                 </div>
-                                <div class="row g-3 align-items-center">
+                                <div class="row g-3 align-items-center" hidden>
                                     <div class="col-3">
                                         <label for="inputRole" class="col-form-label">Posisi</label>
                                     </div>
@@ -296,227 +413,49 @@
                                     </div>
                                     <div class="col-8">
                                         <input id="inputRole" name="role" class="form-control"
-                                               placeholder="role" value="{{$stat->role}}" disabled>
+                                               placeholder="role" value="{{old('role',$stat->role)}}">
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <div class="container-fluid">
+                                        <div class="container-fluid">
+                                            <button type="submit" class="btn btn-info" data-bs-toggle="modal"
+                                                    data-bs-target="#disimpan">Simpan
+                                            </button>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <!-- Modal footer -->
-                        <div class="modal-footer">
-                            <div class="container-fluid">
-
-                            </div>
-                            <div class="container-fluid">
-                                <a>
-                                    <button type="button" class="btn btn-info" data-bs-toggle="modal"
-                                            data-bs-dimiss="modal"
-                                            data-bs-target="#EditData-{{ $stat->id }}">Edit Data
-                                    </button>
-                                </a>
-                                <a href="{{ route('deleteData', $stat->id) }}">
-                                    <button type="button"
-                                            class="badge rounded-pill bg-danger mx-auto d-block"
-                                            style="font-size:15px; border:none; height: 40px; width:175px"
-                                            data-bs-dismiss="modal">Delete
-                                    </button>
-                                </a>
-                            </div>
-                        </div>
+                        </form>
                     </div>
                 </div>
             </div>
-        @endforeach
+        </div>
+    @endforeach
 
-        @foreach ($admin as $stat)
-            <div class="modal fade" id="EditData-{{ $stat->id }}">
-                <div class="modal-dialog modal-dialog-centered">
-                    <div class="modal-content">
-
-                        <!-- Modal Header -->
-                        <div class="modal-header">
-                            <h4 class="modal-title">Detail Admin</h4>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-                        </div>
-
-                        <div class="detail-main">
-                            <img src="/image/Chat.svg" class="float-start" style="width:90px" alt="">
-                            <table>
-                                <tbody>
-                                <tr>
-                                    <td>{{ $stat->username }}</td>
-                                </tr>
-                                <td>{{ $stat->role }}</td>
-                                </tr>
-                                <tr>
-                                    <td><a href="{{ route('pemesanan_Ditolak', $stat->id) }}">
-                                            <button type="button"
-                                                    class="badge rounded-pill bg-danger mx-auto d-block"
-                                                    style="font-size:15px; border:none; height: 40px; width:175px"
-                                                    data-bs-dismiss="modal">Tolak Pemesanan
-                                            </button>
-                                        </a></td>
-                                </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                        <div class="modal-footer">
-                            <form action="{{route('editData')}}" method="post">
-                                @method("put")
-                                @csrf
-                                <div class="row g-3 align-items-center">
-                                    <div class="row g-3 align-items-center">
-                                        <div class="col-3">
-                                            <label for="inputUsername" class="col-form-label">Username</label>
-                                        </div>
-                                        <div class="col-1">
-                                            <label class="col-form-label">:</label>
-                                        </div>
-                                        <div class="col-8">
-                                            <input id="inputUsername" name="username" class="form-control"
-                                                   placeholder="Username" value="{{old('username',$stat->username)}}">
-                                        </div>
-                                    </div>
-                                    <div class="row g-3 align-items-center">
-                                        <div class="col-3">
-                                            <label for="inputEmail" class="col-form-label">Email</label>
-                                        </div>
-                                        <div class="col-1">
-                                            <label class="col-form-label">:</label>
-                                        </div>
-                                        <div class="col-8">
-                                            <input id="inputEmail" name="email" class="form-control"
-                                                   placeholder="Email" value="{{old('email',$stat->email)}}">
-                                        </div>
-                                    </div>
-                                    <div class="row g-3 align-items-center">
-                                        <div class="col-3">
-                                            <label for="inputTtl" class="col-form-label">Tanggal Lahir</label>
-                                        </div>
-                                        <div class="col-1">
-                                            <label class="col-form-label">:</label>
-                                        </div>
-                                        <div class="col-8">
-                                            <input type="text" id="inputTtl" name="TTL" class="form-control"
-                                                   value="{{old('TTL',$stat->TTL)}}">
-                                        </div>
-                                    </div>
-                                    <div class="row g-3 align-items-center">
-                                        <div class="col-3">
-                                            <label for="inputNoTlpn" class="col-form-label">No Telepon</label>
-                                        </div>
-                                        <div class="col-1">
-                                            <label class="col-form-label">:</label>
-                                        </div>
-                                        <div class="col-8">
-                                            <input id="inputNoTlpn" name="number" class="form-control"
-                                                   placeholder="No Telepon" value="{{old('number',$stat->number)}}">
-                                        </div>
-                                    </div>
-                                    <div class="row g-3 align-items-center">
-                                        <div class="col-3">
-                                            <label for="inputAlamat" class="col-form-label">Alamat</label>
-                                        </div>
-                                        <div class="col-1">
-                                            <label class="col-form-label">:</label>
-                                        </div>
-                                        <div class="col-8">
-                                            <input id="inputAlamat" name="address" class="form-control"
-                                                   placeholder="Alamat" value="{{old('address',$stat->address)}}">
-                                        </div>
-                                    </div>
-                                    <div class="row g-3 align-items-center" hidden>
-                                        <div class="col-3">
-                                            <label for="inputRole" class="col-form-label">Posisi</label>
-                                        </div>
-                                        <div class="col-1">
-                                            <label class="col-form-label">:</label>
-                                        </div>
-                                        <div class="col-8">
-                                            <input id="inputRole" name="role" class="form-control"
-                                                   placeholder="role" value="{{old('role',$stat->role)}}">
-                                        </div>
-                                    </div>
-                                    <div class="modal-footer">
-                                        <div class="container-fluid">
-                                            <div class="container-fluid">
-                                                <button type="submit" class="btn btn-info" data-bs-toggle="modal"
-                                                        data-bs-target="#disimpan">Edit Data
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-                @endforeach
-
-                <div class="modal fade" id="disimpan">
-                    <div class="modal-dialog modal-dialog-centered">
-                        <div class="modal-content">
-
-                            <!-- Modal Header -->
-                            <div class="modal-header">
-                                <h4 class="modal-title">Detail Pemesanan</h4>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-                            </div>
-
-                            <div class="detail-main">
-                                <table>
-                                    <tbody>
-                                    <img src="/image/doraemon.png" class="float-start" style="width:90px" alt="">
-                                    <tr>
-                                        <td style="padding-left: 25px">Username</td>
-                                        <td>:</td>
-                                        <td></td>
-                                    </tr>
-                                    <tr>
-                                        <td style="padding-left: 25px">Jenis Kelamin</td>
-                                        <td>:</td>
-                                        <td></td>
-                                    </tr>
-                                    <tr>
-                                        <td style="padding-left: 25px">Tanggal Lahir</td>
-                                        <td>:</td>
-                                        <td></td>
-                                    </tr>
-                                    <tr>
-                                        <td style="padding-left: 25px">Email</td>
-                                        <td>:</td>
-                                        <td></td>
-                                    </tr>
-                                    <tr>
-                                        <td style="padding-left: 25px">No Telepon</td>
-                                        <td>:</td>
-                                        <td></td>
-                                    </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-                <script>
-
-                    Swal.fire({
-                        title: 'Are you sure?',
-                        text: "You won't be able to revert this!",
-                        icon: 'warning',
-                        showCancelButton: true,
-                        confirmButtonColor: '#3085d6',
-                        cancelButtonColor: '#d33',
-                        confirmButtonText: 'Yes, delete it!'
-                    }).then((result) => {
-                        if (result.isConfirmed) {
-                            Swal.fire(
-                                'Deleted!',
-                                'Your file has been deleted.',
-                                'success'
-                            )
-                        }
-                    });
-                </script>
+@endsection
+@section('script')
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+        $(.delete
+        ).click(function () {
+            Swal.fire({
+                title: 'Are you sure?',
+                text: "You won't be able to revert this!",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Yes, delete it!'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    Swal.fire(
+                        'Deleted!',
+                        'Your file has been deleted.',
+                        'success'
+                    )
+                }
+            });
+        });
+    </script>
 @endsection

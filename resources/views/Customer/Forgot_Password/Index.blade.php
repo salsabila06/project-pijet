@@ -58,11 +58,13 @@
                 <span  id="notice" class="text-danger">@error('email'){{$message}}@enderror</span>
             </div>
             <button type="submit" id="forgot-pass-btn">Send Instructions </button>
+            @can(auth('admin'))
             <div class="text">
                 <p id="dont-have-account-2">
                     Don't have account? <a href="{{route('register-page')}}">register</a>
                 </p>
             </div>
+            @endcan
         </fieldset>
     </form>
 

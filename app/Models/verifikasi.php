@@ -12,10 +12,8 @@ class verifikasi extends Model
     protected $table='verifikasi';
     protected $guarded=['id'];
 
-
-
-    public function data()
+    public function pengguna()
     {
-        return $this->hasMany(data::class);
+        return $this->hasMany(pengguna::class);
     }
 }

@@ -1,25 +1,26 @@
 <?php
 
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\FinanceController;
+use App\Http\Controllers\Admin\ResetPassword;
 use App\Http\Controllers\Admin\AdminController;
-use App\Http\Controllers\Admin\DashboardController;
-use App\Http\Controllers\Admin\EditProfileController;
-use App\Http\Controllers\Admin\PembatalanController;
-use App\Http\Controllers\Admin\PemesananController;
+use App\Http\Controllers\Admin\MitraController;
+use App\Http\Controllers\Layout\PageController;
+use App\Http\Controllers\Admin\ReviewController;
 use App\Http\Controllers\Admin\PenggunaController;
+use App\Http\Controllers\Customer\LoginController;
+use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\Admin\PemesananController;
+use App\Http\Controllers\SuperAdmin\SuperAdminMenu;
+use App\Http\Controllers\Admin\PembatalanController;
 use App\Http\Controllers\Admin\VerifikasiController;
 use App\Http\Controllers\Customer\BookingController;
-use App\Http\Controllers\Customer\Forgot_PasswordController;
-use App\Http\Controllers\Customer\LoginController;
-use App\Http\Controllers\Customer\PembayaranController;
-use App\Http\Controllers\SuperAdmin\SuperAdminMenu;
-use App\Http\Controllers\Customer\RegisterController;
-use App\Http\Controllers\Layout\PageController;
-use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Admin\ReviewController;
 use App\Http\Controllers\Customer\ProfileController;
-use App\Http\Controllers\FinanceController;
+use App\Http\Controllers\Admin\EditProfileController;
+use App\Http\Controllers\Customer\RegisterController;
+use App\Http\Controllers\Customer\PembayaranController;
 use App\Http\Controllers\SuperAdmin\EditDataController;
-use App\Http\Controllers\Admin\ResetPassword;
+use App\Http\Controllers\Customer\Forgot_PasswordController;
 
 /*
 |--------------------------------------------------------------------------
@@ -82,6 +83,8 @@ Route::middleware(['admin:web'])->group(function () {
         Route::get('/ditolak', [PemesananController::class, 'ditolak'])->name('tampil_pemesanan_ditolak');
         Route::get('/sukses/{id}', [PemesananController::class, 'pemesanan_Berhasil'])->name('pemesanan_berhasil');
         Route::get('/failed/{id}', [PemesananController::class, 'pemesanan_Ditolak'])->name('pemesanan_Ditolak');
+        Route::post('/riwayat_transaksi', [PemesananController::class, 'riwayat_transaksi'])->name('riwayat_transaksi');
+
     });
 
     Route::prefix('/Verifikasi')->group(function () {
@@ -96,6 +99,10 @@ Route::middleware(['admin:web'])->group(function () {
     Route::get('Pembatalan/detail', [PembatalanController::class, 'detail'])->name('detail_pembatalan');
 
     Route::get('Pengguna', [PenggunaController::class, 'index'])->name('pengguna');
+    Route::get('mitra', [PenggunaController::class, 'index'])->name('mitra');
+
+    Route::get('Pelanggan', [PenggunaController::class, 'index'])->name('pelanggan');
+    Route::get('mitramitrafinance', [PenggunaController::class, 'index'])->name('mitrafinance');
 
     Route::get('finance', [FinanceController::class, 'index'])->name('finance');
 
@@ -106,5 +113,3 @@ Route::middleware(['admin:web'])->group(function () {
     Route::put('SuperAdmin/EditData',[EditDataController::class,'edit'])->name('editData');
     Route::get('SuperAdmin/{id}',[EditDataController::class,'destroy'])->name('deleteData');
 });
-
-

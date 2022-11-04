@@ -410,3 +410,67 @@
     letter-spacing: 0.05em;
     color: #000000;
   }
+
+//detail pembatalan
+  .leftcontent {
+    height: 100vh;
+    width: 60%;
+    float: left;
+  }
+
+  .leftcontent h5 {
+    font-family: 'Poppins';
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 30px;
+    text-align: center;
+    color: #000000;
+  }
+  .title {
+    font-family: 'Poppins';
+    font-weight: 500;
+    font-size: 30px;
+    line-height: 45px;
+    letter-spacing: 0.05em;
+    color: #000000;
+  }
+  .card-title {
+    font-family: 'Poppins';
+    font-weight: 500;
+    font-size: 20px;
+    text-align: center;
+    color: #000000;
+    margin-bottom: 11px;
+  }
+  .subtitle {
+    font-family: 'Poppins';
+    font-weight: 400;
+    font-size: 15px;
+    color: #000000;
+    margin-top: 11px;
+  }
+
+  .rightcontent {
+    height: 100vh;
+    float: right;
+    width: 40%;
+    padding: 100px 0;
+  }
+  .bdy {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 24px;
+    color: #000000;
+  }
+  .bborder {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px;
+    gap: 15px;
+    width: 80vw;
+    height: 80vh;
+    border: none;
+  }

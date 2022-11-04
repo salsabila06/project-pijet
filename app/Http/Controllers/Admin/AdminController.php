@@ -92,7 +92,7 @@ class AdminController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy()
+    public function logout()
     {
         Auth::guard('admin')->logout();
 
@@ -100,7 +100,7 @@ class AdminController extends Controller
 
         request()->session()->regenerateToken();
 
-        return redirect('/Login_Admin');
+        return redirect('/Login_Admin')->with('logout','Anda Telah Logout');
         //
     }
 }

@@ -20,13 +20,17 @@ class BookingController extends Controller
 
     public function store(Request $request)
     {
+
         $validateData=$request->validate([
             'waktu_booking'=>'required',
             'durasi_waktu'=>'required',
-            'jenis_pijat'=>'required',
+            'jenispijat_id'=>'required',
             'alamat'=>'required',
+            'jenis_kelamin'=>'required',
         ]);
-        pemesanan::create($validateData+['customer_id'=>auth()->id(),
+
+
+        pemesanan::create($validateData+['pengguna_id'=>auth()->user()->id,
                                     'status'=>'menunggu']);
 
         return redirect()->route('home')->with('success','Anda Berhasil Melakukan Booking');

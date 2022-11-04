@@ -10,8 +10,19 @@ class pemesanan extends Model
     use HasFactory;
 
     protected $table='pemesanan';
-    protected $fillable=['waktu_booking','durasi_waktu','alamat','jenis_pijat','status'];
+    protected $fillable=['username','pengguna_id','jenispijat_id','jenis_kelamin','waktu_booking','durasi_waktu','alamat','status'];
     protected $guarded='id';
+
+    public function pengguna(): \Illuminate\Database\Eloquent\Relations\BelongsTo
+    {
+        return $this->belongsTo(pengguna::class);
+    }
+
+    /** @noinspection PhpUnused */
+    public function jenispijat(): \Illuminate\Database\Eloquent\Relations\BelongsTo
+    {
+        return $this->belongsTo(jenispijat::class);
+    }
 
     public function scopeFilters($query, array $filters)
     {
@@ -20,4 +31,7 @@ class pemesanan extends Model
                          ->orwhere('jasa_pijat', 'like', "%{$search}%");
         });
     }
+
+
+
 }

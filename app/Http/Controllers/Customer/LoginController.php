@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Customer;
 
 use App\Http\Controllers\Controller;
+use App\Models\pengguna;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -28,11 +29,6 @@ class LoginController extends Controller
 
         return back()->with('loginError','Login failed!');
 
-    }
-
-    public function show()
-    {
-        return view('Profile.Index',['datas'=>dataz::where('id',auth()->user()->id)->get()]);
     }
 
     public function logout()
