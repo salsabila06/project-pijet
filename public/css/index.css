@@ -1,0 +1,114 @@
+/*=============== GOOGLE FONTS ===============*/
+/* @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap"); */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300&display=swap');
+
+/*=============== VARIABLES CSS ===============*/
+:root {
+  --header-height: 3rem;
+
+  /*========== Colors ==========*/
+  --hue: 174;
+  --sat: 63%;
+  --first-color: hsl(var(--hue), var(--sat), 40%);
+  --first-color-alt: hsl(var(--hue), var(--sat), 36%);
+  --title-color: hsl(var(--hue), 12%, 15%);
+  --text-color: rgb(0, 0, 0);
+  --text-white-color: rgb(255, 255, 255);
+  --body-color: rgba(219, 255, 246, 1);
+  --btn-color: linear-gradient(88.82deg, #7B61FF -3.05%, #5B98D1 108.06%);
+  --border-radius-button: 7px;
+  --container-color: #FFF;
+
+  /*========== Font and typography ==========*/
+  
+  --body-font: 'Poppins', sans-serif;
+  --h1-font-size: 1.7rem;
+  --normal-font-size: 1rem;
+  --tiny-font-size: .725rem;
+
+
+  /*========== z index ==========*/
+  --z-tooltip: 10;
+  --z-fixed: 100;
+}
+
+@media screen and (min-width: 968px) {
+  :root {
+    --h1-font-size: 2.25rem;
+    --normal-font-size: 1rem;
+  }
+}
+
+/*=============== BASE ===============*/
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  
+  margin: var(--header-height) 0 0 0;
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size);
+  background-color: var(--body-color);
+  color: var(--text-color);
+}
+
+ul {
+  list-style: none;
+}
+div input{
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size);
+}
+p{
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size);
+  color: var(--text-color);
+}
+a {
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size);
+  color: var(--text-color);
+  
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.container {
+  max-width: 968px;
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
+.bg {
+    background-color:  var(--body-color); ;
+    background-image: url("/assets/img/Group 179.svg");
+    height: 50%;
+    background-position: right;
+    background-repeat: no-repeat;
+}
+
+.title{
+  font-family: var(--body-font);
+  font-size: var(--h1-font-size);
+  color: var(--text-color);
+}
+.btn-masuk{
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size);
+  color: var(--text-white-color);
+  background: var(--btn-color);
+  border-radius: var(--border-radius-button);
+  width: 100%;
+ 
+}
+
