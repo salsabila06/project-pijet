@@ -15,9 +15,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 
     <!--my style -->
-    <link rel="stylesheet" href="{{asset('/css/index.css')}}">
+    <link rel="stylesheet" href="{{asset('/css/login.css')}}">
+    @yield('link')
     <title>@yield('title')</title>
-    {{-- <style>
+    <style>
         #imageBoooking {
             display: flex;
             flex-direction: row;
@@ -29,19 +30,17 @@
             left: 545px;
             top: 0px;
         }
-    </style> --}}
+    </style>
 </head>
 
-<body class="bg">
+<body class="body">
 <div class="container">
-    <nav class="navbar">
-        <div class="container">
-          <a class="navbar-brand" href="#">
-            <img src="/image/Pijetin 2.svg" alt="brand" srcset="">
-          </a>
+    <nav>
+        <div class="nav-brand">
+            <img src="/image/Pijetin 2.svg" alt="" srcset="">
         </div>
     </nav>
-    {{-- @auth()
+    @auth()
         <div class="column-illustration-hero" id="imageBoooking">
             <img id="imageBoooking" src="/image/foto 2.svg" alt="" srcset="">
         </div>
@@ -49,7 +48,7 @@
         <div class="column-illustration-hero">
             <img src="/image/Group 179.svg" alt="" srcset="">
         </div>
-    @endauth --}}
+    @endauth
     @yield('contain')
 </div>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
